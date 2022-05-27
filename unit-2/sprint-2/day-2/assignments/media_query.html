@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query Assignment</title>
+    <style>
+        #container {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #container:nth-child(1) {
+            width: 100%;
+            height: 10%;
+        }
+        
+        #container>div+div:nth-child(1) {
+            width: 400px;
+            height: 350px;
+            background-color: red;
+        }
+        
+        #container>div+div:nth-child(2) {
+            width: 400px;
+            height: 350px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>Navigation</div>
+    <div>
+        <div>Box1</div>
+        <div>Box2</div>
+    </div>
+</body>
+
+</html>
