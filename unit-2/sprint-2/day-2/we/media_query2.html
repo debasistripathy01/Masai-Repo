@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using GRid Template area</title>
+    <style>
+        #navbar {
+            background-color: yellow;
+            width: 100%;
+            height: 80px;
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            grid-area: nav;
+        }
+        
+        #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 80px 150px;
+            gap: 20px;
+            height: auto;
+            /* grid-template-areas: "nav nav nav nav" "b1 b2 b3 b4"; */
+        }
+        /* #blocks {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 300px;
+            gap: 20px;
+            margin-top: 30px;
+            font-size: 30px;
+        } */
+        
+        #container>div:nth-child(2) {
+            background-color: red;
+            grid-area: b1;
+        }
+        
+        #container>div:nth-child(3) {
+            background-color: #7ff233;
+            grid-area: b2;
+        }
+        
+        #container>div:nth-child(4) {
+            background-color: rgb(87, 98, 239);
+            grid-area: b3;
+        }
+        
+        #container>div:nth-child(5) {
+            background-color: #989898;
+            grid-area: b4;
+        }
+        
+        @media all and (min-with:480px) and (max-width: 720px) {
+            #container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 80px 300px 300px;
+                grid-template-areas: "nav nav " "b1 b3" "b2 b4";
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="navbar">Navigation</div>
+        <!-- <div id="blocks"> -->
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+        <!-- </div> -->
+    </div>
+</body>
+
+</html>
