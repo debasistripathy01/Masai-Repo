@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query model</title>
+    <style>
+        #navigation {
+            background-color: yellow;
+            width: 70%;
+            height: 50px;
+            margin: auto;
+            display: flex;
+            font-size: 30px;
+        }
+        
+        #navigation+div {
+            display: grid;
+            width: 70%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 400px;
+            gap: 20px;
+            margin: auto;
+            margin-top: 1%;
+            /* border: 1px solid red; */
+        }
+        
+        #navigation+div>div {
+            cursor: pointer;
+            /* border: 2px solid red; */
+        }
+        
+        #navigation+div>div:first-child {
+            background-color: red;
+        }
+        
+        #navigation+div>div:last-child {
+            background-color: rgb(64, 231, 64);
+        }
+        
+        @media all and (min-width: 50px) and (max-width: 450px) {
+            #navigation+div {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(2, 100px);
+                gap: 20px;
+                width: 70%;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navigation">Navigation</div>
+
+    <div>
+        <div>Left-Box</div>
+        <div>Right-Box</div>
+    </div>
+
+
+</body>
+
+</html>
