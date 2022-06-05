@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            margin: auto;
+        }
+        
+        #grid {
+            width: 70%;
+            height: 100px;
+            margin: auto;
+            display: grid;
+            grid-gap: 8px;
+            grid-template-columns: [a] 100px [a] 100px [a] 100px [a] 100px;
+            grid-template-rows: [b] auto [b] auto [b];
+            background-color: #fff;
+            color: #444;
+        }
+        
+        #grid>div {
+            border: 1px solid red;
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 150%;
+        }
+        
+        .key-1 {
+            grid-column: a / span 2;
+            grid-row: b;
+            border: 1px solid red;
+        }
+        
+        .key-2 {
+            grid-column: a 3 / span 2;
+            grid-row: b;
+            border: 1px solid yellow;
+        }
+        
+        .key-3 {
+            grid-column: a;
+            grid-row: b 2;
+            border: 1px solid yellow;
+        }
+        
+        .key-4 {
+            grid-column: a 2 / span 3;
+            grid-row: b 2;
+            border: 1px solid yellow;
+        }
+        
+        .key-5 {
+            grid-column: a / span 4;
+            grid-row: b 3;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="grid">
+        <div class="key-1">A</div>
+        <div class="key-2">B</div>
+        <div class="key-3">C</div>
+        <div class="key-4">D</div>
+        <div class="key-5">E</div>
+    </div>
+</body>
+
+</html>
