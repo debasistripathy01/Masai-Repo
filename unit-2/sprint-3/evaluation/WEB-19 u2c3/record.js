@@ -21,26 +21,26 @@ function MySubmission() {
 
 
     var tr = document.createElement("tr");
-    var td1 = document.createElement("td");
+    var td1 = document.createElement("th");
     td1.innerText = name;
 
-    var td2 = document.createElement("td");
+    var td2 = document.createElement("th");
     td2.innerText = EmployeeId;
 
-    var td3 = document.createElement("td");
+    var td3 = document.createElement("th");
     td3.innerText = department;
 
-    var td4 = document.createElement("td");
+    var td4 = document.createElement("th");
     td4.innerText = experience;
 
-    var td5 = document.createElement("td");
+    var td5 = document.createElement("th");
     td5.innerText = email;
 
-    var td6 = document.createElement("td");
+    var td6 = document.createElement("th");
     td6.innerText = mob_num;
 
 
-    var td7 = document.createElement("td");
+    var td7 = document.createElement("th");
     if (experience > 5) {
         // console.log("Senior");
         td7.innerText = "Senior";
@@ -54,7 +54,7 @@ function MySubmission() {
 
 
 
-    var td8 = document.createElement("td");
+    var td8 = document.createElement("th");
     td8.innerText = "Delete";
     td8.addEventListener("click", deleteFunction);
     td8.style.backgroundColor = "red";
