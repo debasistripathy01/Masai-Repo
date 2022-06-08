@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons using JS</title>
+    <style>
+        .container {
+            width: 100px;
+            height: 40px;
+            margin: auto;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // var names = ["primary", "Secondary", "Success", "Danger", "Warning", "Info", "Light", "Dark", "Link"];
+    // var colors = ["cyan", "grey", "green", "red", "yellow", "lightblue", "whitesmoke", "black", "white"]
+    // var text_color = ["white", "white", "white", "white", "black", "white", "black", "white", "blue"]
+    // var buttonData = [{}]
+
+    var buttonObj = [{
+        name: "primary",
+        color: "white",
+        backgroundColor: "cyan",
+    }, {
+        name: "Secondary",
+        color: "white",
+        backgroundColor: "grey"
+    }, {
+        name: "Success",
+        color: "white",
+        backgroundColor: "green"
+    }, {
+        name: "Danger",
+        color: "white",
+        backgroundColor: "red"
+    }, {
+        name: "Warning",
+        color: "black",
+        backgroundColor: "yellow"
+    }, {
+        name: "Info",
+        color: "white",
+        backgroundColor: "lightblue"
+    }, {
+        name: "Light",
+        color: "black",
+        backgroundColor: "whitesmoke"
+    }, {
+        name: "Dark",
+        color: "white",
+        backgroundColor: "black"
+    }, {
+        name: "Link",
+        color: "blue",
+        backgroundColor: "white"
+    }, ]
+    buttonObj.forEach(function(elem) {
+        console.log(elem.backgroundColor);
+        var btn = document.createElement("button")
+        btn.innerText = elem.name
+        btn.style.backgroundColor = elem.backgroundColor
+        btn.style.color = elem.color
+        btn.setAttribute("class", "container");
+        document.querySelector("body").append(btn);
+
+    })
+
+    for (var i = 0; i < 9; i++) {
+        var btn = document.createElement("button")
+        btn.innerText = names[i]
+        btn.style.backgroundColor = colors[i]
+        btn.style.textDecorationColor = text_color[i]
+        document.querySelector("body").append(btn)
+    }
+</script>
