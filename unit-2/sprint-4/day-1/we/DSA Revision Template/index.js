@@ -3,7 +3,11 @@ document.querySelector("form").addEventListener("submit", mySubmission);
 function mySubmission(event) {
     event.preventDefault();
 
-    var queArr = [];
+    var queArr = JSON.parse(localStorage.getItem("queArr")) || [];
+
+    window.addEventListener("load", function() {
+        displayTable(queArr);
+    })
 
     var queObj = {
         questionTitle: document.querySelector("#title").value,
@@ -14,11 +18,13 @@ function mySubmission(event) {
     queArr.push(queObj);
     // console.log(queArr);
     //question Array length 
-    displayTable(queArr);
+    // displayTable(queArr);
+    localStorage.setItem("questionData", JSON.stringify("queArr"));
 
     // store queArr in LS
 
     function displayTable(queArr) {
+        document.querySelector("tbody").innerHTML = "";
         queArr.forEach(function(elem) {
             let tr = document.createElement("tr");
 
