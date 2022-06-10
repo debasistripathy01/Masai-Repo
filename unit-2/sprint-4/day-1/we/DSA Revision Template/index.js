@@ -5,9 +5,9 @@ function mySubmission(event) {
 
     var queArr = JSON.parse(localStorage.getItem("queArr")) || [];
 
-    window.addEventListener("load", function() {
-        displayTable(queArr);
-    })
+    // window.addEventListener("load", function() {
+    //     displayTable(queArr);
+    // })
 
     var queObj = {
         questionTitle: document.querySelector("#title").value,
@@ -18,7 +18,7 @@ function mySubmission(event) {
     queArr.push(queObj);
     // console.log(queArr);
     //question Array length 
-    // displayTable(queArr);
+    displayTable(queArr);
     localStorage.setItem("questionData", JSON.stringify("queArr"));
 
     // store queArr in LS
