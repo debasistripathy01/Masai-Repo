@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input id="name" type="text" placeholder="input_name">
+        <input id="age" type="text" placeholder="age">
+        <select name="gender" id="gender">
+            <option value="">-------</option>
+            <option value="male">M</option>
+            <option value="female">F</option>
+        </select>
+
+        <input id="email" type="text" placeholder="input_email">
+        <input id="mob" type="number" placeholder="Mob. number">
+        <input id="submit" type="submit" value="Submit">
+
+
+    </form>
+</body>
+
+
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit", myFunction)
+
+    let userArr = [];
+
+    function myFunction() {
+        event.preventDefault();
+
+        let userObj = {
+            userName: document.querySelector("#name").value,
+            userAge: document.querySelector("#age").value,
+            userGender: document.querySelector("#gender").value,
+            userEmail: document.querySelector("#email").value,
+            userNumber: document.querySelector("#mob").value
+        };
+
+        userArr.push(userObj);
+
+        // console.log(name, age, gen, email, mob)
+
+        console.log(userArr);
+    }
+</script>
