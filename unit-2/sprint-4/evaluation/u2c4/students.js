@@ -2,18 +2,32 @@
 
 studentDataLS = JSON.parse(localStorage.getItem("admission"));
 
-let StudentArr = localStorage.getItem("admission-accepted") || [];
+let StudentArr = localStorage.getItem("admission") || [];
 //let acceptStudentArr = localStorage.getItem("admission-accepted") || [];
 
 //let rejectStudentArr = localStorage.getItem("admission-rejected") || [];
 
-displayData(studentDataLS);
+displayData(StudentArr);
 
 function courseFilter() {
     var filterCourse = document.querySelector("#filter").value;
 
-    if (filterCourse === "All") {
 
+    if (filterCourse === "All") {
+        var x = a.course.toUpperCase();
+        var y = b.course.toUpperCase();
+
+        StudentArr.sort(function(a, b) {
+            if (x > y) {
+                return -1;
+            }
+            if (x < y) {
+                return 1;
+            }
+            return 0;
+        });
+        console.log(StudentArr);
+        displayData(StudentArr);
     }
 }
 
