@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin Page</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <form>
+        <input id="userName" placeholder="userName" type="text">
+        <input id="passwd" placeholder="Password" type="password">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
+<script>
+    let form = document.querySelector("form").addEventListener("click", mySubmission);
+
+    let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+    function mySubmission(elem) {
+        event.preventDefault();
+
+        if (userData === null) {
+            alert("Please Signup First");
+            window.location.href = "index.html";
+        } else if (userData.userName === form.userName.value && userData.Passwd === form.passwd.value) {
+            alert("Signin Successful");
+            localStorage.setItem("signin", JSON.stringify(userData))
+            window.location.href = "index.html";
+        } else {
+            alert("Login or password is wrong");
+            window.location.reload();
+        }
+    }
+</script>
