@@ -19,23 +19,28 @@
 
 </html>
 <script>
-    let form = document.querySelector("form").addEventListener("click", mySubmission);
+    let form = document.querySelector("form").addEventListener("submit", mySubmission);
 
-    let userData = JSON.parse(localStorage.getItem("userData")) || [];
+    let userData = JSON.parse(localStorage.getItem("userData"));
 
     function mySubmission() {
         event.preventDefault();
 
+        let objData = {
+            Name: document.querySelector("form").userName.value,
+            Passwd: document.querySelector("form").passwd.value
+        }
+
         if (userData === null) {
             alert("Please Signup First");
             //window.location.href = "index.html";
-        } else if (userData.userName === document.querySelector("form").userName.value && userData.Passwd === document.querySelector("form").passwd.value) {
+        } else if (userData.userName === objData.Name && userData.Passwd === objData.Passwd) {
             alert("Signin Successful");
-            localStorage.setItem("signin", JSON.stringify(userData))
+            localStorage.setItem("signin", JSON.stringify(userData));
             window.location.href = "index.html";
         } else {
-            //alert("Login or password is wrong");
-            //window.location.reload();
+            alert("Login or password is wrong");
+            window.location.reload();
         }
     }
 </script>
