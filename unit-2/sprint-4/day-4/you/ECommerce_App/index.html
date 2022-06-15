@@ -32,4 +32,11 @@
 </html>
 
 <script>
+    let user = document.querySelector(".user");
+    var signinData = JSON.parse(localStorage.getItem("signin"));
+
+    if (signinData !== null) {
+        user.innerHTML = `<h2><a href="#">User</a></h2>
+            <h2><a href="cart.html">Cart</a></h2>`;
+    }
 </script>
