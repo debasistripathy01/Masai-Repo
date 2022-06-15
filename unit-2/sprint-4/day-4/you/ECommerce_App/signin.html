@@ -23,19 +23,19 @@
 
     let userData = JSON.parse(localStorage.getItem("userData")) || [];
 
-    function mySubmission(elem) {
+    function mySubmission() {
         event.preventDefault();
 
         if (userData === null) {
             alert("Please Signup First");
-            window.location.href = "index.html";
-        } else if (userData.userName === form.userName.value && userData.Passwd === form.passwd.value) {
+            //window.location.href = "index.html";
+        } else if (userData.userName === document.querySelector("form").userName.value && userData.Passwd === document.querySelector("form").passwd.value) {
             alert("Signin Successful");
             localStorage.setItem("signin", JSON.stringify(userData))
             window.location.href = "index.html";
         } else {
-            alert("Login or password is wrong");
-            window.location.reload();
+            //alert("Login or password is wrong");
+            //window.location.reload();
         }
     }
 </script>
