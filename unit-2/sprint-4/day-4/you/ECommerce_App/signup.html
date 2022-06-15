@@ -14,16 +14,16 @@
     <form>
         <input id="username" placeholder="username" type="text">
         <input id="email" placeholder="email" type="text">
-        <input id="psswd" placeholder="password" type="password">
+        <input id="passwd" placeholder="password" type="password">
         <input type="submit" value="submit">
     </form>
 </body>
 
 </html>
 <script>
-    let form = document.querySelector("#form").addEventListener("click", mySubmission);
+    let form = document.querySelector("form").addEventListener("submit", mySubmission);
 
-    function mySubmission(elem) {
+    function mySubmission() {
         event.preventDefault();
 
         var dataObj = {
@@ -31,7 +31,8 @@
             Email: document.querySelector("#email").value,
             Passwd: document.querySelector("#passwd").value
         }
-
+        alert("sign up is successful");
+        localStorage.setItem("userData", JSON.stringify(dataObj));
+        window.location.href = "signin.html";
     }
-    localStorage.setItem("userData", JSON.stringify(dataObj));
 </script>
