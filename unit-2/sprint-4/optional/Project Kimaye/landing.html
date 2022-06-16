@@ -19,6 +19,24 @@
         background-color: rgb(238, 238, 233);
     }
     
+    .kr_1 {
+        padding-top: 60px;
+    }
+    
+    .kr_1>h3 {
+        font-weight: bolder;
+        font-size: 30px;
+        text-align: center;
+        margin-left: 20px;
+        padding: 10px;
+    }
+    
+    #kimaye-recommend>div:nth-child(2) {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
     #fruits-div {
         display: grid;
         grid-template-columns: repeat(2, 48%);
@@ -29,49 +47,64 @@
         padding: 40px;
     }
     
-    .h4tag {
-        margin-left: 218px;
+    #all-fruits>div:nth-child(2)>h4 {
+        /* margin-left: 218px; */
+        text-align: center;
         font-weight: bolder;
         font-size: 22px;
+        padding: 2%;
     }
     
-    .ptag {
-        margin-left: 100px;
+    #all-fruits>div:nth-child(3)>p {
+        text-align: center;
         font-size: 20px;
+        padding: 2%;
     }
     
-    .btn {
-        margin-left: 220px;
+    #all-fruits>div:last-child {
+        align-items: center;
+        margin: auto;
+        padding: 2%;
+        display: flex;
+        justify-content: center;
         color: whitesmoke;
+    }
+    
+    #all-fruits>div:last-child>button {
         background-color: rgb(205, 23, 32);
-        padding: 8px;
-        border-radius: 8px;
+        padding: 2%;
+        border-radius: 7px;
         font-size: 18px;
         border: none;
+        cursor: pointer;
     }
     
-    .fruts-div-image {
+    #all-fruits>div:first-child>img {
         border-radius: 32px;
+        height: auto;
     }
     
-    #instruction-kimaye-image {
-        width: 100%;
+    #instruction-kimaye>div:first-child>img {
+        width: 30%;
     }
     
-    #super-safe {
-        margin-left: 460px;
-        padding-top: 50px;
-        font-size: 40px;
+    #instruction-kimaye>div+div>div:first-child>h1 {
+        text-align: center;
+        padding-top: 5%;
+        /* @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap'); */
+        font-family: 'Caveat', cursive;
+        font-size: 30px;
     }
     
-    #witness-journey-tag {
-        margin-left: 600px;
-        font-size: 35px;
+    #instruction-kimaye>div+div>div:nth-child(2)>p {
+        text-align: center;
+        font-size: 25px;
+        margin: 2%;
     }
     
     #journy-slideshow-image {
-        width: 100%;
-        height: 600px;
+        width: 30%;
+        height: auto;
     }
     
     .carousal {
@@ -183,7 +216,7 @@
 <body>
     <!----------------- HEADER --------------->
     <header>
-        <div id="container">
+        <div id="container1">
             <div id="sign-div">
                 <div id="topinfo">
                     <div id="sign-name">Sign in</div>
@@ -197,7 +230,7 @@
                     <p id="passtag">Lost Your Password?</p>
 
                     <button id="loginbtn">Login</button><br><br>
-                    <button class="socialbtnfb">Sign in with Facebook <img src="https://w7.pngwing.com/pngs/69/315/png-transparent-computer-icons-facebook-inc-logo-facebook-blue-text-rectangle.png" alt="" class="social"></button><br><br>
+                    <button class="socialbtnfb">Sign in with Facebook <img src="https://w7.pngwing.com/pngs/69/315/png-transparent-computer-icons-facebook-inc-logo-facebook-blue-text-rectangle.png" alt="" class="social"></button>
 
 
                     <button class="socialbtng">Sign in with Google <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/google-plus-512.png" alt="" class="social"></button>
@@ -221,38 +254,25 @@
                     <div id="sign-name">Sign in</div>
                     <div id="closeup">Close</div>
                 </div>
-                <br>
                 <div id="details">
                     <button class="socialbtnfb">Sign in with Facebook <img src="https://w7.pngwing.com/pngs/69/315/png-transparent-computer-icons-facebook-inc-logo-facebook-blue-text-rectangle.png" alt="" class="social"></button><br><br>
                     <button class="socialbtng">Sign in with Google <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/google-plus-512.png" alt="" class="social"></button>
-                    <br><br>
                     <label for="">First Name</label>
-                    <br>
                     <input type="text" id="fname">
-                    <br><br>
                     <label for="">Last Name</label>
-                    <br>
                     <input type="text" id="lname">
-                    <br><br>
                     <label for="">Email Address</label>
-                    <br>
                     <input type="text" id="email">
-                    <br><br>
                     <label for="">Password</label>
-                    <br>
                     <input type="text" id="password">
-                    <br><br>
                     <button id="registerbtn">Register</button>
                     <hr>
-                    <br>
                     <img src="https://icon-library.com/images/user-login-icon/user-login-icon-2.jpg" alt="" class="loginicon">
                     <h4 style="margin-left:135px;">Not Account yet?</h4>
                     <div id="text">
                         Welcome to Kimaye! Help us with a few details before you begin enjoying our safe and tasty fruits.
                     </div>
-                    <br><br>
                     <button id="sign-login">Login</button>
-                    <br><br><br>
 
                 </div>
 
@@ -334,83 +354,86 @@
         </div>
     </div>
     <div id="kimaye-recommend">
-        <div style="padding-top: 60px;">
-            <h style="font-weight: bolder; font-size:60px;margin-left: 400px;padding-top: 200px;">KIMAYE RECOMMENDS</h>
+        <div class="kr_1">
+            <h3>KIMAYE RECOMMENDS</h3>
         </div>
-        <p style="font-size:30px;margin-left: 520px;padding-top:20px;">A Handpicked and Curated Fruit offering</p>
+        <div>
+            <p>A Handpicked and Curated Fruit offering</p>
+        </div>
 
         <div id="fruits-div">
             <div id="all-fruits">
                 <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-1-min_570x.png?v=1614338437" alt="" class="fruts-div-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-1-min_570x.png?v=1614338437" alt="">
                 </div>
                 <div>
-                    <h4 class="h4tag">ALL FRUITS</h4>
+                    <h4>ALL FRUITS</h4>
                 </div>
                 <div>
-                    <p class="ptag">Pick and choose from a wide range of delicious fruits</p>
+                    <p>Pick and choose from a wide range of delicious fruits</p>
                 </div>
                 <div>
-                    <button class="btn">Shop Now</button>
-                </div>
-            </div>
-            <div id="all-fruits">
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-3-min_570x.png?v=1614338730" alt="" class="fruts-div-image">
-                </div>
-                <div>
-                    <h4 class="h4tag">FRESH CUTS</h4>
-                </div>
-                <div>
-                    <p class="ptag">We want to spoon-feed you… quite literally</p>
-                </div>
-                <div>
-                    <button class="btn">Shop Now</button>
+                    <button>Shop Now</button>
                 </div>
             </div>
             <div id="all-fruits">
                 <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-2-min_570x.jpg?v=1614339080" alt="" class="fruts-div-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-3-min_570x.png?v=1614338730" alt="">
                 </div>
                 <div>
-                    <h4 class="h4tag">FRUIT COMBOS</h4>
+                    <h4>FRESH CUTS</h4>
                 </div>
                 <div>
-                    <p class="ptag">Indulge in fruit combinations created by us</p>
+                    <p>We want to spoon-feed you… quite literally</p>
                 </div>
                 <div>
-                    <button class="btn">Shop Now</button>
+                    <button>Shop Now</button>
                 </div>
             </div>
             <div id="all-fruits">
                 <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/2I8A6078_570x.jpg?v=1631516874" alt="" class="fruts-div-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-2-min_570x.jpg?v=1614339080" alt="">
                 </div>
                 <div>
-                    <h4 class="h4tag">GIFTS BY KIMAYE</h4>
+                    <h4>FRUIT COMBOS</h4>
                 </div>
                 <div>
-                    <p class="ptag">Healthy & memorable gifts for your loved ones</p>
+                    <p>Indulge in fruit combinations created by us</p>
                 </div>
                 <div>
-                    <button class="btn">Shop Now</button>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div id="all-fruits">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/2I8A6078_570x.jpg?v=1631516874" alt="">
+                </div>
+                <div>
+                    <h4>GIFTS BY KIMAYE</h4>
+                </div>
+                <div>
+                    <p>Healthy & memorable gifts for your loved ones</p>
+                </div>
+                <div>
+                    <button>Shop Now</button>
                 </div>
             </div>
 
         </div>
         <div id="instruction-kimaye">
-            <img src="https://lh3.googleusercontent.com/g-cetZKwTGPyluuyka-eeL2iUY1R1dSRwzdtChVWON1fMn6LeVb0K-8VxsqsuClpvFBu4tHUw0U6RcDwW0fBPGp06g5O-APAzbEj4DU" alt="" id="instruction-kimaye-image">
-        </div>
-        <div id="about-joruney">
             <div>
-                <h1 id="super-safe">THE SECRET’S OUT: WE’RE SUPER SAFE</h1>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kimahi_570x_2db87855-9260-47c2-a80e-3759af77dbea_570x.png?v=1622009438" alt="">
             </div>
             <div>
-                <p id="witness-journey-tag">Witness Our Journey</p>
-            </div>
-            <div id="witness-journey-slideshow">
-
-                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-1_guetzli-min.jpg?v=1614755149" alt="" id="journy-slideshow-image">
+                <div>
+                    <h1>THE SECRET’S OUT: WE’RE SUPER SAFE</h1>
+                </div>
+                <div>
+                    <p>Witness Our Journey</p>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-1_guetzli-min.jpg?v=1614755149" alt="">
+                </div>
             </div>
         </div>
         <div class="carousal">
@@ -479,10 +502,39 @@
         </div>
     </div>
 
+    <div id="container">
+        <div id="footer">
+            <div>
+                <h4>FAQ'S</h4>
+                <h4>Contact Us</h4>
+                <h4>Shipping & Return Policy</h4>
+                <h4>Terms & Conditions</h4>
+                <h4>Privacy Policy</h4>
+            </div>
+            <div>
+                <div>
+                    <h4>Follow us on</h4>
+                    <div id="social_media_image">
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756" alt="">
+                        </div>
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756" alt="">
+                        </div>
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
 
-    <footer>
+        </div>
+        <div>
+            <p>Copyrigth© All rights Reserved</p>
+        </div>
+    </div>
 
-    </footer>
 </body>
 
 </html>
