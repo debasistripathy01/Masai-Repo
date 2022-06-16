@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
+
 </head>
 <style>
     #image {
@@ -102,17 +103,34 @@
         margin: 2%;
     }
     
-    #journy-slideshow-image {
-        width: 30%;
+    #instruction-kimaye>div+div>div:nth-child(3) {
+        /* border: 1px solid red; */
+        width: 100%;
         height: auto;
+        display: flex;
+    }
+    
+    #instruction-kimaye>div+div>div:nth-child(3)>div {
+        width: 30%;
+        /* border: 3px solid rgb(42, 41, 38); */
+        height: auto;
+        margin: auto;
+    }
+    
+    #instruction-kimaye>div+div>div:nth-child(3)>div>img {
+        width: 100%;
+        display: flex;
+        border-radius: 3%;
     }
     
     .carousal {
         background-color: rgb(236, 205, 101);
     }
     
-    #some-text {
+    .carousal>div:first-child>h3 {
         padding-top: 40px;
+        text-align: center;
+        font-size: 25px;
     }
     
     #fruits-h1-tag {
@@ -133,25 +151,53 @@
         position: relative;
     }
     
-    #scrollleftbtn,
-    #scrollrightbtn {
+    .displayproduct>div:first-child>button {
         width: 50px;
         height: 30px;
         border: none;
         background-color: rgb(236, 205, 101);
     }
     
-    #scrollleftbtn>img,
-    #scrollrightbtn>img {
+    .displayproduct>div:last-child>button {
+        width: 50px;
+        height: 30px;
+        border: none;
+        background-color: rgb(236, 205, 101);
+    }
+    
+    .displayproduct>div:first-child>button>img {
         width: 50px;
         height: 30px;
     }
     
-    .caro-image {
+    .displayproduct>div:last-child>button>img {
+        width: 50px;
+        height: 30px;
+    }
+    
+    .displayproduct>div:nth-child(2) {
+        border: 1px solid red;
+        display: flex;
+    }
+    
+    .displayproduct>div:nth-child(2)>div>div>img {
         border-radius: 10px;
-        width: 700px;
+        width: 100%;
+        position: relative;
         object-fit: cover;
         height: 400px;
+    }
+    
+    .carousal+div>h3 {
+        padding-top: 2%;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+    
+    .carousal+div+div>p {
+        margin-left: 630px;
+        font-size: 42px;
     }
     
     #last-div {
@@ -161,7 +207,7 @@
         margin-left: 150px;
     }
     
-    .img {
+    #last-div>div>img {
         border-radius: 15px;
         height: 300px
     }
@@ -432,72 +478,80 @@
                     <p>Witness Our Journey</p>
                 </div>
                 <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-1_guetzli-min.jpg?v=1614755149" alt="">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-5_guetzli-min.jpg?v=1622009925" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-1_guetzli-min.jpg?v=1614755149" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-2_guetzli-min.jpg?v=1622009925" alt="">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="carousal">
-            <div id="some-text">
-                <h1 id="fruits-h1-tag">JAZZ IT UP WITH FRUITS</h1>
+            <div>
+                <h3>JAZZ IT UP WITH FRUITS</h3>
             </div>
 
             <div class="displayproduct">
-                <div class="left-btn">
-                    <button id="scrollleftbtn"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" alt=""></button>
+                <div>
+                    <button><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" alt=""></button>
                 </div>
-                <div id="slide-div" class="slides-container">
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/MangoCover_908c34e6-fcdb-4564-918e-48d7baeaf628_360x.jpg?v=1645445684" alt="" class="caro-image">
+                <div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/MangoCover_908c34e6-fcdb-4564-918e-48d7baeaf628_360x.jpg?v=1645445684" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/Mahashivratri-Combo-cover_360x.jpg?v=1645619337" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/Mahashivratri-Combo-cover_360x.jpg?v=1645619337" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/cape-gooseberries_360x.jpg?v=1645205791" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/cape-gooseberries_360x.jpg?v=1645205791" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/combo-1_360x.jpg?v=1644479793" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/combo-1_360x.jpg?v=1644479793" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/463b5516-614a-4a66-9556-f4a09e45afbc_360x.png?v=1614326370" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/463b5516-614a-4a66-9556-f4a09e45afbc_360x.png?v=1614326370" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/royal-gala-apple-cover_360x.jpg?v=1643012816" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/royal-gala-apple-cover_360x.jpg?v=1643012816" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/9ebb0dfa-3897-42a3-97be-5a0ecb8491f8_360x.png?v=1615016898" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/9ebb0dfa-3897-42a3-97be-5a0ecb8491f8_360x.png?v=1615016898" alt="">
                     </div>
-                    <div class="slides-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/grapefruit-cover_360x.jpg?v=1639461484" alt="" class="caro-image">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/grapefruit-cover_360x.jpg?v=1639461484" alt="">
                     </div>
                 </div>
 
-                <div class="right-btn">
-                    <button id="scrollrightbtn"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-right-512.png" alt=""></button>
+                <div>
+                    <button><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-right-512.png" alt=""></button>
                 </div>
             </div>
         </div>
-        <div style="padding-top: 50px;">
-            <h style="margin-left: 500px; font-weight: bolder; font-size: 50px;">PSST… LOOKIN’ FOR US?</h>
+        <div>
+            <h3>PSST… LOOKIN’ FOR US?</h3>
         </div>
         <div>
-            <p style="margin-left: 630px; font-size:42px">We are here</p>
+            <p>We are here</p>
         </div>
         <div id="last-div">
             <div>
                 <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274611351_349089837095576_7501287755170325450_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=CKADY8CCwH8AX8l-XC_&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-Osr9LjlKIizjS5iNsYMGgRddeFtzZEqZQMxS8PaRM-A&oe=621E937C"
-                    alt="" class="img">
+                    alt="">
             </div>
             <div>
                 <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274490324_490765365742602_2272867067071858155_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=pk0txQESOWMAX92CMDl&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_YQSiOFk1HS5cRzrWYQsBBYkKY30HsHAZEyDbSTFPiOw&oe=621DF96E"
-                    alt="" class="img">
+                    alt="">
             </div>
             <div>
-                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/KiwiBlueberry_360x.png?v=1617983685" alt="" class="img">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/KiwiBlueberry_360x.png?v=1617983685" alt="">
             </div>
             <div>
                 <img src="https://scontent.cdninstagram.com/v/t51.2885-15/274148516_1117250272365231_8374639162014757054_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=e8ZbmM23Sn8AX9FQEeJ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-r9vUPdTyRK4vK7_59vWzY8hftQpy2oM8s4GSxVuAFSg&oe=621EABA0"
-                    alt="" class="img">
+                    alt="">
             </div>
         </div>
     </div>
