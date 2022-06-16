@@ -103,14 +103,14 @@
     <!----------------------- container =------------------>
     <h1>Men's Products</h1>
 
-    <select id="sortPrices">
-        <option value="" >Sort By Price</option>
+    <select id="sortPrices" onChange="handleSalarySort()">
+        <option value="none" >Sort By Price</option>
         <option value="LTH">Low to High</option>
         <option value="HTL">High to Low</option>
     </select>
 
     <select id="filterByNames">
-        <option>Sort By Name</option>
+        <option value="none">Sort By Name</option>
         <option value="asc">Ascending</option>
         <option value="dsc">Descending</option>
     </select>
@@ -307,37 +307,16 @@
 
 
     localStorage.setItem("MenData", JSON.stringify(objectMen));
+    var prodArr = JSON.parse(localStorage.getItem("MenData")) || [];
 
-    let MenDataArr = JSON.parse(localStorage.getItem("MenData"));
-
-
-    displayData(objectMen);
-
-    document.querySelector("#sortPrices").addEventListener("change", handlePriceSort());
-
-    function handlePriceSort() {
-        var selected = document.querySelector("#sortPrices").value;
-
-        if (selected === "LTH") {
-            objectMen.sort(function(a, b) {
-                return a.price - b.price;
-
-            });
-
-        } else if (selected === "HTL") {
-            objectMen.sort(function(a, b) {
-                return b.price - a.price;
-            });
-
-        }
-
-        displayData(objectMen);
-    }
-
+    // console.log(prod);
+    // var products = document.querySelector("#container");
+    // var filter = document.querySelector("#sortPrices");
 
 
 
     function displayData(data) {
+        document.querySelector("#container").innerHTML = "";
         data.forEach(function(elem) {
             console.log(elem);
 
@@ -373,4 +352,83 @@
             document.querySelector("#container").append(box);
         });
     }
+
+    function handleSalarySort() {
+        let selected = document.querySelector("#sortPrices").value;
+
+        // console.log(selected)
+        if (selected === "HTL") {
+            prodArr.sort(function(a, b) {
+                // a = Number(a);
+                // b = Number(b);
+                return b.price - a.price;
+            });
+            console.log(prodArr);
+            displayData(prodArr)
+
+        } else if (selected === "LTH") {
+            prodArr.sort(function(a, b) {
+                // a = Number(a);
+                // b = Number(b);
+                return a.price - b.price;
+            });
+            console.log(prodArr);
+            // console.log(objectMen);
+            displayData(prodArr);
+        } else {
+            displayData(prodArr);
+        }
+
+    }
+
+    displayData(prodArr);
+
+    // var products = document.querySelector("#container");
+    // let filter = document.querySelector("#filterByNames");
+
+    // filter.addEventListener("change", function() {
+    //     var x = a.name.toUpperCase();
+    //     var y = b.name.toUpperCase();
+
+    //     if (filter.value === "none") {
+    //         displayData(objectMen);
+    //     } else if (filter.value === "asc") {
+    //         var filtered = objectMen.filter(function(a, b) {
+    //             if (x > y) return 1;
+    //             if (x < y) return -1;
+    //             return 0;
+    //         });
+    //         displayData(filtered);
+    //     } else if (filter.value === "dsc") {
+    //         var filtered = objectMen.filter(function(a, b) {
+    //             if (x < y) return -1;
+    //             if (x < y) return 1;
+    //             else return 0;
+    //         });
+    //         displayData(objectMen);
+    //     }
+    // })
+
+
+    // var selected = document.querySelector("#sortPrices").addEventListener("change", handlePriceSort);
+    // //  document.querySelector("#sortPrices").value;
+    // function handlePriceSort() {
+    //     if (selected === "none") {
+    //         displayData(objectMen);
+    //     } else if (selected === "LTH") {
+    //         var prod = objectMen.sort(function(a, b) {
+    //             return b.price - a.price;
+
+    //         });
+    //         displayData(prod);
+
+    //     } else if (selected === "HTL") {
+    //         var prod = objectMen.sort(function(a, b) {
+    //             return b.price - a.price;
+    //         });
+    //         displayData(prod);
+    //     }
+
+    //     // displayData(objectMen);
+    // }
 </script>
