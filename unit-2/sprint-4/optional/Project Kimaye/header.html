@@ -55,35 +55,21 @@
             <div id="details">
                 <button class="socialbtnfb">Sign in with Facebook <img src="https://w7.pngwing.com/pngs/69/315/png-transparent-computer-icons-facebook-inc-logo-facebook-blue-text-rectangle.png" alt="" class="social"></button><br><br>
                 <button class="socialbtng">Sign in with Google <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/google-plus-512.png" alt="" class="social"></button>
-                <br><br>
                 <label for="">First Name</label>
-                <br>
                 <input type="text" id="fname">
-                <br><br>
                 <label for="">Last Name</label>
-                <br>
                 <input type="text" id="lname">
-                <br><br>
                 <label for="">Email Address</label>
-                <br>
                 <input type="text" id="email">
-                <br><br>
                 <label for="">Password</label>
-                <br>
                 <input type="text" id="password">
-                <br><br>
                 <button id="registerbtn">Register</button>
-                <hr>
-                <br>
                 <img src="https://icon-library.com/images/user-login-icon/user-login-icon-2.jpg" alt="" class="loginicon">
                 <h4 style="margin-left:135px;">Not Account yet?</h4>
                 <div id="text">
                     Welcome to Kimaye! Help us with a few details before you begin enjoying our safe and tasty fruits.
                 </div>
-                <br><br>
                 <button id="sign-login">Login</button>
-                <br><br><br>
-
             </div>
 
 
@@ -205,15 +191,15 @@
 
         var password = document.querySelector("#password").value;
 
-        let user_found = false;
+        let user_info = false;
         for (var i = 0; i < regduser.length; i++) {
             if (regduser[i].emailId === email && regduser[i].pass === password) {
-                user_found = true;
+                user_info = true;
                 window.location.href = "account.html";
 
             }
         }
-        if (user_found === false) {
+        if (user_info === false) {
             alert("wrong credientials");
         }
     }

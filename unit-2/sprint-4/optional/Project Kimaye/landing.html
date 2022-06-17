@@ -282,7 +282,7 @@
                     <button class="socialbtng">Sign in with Google <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/google-plus-512.png" alt="" class="social"></button>
 
 
-                    <img src="https://icon-library.com/images/user-login-icon/user-login-icon-2.jpg" alt="" class="loginicon">
+                    <a href="sigup.html"><img src="https://icon-library.com/images/user-login-icon/user-login-icon-2.jpg" alt="" class="loginicon"></a>
                     <h4 style="margin-left:135px;">Not Account yet?</h4>
 
                     <div class="text">
@@ -539,18 +539,19 @@
         </div>
         <div id="last-div">
             <div>
-                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274611351_349089837095576_7501287755170325450_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=CKADY8CCwH8AX8l-XC_&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-Osr9LjlKIizjS5iNsYMGgRddeFtzZEqZQMxS8PaRM-A&oe=621E937C"
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/286476421_5512742678790182_9133878254313440813_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=lb_ZGm3wyeUAX8jYSln&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-74U3HrBQQfU5WttYkXPl-Q2rkSz8OuP9X5z-28spHcw&oe=62B10515"
                     alt="">
             </div>
             <div>
-                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274490324_490765365742602_2272867067071858155_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=pk0txQESOWMAX92CMDl&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_YQSiOFk1HS5cRzrWYQsBBYkKY30HsHAZEyDbSTFPiOw&oe=621DF96E"
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/287661335_435396271444075_5269129130906661203_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=chNto7ljN2QAX9RDh8n&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-2_MuSy4369qooQUFt4uLUUeq3jDPZfgtP8YC9dWAXsg&oe=62B06C84"
                     alt="">
             </div>
             <div>
-                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/KiwiBlueberry_360x.png?v=1617983685" alt="">
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/287777520_709043673687257_3035340965363558444_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=qcpWAq8zICEAX-Q2OuT&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9Izjbk_K86ZXJoIG9btxbf4H3KyuEoN58QHeYea2obmQ&oe=62AFC2FF"
+                    alt="">
             </div>
             <div>
-                <img src="https://scontent.cdninstagram.com/v/t51.2885-15/274148516_1117250272365231_8374639162014757054_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=e8ZbmM23Sn8AX9FQEeJ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-r9vUPdTyRK4vK7_59vWzY8hftQpy2oM8s4GSxVuAFSg&oe=621EABA0"
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/287998135_425802062515036_1538122002023877767_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=hfGoh_qdnkgAX8hvKtc&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_QfblYPFo48THgOqFmP5jctuLzJRw6tFUZENyVGZEP6Q&oe=62B022B7"
                     alt="">
             </div>
         </div>
@@ -603,24 +604,24 @@
     document.querySelector("header").innerHTML = header();
 
 
-    document.querySelector("#login").addEventListener("click", () => {
+    document.querySelector("#login").addEventListener("click", function() {
         document.querySelector("#sign-div").style.display = "block";
     });
 
-    document.querySelector("#closein").addEventListener("click", () => {
+    document.querySelector("#closein").addEventListener("click", function() {
         document.querySelector("#sign-div").style.display = "none";
     })
 
-    document.querySelector("#accbtn").addEventListener("click", () => {
+    document.querySelector("#accbtn").addEventListener("click", function() {
         document.querySelector("#sign-div").style.display = "none";
         document.querySelector("#signupdiv").style.display = "block";
     })
 
-    document.querySelector("#closeup").addEventListener("click", () => {
+    document.querySelector("#closeup").addEventListener("click", function() {
         document.querySelector("#signupdiv").style.display = "none";
     })
 
-    document.querySelector("#sign-login").addEventListener("click", () => {
+    document.querySelector("#sign-login").addEventListener("click", function() {
         document.querySelector("#signupdiv").style.display = "none";
         document.querySelector("#sign-div").style.display = "block";
     })
@@ -650,7 +651,7 @@
         window.location.href = "landing.html";
     }
 
-    // login part
+    //--------------------------- login section-------------------//
 
     document.querySelector("#loginbtn").addEventListener("click", login);
     var regduser = JSON.parse(localStorage.getItem("userdatabase"));
@@ -674,7 +675,7 @@
     }
 
 
-    // dropdown functionallity---->
+    //----------------------------- dropdown functionallity---------------
 
     document.querySelector("#shop").addEventListener("mouseover", function() {
         document.querySelector("#popupdivsec").style.display = "none";
