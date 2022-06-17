@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
 
+
 </head>
 <style>
     * {
@@ -449,6 +450,7 @@
                 <div>GROW </div>
             </div>
             <div id="kimaye_image">
+
                 <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x.png?v=1596288204" alt="">
             </div>
             <div id="search_login_bag_icon">
@@ -456,7 +458,7 @@
                     <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-512.png" alt="" class="search-icon">
                 </div>
                 <div>
-                    <img src="https://cdn2.vectorstock.com/i/1000x1000/08/56/user-profile-login-or-access-authentication-icon-vector-28920856.jpg" alt="" class="left_nav" id="login">
+                    <a href="signin.html"><img src="https://cdn2.vectorstock.com/i/1000x1000/08/56/user-profile-login-or-access-authentication-icon-vector-28920856.jpg" alt="" class="left_nav" id="login"></a>
                 </div>
                 <div>
                     <a href="cart.html">
@@ -550,6 +552,7 @@
         star: "⭐⭐⭐⭐"
     }
 
+    var itemCartLS = JSON.parse(localStorage.getItem("cartData")) || [];
 
     displayprod(pomeg)
 
@@ -579,7 +582,7 @@
 
         let desdiv = document.createElement("div");
         desdiv.className = "desdiv";
-        desdiv.innerHTML = `Kimaye Arils are non-frozen, non-dried, fresh Pomegranate seeds.<br>Pop open the cup to enjoy arils as fresh as a pomegranate opened at your home.`
+        desdiv.innerHTML = `Kimaye Arils are non-frozen, non-dried, fresh Pomegranate seeds. Pop open the cup to enjoy arils as fresh as a pomegranate opened at your home.`
 
         let orgintag = document.createElement("h4");
         orgintag.className = "origin"
@@ -600,19 +603,33 @@
         let td1 = document.createElement("td")
         let buttondec = document.createElement("button");
         buttondec.innerText = "-";
+        buttondec.addEventListener("click", function() {
+            decreaseCount(elem);
+        })
+
+
         td1.append(buttondec);
         let td2 = document.createElement("td")
         td2.innerText = "1"
+
         let td3 = document.createElement("td")
         let buttoninc = document.createElement("button");
         buttoninc.innerText = "+";
+        buttoninc.addEventListener("click", function() {
+            increaseCount(elem);
+        })
+
         td3.append(buttoninc);
         tr.append(td1, td2, td3);
         table.append(tr);
         quantdiv.append(table);
         let cartbutton = document.createElement("button");
         cartbutton.className = "addtocart";
-        cartbutton.innerText = "Add to Cart"
+        cartbutton.innerText = "Add to Cart";
+        cartbutton.addEventListener("click", function() {
+            itemAdded(elem);
+        })
+
 
         buttondiv.append(quantdiv, cartbutton);
         let line = document.createElement("hr");
@@ -632,4 +649,11 @@
 
         document.getElementById("append-prod").append(main_div);
     }
+
+    function itemAdded(elem) {
+        itemCart.push(elem);
+        localStorage.setItem("cartData", JSON.stringify(itemCartLS));
+        alert("item added to cart successfully");
+    }
 </script>
+<script src="cart1.js"></script>
