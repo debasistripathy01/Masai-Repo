@@ -134,75 +134,75 @@
 
 </html>
 <script>
-    document.querySelector("#login").addEventListener("click", function() {
-        document.querySelector("#sign-div").style.display = "block";
-    })
+    // document.querySelector("#login").addEventListener("click", function() {
+    //     document.querySelector("#sign-div").style.display = "block";
+    // })
 
-    document.querySelector("#closein").addEventListener("click", function() {
-        document.querySelector("#sign-div").style.display = "none";
-    })
+    // document.querySelector("#closein").addEventListener("click", function() {
+    //     document.querySelector("#sign-div").style.display = "none";
+    // })
 
-    document.querySelector("#accbtn").addEventListener("click", function() {
-        document.querySelector("#sign-div").style.display = "none";
-        document.querySelector("#signupdiv").style.display = "block";
-    })
+    // document.querySelector("#accbtn").addEventListener("click", function() {
+    //     document.querySelector("#sign-div").style.display = "none";
+    //     document.querySelector("#signupdiv").style.display = "block";
+    // })
 
-    document.querySelector("#closeup").addEventListener("click", function() {
-        document.querySelector("#signupdiv").style.display = "none";
-    })
+    // document.querySelector("#closeup").addEventListener("click", function() {
+    //     document.querySelector("#signupdiv").style.display = "none";
+    // })
 
-    document.querySelector("#sign-login").addEventListener("click", function() {
-        document.querySelector("#signupdiv").style.display = "none";
-        document.querySelector("#sign-div").style.display = "block";
-    })
+    // document.querySelector("#sign-login").addEventListener("click", function() {
+    //     document.querySelector("#signupdiv").style.display = "none";
+    //     document.querySelector("#sign-div").style.display = "block";
+    // })
 
-    //    Register part
+    // //    Register part
 
-    document.querySelector("#registerbtn").addEventListener("click", register);
-    var userdata = JSON.parse(localStorage.getItem("userdatabase")) || [];
+    // document.querySelector("#registerbtn").addEventListener("click", register);
+    // var userdata = JSON.parse(localStorage.getItem("userdatabase")) || [];
 
-    function register() {
-        var firstname = document.querySelector("#fname").value;
-        var lastname = document.querySelector("#lname").value;
-        var email = document.querySelector("#email").value;
-        var password = document.querySelector("#password").value;
+    // function register() {
+    //     var firstname = document.querySelector("#fname").value;
+    //     var lastname = document.querySelector("#lname").value;
+    //     var email = document.querySelector("#email").value;
+    //     var password = document.querySelector("#password").value;
 
 
-        var usercred = {
-            fname: firstname,
-            lname: lastname,
-            emailId: email,
-            pass: password,
+    //     var usercred = {
+    //         fname: firstname,
+    //         lname: lastname,
+    //         emailId: email,
+    //         pass: password,
 
-        };
+    //     };
 
-        userdata.push(usercred);
-        localStorage.setItem("userdatabase", JSON.stringify(userdata));
-        window.location.href = "landing.html";
-    }
+    //     userdata.push(usercred);
+    //     localStorage.setItem("userdatabase", JSON.stringify(userdata));
+    //     window.location.href = "landing.html";
+    // }
 
-    // login part
+    // // login part
 
-    document.querySelector("#loginbtn").addEventListener("click", login);
-    var regduser = JSON.parse(localStorage.getItem("userdatabase"));
+    // document.querySelector("#loginbtn").addEventListener("click", login);
+    // var regduser = JSON.parse(localStorage.getItem("userdatabase"));
 
-    function login() {
-        var email = document.querySelector("#email").value;
+    // function login() {
+    //     var email = document.querySelector("#email").value;
 
-        var password = document.querySelector("#password").value;
+    //     var password = document.querySelector("#password").value;
 
-        let user_info = false;
-        for (var i = 0; i < regduser.length; i++) {
-            if (regduser[i].emailId === email && regduser[i].pass === password) {
-                user_info = true;
-                window.location.href = "account.html";
+    //     let user_info = false;
+    //     for (var i = 0; i < regduser.length; i++) {
+    //         if (regduser[i].emailId === email && regduser[i].pass === password) {
+    //             user_info = true;
+    //             window.location.href = "account.html";
 
-            }
-        }
-        if (user_info === false) {
-            alert("wrong credientials");
-        }
-    }
+    //         }
+    //     }
+    //     if (user_info === false) {
+    //         alert("wrong credientials");
+    //     }
+    // }
 
 
     // dropdown functionallity---->
