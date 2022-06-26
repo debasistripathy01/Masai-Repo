@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We first session</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //the way i use
+    function nikeProduct(n, t, p) {
+        let obj = {
+            name: n,
+            type: t,
+            price: p
+        }
+        return obj;
+    }
+    let x = nikeProduct('shoe', 'nike', 2000);
+    console.log("x :", x);
+
+    // normal function
+
+    function nikeProduct(n, t, p) {
+        var object = {};
+        object.name = n;
+        object.type = t;
+        object.price = p;
+        let x = nikeProduct('shoe', 'nike', 2000);
+        console.log("x :", x);
+    }
+    //Constructor Function
+
+    /// new ---> return repleacement
+    function nikeProductCF() {
+        this.name = n
+        this.type = t
+        this.price = p
+        let y = new nikeProductCF('shoe', 'nike', 2000);
+        console.log("y :", y);
+
+    }
+</script>
