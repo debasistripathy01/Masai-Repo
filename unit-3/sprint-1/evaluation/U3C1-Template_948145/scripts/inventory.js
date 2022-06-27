@@ -7,6 +7,7 @@ function showProduct(details) {
 
     // document.querySelector("products_data").innerHTML = "";
     details.forEach(function(el, i) {
+        // event.preventDefault();
 
         let box = document.createElement("div"); // create and append this box 
 
