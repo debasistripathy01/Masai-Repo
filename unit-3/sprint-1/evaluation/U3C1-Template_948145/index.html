@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index page</title>
+    <Style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #menu {
+            margin: auto;
+        }
+        
+        #show_products>a {
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5%;
+        }
+        
+        #show_products {
+            width: 30%;
+            height: 60px;
+            /* border: 1px solid red; */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        
+        #menu+div {
+            margin: auto;
+            margin-top: 4%;
+            display: flex;
+            width: 30%;
+            height: auto;
+            /* border: 1px solid green; */
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        
+        #menu+div>h2 {
+            text-align: center;
+            padding: 2%;
+            margin: auto;
+            font-size: 18px;
+        }
+        
+        #menu+div>form>input {
+            width: 70%;
+            height: 40px;
+            margin-top: 5%;
+        }
+        
+        #product_form>input:nth-child(5) {
+            cursor: pointer;
+        }
+    </Style>
+</head>
+
+<body>
+    <div id="menu">
+        <!--Create Show Products button here, give id as "show_products". avoid making spelling mistakes in HTML id's-->
+        <button id="show_products">
+          <a href="./inventory.html">Show Products</a>
+        </button>
+    </div>
+    <div>
+        <h2>Add Products</h2>
+        <!--Create a form here to accept product data from user, give form HTML id as "product_form"-->
+        <form action="" id="product_form">
+
+            <input type="text" placeholder="brand" id="product_brand">
+            <input type="text" placeholder="Name of the Product" id="product_name">
+            <input type="number" placeholder="Price" id="product_price">
+            <input type="text" placeholder="Image URL" id="product_image">
+            <input type="submit" name="Submit" id="submit">
+            <!--Create four inputs to accept brand, name, price, image and brand-->
+            <!--give the inputs following respective id's, "product_brand", "product_name", "product_price","product_image"-->
+            <!--create a submit option to submit form, give it html id as "submit"-->
+
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script src="./scripts/index.js"></script>
