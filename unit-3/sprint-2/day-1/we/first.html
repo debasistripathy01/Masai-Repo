@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // let url = "https://www.meme.net/babubhaiya";
+
+    // function download(url) {
+    //     setTimeout(function() {
+    //         console.log(`Downloading ${url}`);
+    //     }, 2000);
+
+    // }
+
+    // function process(url) {
+    //     console.log(`Processing ${url}`);
+    // }
+
+    // download(url);
+
+
+    let url1 = "https://www.meme.net/raju"
+    let url2 = "https://www.meme.net/shyam";
+    let url3 = "https://www.meme.net/babubhaiya";
+
+    function download(url, callback) {
+        setTimeout(function() {
+            console.log(`Downloading ${url}`);
+            callback(url)
+        }, 2000);
+
+    }
+
+    function process(url) {
+        console.log(`Processing ${url}`);
+    }
+
+    download(url, process);
+
+
+    // 3- url 1/p -- url 2 / p--- url 3 / p
+
+    let P = new Promise() // constructor function
+
+
+    let p = new Promise(function(resolve, reject) {
+        resolve("Resolve");
+    });
+    console.log(`P:-${p}`);
+
+    let S = new Promise(function(resolve, reject) {
+        reject("Rejected");
+    });
+
+    //Payment System
+    // Buffering Image ------> success Image 
+    // pay ----> setTimeout --> img.src == success image;
+</script>
