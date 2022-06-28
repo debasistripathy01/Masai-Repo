@@ -38,10 +38,10 @@ function showProduct(details) {
     });
 }
 
-function removeElem(elem, i) {
-    Data.splice(i, 1);
+function removeElem(elem, index) {
+    Data.splice(index, 1);
 
-    showProduct(Data);
-    window.location.reload();
     localStorage.setItem("products_data", JSON.stringify(Data));
+    window.location.reload();
+    showProduct(Data);
 }
