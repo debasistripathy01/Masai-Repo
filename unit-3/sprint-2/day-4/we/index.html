@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        input {
+            width: 500px;
+            height: 50px;
+        }
+        
+        #movies {
+            width: 500px;
+            height: 500px;
+            border: 1px solid blue;
+            overflow: scroll;
+        }
+        
+        .movie {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .movie img {
+            width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Closures</h1>
+    <input oninput="main()" type="text" id="query" placeholder="search">
+    <div id="movies"></div>
+</body>
+
+</html>
+<script src="index.js"></script>

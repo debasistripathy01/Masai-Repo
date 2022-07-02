@@ -4,7 +4,7 @@
 function getData(event) {
     let city = document.getElementById("query").value
 
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a12a0cc115d3dfcb6b620f1e61ad29a1`
+    let url = `src="https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed"`
 
     fetch(url).then(function(res) {
             // console.log(res);
@@ -16,7 +16,7 @@ function getData(event) {
             append(res);
         }).catch(function(err) {
             console.log(err)
-        })
+        });
 }
 
 function append(data) {
@@ -36,4 +36,28 @@ function append(data) {
     Max_temp.innerText = `Max Temp :- ${data.main.temp_max}`;
 
     container.append(h2, temp, Min_temp, Max_temp);
+
+    let iframe = document.getElementById("gmap_canvas");
+    iframe.src = url;
 }
+
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(success);
+
+    function success(pos) {
+        const crd = pos.coords;
+        console.log('Your current position is:');
+        console.log(`Latitude : ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+        console.log(`More or less ${crd.accuracy} meters.`);
+    }
+}
+
+function getWeatherOnLocation(lat, long) {
+    let url = ``
+}
+
+
+// How many data type in  js : - bigInt , symbol (explore);
+
+//Explain differrent types of "Type Coercion" in JS.
