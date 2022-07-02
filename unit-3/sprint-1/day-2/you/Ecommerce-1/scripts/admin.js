@@ -1,14 +1,16 @@
-let array = JSON.parse(localStorage.getItem("products")) || [];
+document.getElementById("form").addEventListener("submit", Data);
+
+let array = JSON.parse(localStorage.getItem("Products")) || [];
 
 
 
-function Products(p, c, i, pri, g, s) {
-    this.Product = p
-    this.Category = c
-    this.Image_url = i
-    this.Price = p
-    this.Gender = g
-    this.Sold = s
+function Product2(p, c, i, pri, g, s) {
+    this.Product = p;
+    this.Category = c;
+    this.Image_url = i;
+    this.Price = p;
+    this.Gender = g;
+    this.Sold = s;
 }
 
 
@@ -17,15 +19,15 @@ function Data(e) {
 
     let form = document.getElementById("form");
 
-    let Product = document.getElementById("name").value;
+    let Name = form.name.value;
 
-    let Category = document.getElementById("category").value;
-    let Image_url = document.getElementById("imgae").value;
-    let Price = document.getElementById("price").value;
-    let Gender = document.getElementById("gender").value;
-    let Sold = document.getElementById("sold").value;
+    let Category = form.category.value;
+    let Image_url = form.image.value;
+    let Price = form.price.value;
+    let Gender = form.gender.value;
+    let Sold = form.sold.value;
 
-    let Prod = new Products(Product, Category, Image_url, Price, Gender, Sold);
+    let Prod = new Product2(Name, Category, Image_url, Price, Gender, Sold);
     array.push(Prod);
-    localStorage.setItem("products", JSON.stringify(array));
+    localStorage.setItem("Products", JSON.stringify(array));
 }
