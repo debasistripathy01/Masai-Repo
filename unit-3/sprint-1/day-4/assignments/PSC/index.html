@@ -7,6 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Page for details</title>
 </head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #navbar {
+        text-align: center;
+        margin: auto;
+        font-size: 18px;
+    }
+    
+    #navbar+button {
+        margin: 2%;
+        padding: 2%;
+        cursor: pointer;
+    }
+    
+    button>a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    #form {
+        margin: auto;
+        width: 50%;
+        /* display: flex; */
+        height: auto;
+        border: 1px solid red;
+    }
+    
+    #form>input {
+        height: 40px;
+        width: 70%;
+        /* margin-top: 4%; */
+        gap: 20px;
+        /* margin: auto; */
+        margin: auto;
+        margin-top: 2%;
+        padding: 1%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #form>input:last-child {
+        width: 20%;
+        margin: auto;
+        margin-top: 2%;
+        border-radius: 4px;
+    }
+    
+    #form>input:last-child:hover {
+        background-color: blueviolet;
+    }
+</style>
 
 <body>
     <div id="navbar">
