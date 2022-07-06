@@ -14,15 +14,17 @@ let search = () => {
 
 let getData = async(query) => {
     try {
-        let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=viewCount&q=${query}&key=${API_key}`
+        // let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&maxResults=40&chart=mostPopular&regionCode=IN&key=${api_key}`
+        //let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&chart=mostpopular&regionCode=IN&q=${query}&key=${api_key}`
+        let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&order=viewCount&regionCode=IN&q=${query}&key=${API_key}` /// most popular videos in india by taking view counts
 
-
+        //let data = JSON.parse(localStorage.getItem("video"));
         let res = await fetch(url);
-        let data = await res.json();
+        data = await res.json();
 
         console.log(data.items);
         append(data.items);
-        return data.items;
+        // return data.items;
     } catch (err) {
         console.log("error");
     }
@@ -48,12 +50,12 @@ let append = (data) => {
 
 
         let button = document.createElement("button");
-        button.addEventListener("click", () => {
-            PlayVideo(el.id)
-        });
+        // button.addEventListener("click", () => {
+        //     PlayVideo(el.id)
+        // });
 
         box.onclick = () => {
-            saveData(el);
+            saveData(el.id);
         }
 
         box.setAttribute("class", "video");
@@ -74,10 +76,10 @@ var dataArr = [];
 
 
 let saveData = (el) => {
-        // let vidId = el.videoId;
+        let vidId = el.videoId;
         // console.log(vidId);
         // console.log("video", el);
-        dataArr.push(el.videoId);
+        dataArr.push(vidId);
         localStorage.setItem("video", JSON.stringify(dataArr));
         window.location.href = "video.html";
 
