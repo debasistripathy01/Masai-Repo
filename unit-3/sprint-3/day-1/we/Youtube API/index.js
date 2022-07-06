@@ -12,15 +12,22 @@ let search = () => {
 }
 
 let getData = async(query) => {
-    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${API_key}`
+    try {
+        let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${API_key}`
 
 
-    let res = await fetch(url);
-    let data = await res.json();
+        let res = await fetch(url);
+        let data = await res.json();
 
-    console.log(data);
-    return data.items;
+        console.log(data.items);
+        append(data.items);
+        return data.items;
+    } catch (err) {
+        console.log("error");
+    }
 }
+
+getData();
 
 let append = (data) => {
     let container = document.getElementById("container");
@@ -28,24 +35,46 @@ let append = (data) => {
     data.forEach((el) => {
         //snippet --> title
         // snippet ---> thumbnails ----> images
+        let box = document.createElement("div");
+        // box.setAttribute("id", "cards");
 
         let img = document.createElement("img");
         img.src = el.snippet.thumbnails.medium.url;
 
         let h3 = document.createElement("h3");
-        h3.innerText = el.snippet.title
+        h3.innerText = el.snippet.title;
+        h3.setAttribute("id", "title")
 
-        let box = document.createElement("div");
+
+        let button = document.createElement("button");
+        button.addEventListener("click", () => {
+            PlayVideo(el.id)
+        });
+
         box.onclick = () => {
             saveData(el);
         }
+
         box.setAttribute("class", "video");
+
         box.append(img, h3);
 
         container.append(box);
     });
 }
 
-let saveData = () => {
-    localStorage.setItem("video", JSON.stringify(data))
+var dataArr = [];
+// const PlayVideo = (elem) => {
+//     let x = elem;
+//     console.log(x);
+//     localStorage.setItem("video", JSON.stringify(dataArr));
+//     window.location.href = "video.html";
+// }
+
+
+let saveData = (el) => {
+    console.log("video", el);
+    dataArr.push(el);
+    localStorage.setItem("video", JSON.stringify(dataArr));
+    window.location.href = "video.html";
 }

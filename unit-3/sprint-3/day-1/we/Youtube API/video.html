@@ -6,16 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Video</title>
+    <style>
+        #videoFrame {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="container" onload="PlayVideo()"></div>
+    <div id="container" onload="PlayVideo()">
+        <iframe id="videoFrame" width: 500px; height: 300px; frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; clipboard-write;" allowfullscreen></iframe>
+        <title>Youthoob Video Player</title>
+    </div>
 </body>
 
 </html>
 <script>
     let PlayVideo = () => {
         let Video = JSON.parse(localStorage.getItem("video"))
+        var anything = Video.id.videoId;
+        let videoFrame = document.getElementById("videoFrame");
+        videoFrame.src = `https://www.youtube.com/embed/${anything}`
         console.log(Video)
     }
 </script>
