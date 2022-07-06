@@ -35,6 +35,7 @@
     <title>Youthoob Video Player</title>
     <div id="container">
         <iframe id="videoFrame" width: 50%; height: 30%; frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; clipboard-write;" allowfullscreen></iframe>
+
     </div>
 </body>
 
@@ -54,13 +55,12 @@
         var container = document.getElementById("container");
         let Video = JSON.parse(localStorage.getItem("video"));
         // var anything = Video.id.videoId;
-        // var x = Video.id.videoId;
+        // var x = video.id.videoId;
         let videoFrame = document.getElementById("videoFrame");
-        videoFrame.src = `https://www.youtube.com/embed/${Video}`
-        console.log(Video);
+        videoFrame.src = `https://www.youtube.com/embed/${Video.videoId}`
         container.append(videoFrame);
         // console.log(Video);
-        // console.log(Video);
+        console.log(Video);
         // console.log(Video.id.videoId)
     }
 </script>
