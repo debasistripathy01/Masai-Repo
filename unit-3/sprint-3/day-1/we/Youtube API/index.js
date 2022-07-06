@@ -73,8 +73,12 @@ var dataArr = [];
 
 
 let saveData = (el) => {
-    console.log("video", el);
-    dataArr.push(el);
-    localStorage.setItem("video", JSON.stringify(dataArr));
-    window.location.href = "video.html";
-}
+        // let vidId = el.videoId;
+        // console.log(vidId);
+        // console.log("video", el);
+        dataArr.push(el.videoId);
+        localStorage.setItem("video", JSON.stringify(dataArr));
+        window.location.href = "video.html";
+
+    }
+    // console.log(video);
