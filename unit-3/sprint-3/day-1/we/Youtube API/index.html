@@ -11,12 +11,75 @@
             margin: 0px;
             padding: 0px;
         }
+        
+        #navbar {
+            width: 100%;
+            height: 150px;
+            /* display: flex; */
+            margin: auto;
+        }
+        
+        #navbar>div {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #title {
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 5%;
+        }
+        
+        #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            font-weight: bold;
+            grid-gap: 20px;
+        }
+        
+        #title {
+            overflow: hidden;
+        }
+        
+        h3 {
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        input,
+        button {
+            align-items: center;
+            display: flex;
+            margin-left: 2%;
+        }
+        
+        input {
+            width: 40%;
+            height: 30px;
+        }
+        
+        button {
+            width: 80px;
+            height: 30px;
+        }
     </style>
 </head>
 
 <body>
-    <input type="text" placeholder="Input Data" id="query">
-    <button onclick="search()">search</button>
+    <div id="navbar">
+        <h3>Home</h3>
+        <title id="title"></title>
+
+        <div>
+            <input type="text" placeholder="Input Data" id="query">
+            <button onclick="search()">Search</button>
+        </div>
+    </div>
+    <div id="container"></div>
 </body>
 
 </html>
