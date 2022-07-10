@@ -2,10 +2,9 @@
 
 async function main() {
     let query = document.getElementById("query").value;
-    let data = await getData(query)
-        // getData(query);
-        // console.log(data);
-    append(data)
+    let data = await getData(query);
+    // getData(query);
+    append(data);
 }
 
 

@@ -6,9 +6,14 @@ let container = document.getElementById("container");
 
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=viewCount&q=most%20popular&key=[YOUR_API_KEY]
 
-let search = () => {
-    let query = document.getElementById("query").value;
 
+let q = "";
+
+let search = async() => {
+    let query = document.getElementById("query").value;
+    let data = await getData(query);
+    q = query;
+    append(data)
     getData(query);
 }
 
@@ -76,12 +81,20 @@ var dataArr = [];
 
 
 let saveData = (el) => {
-        let vidId = el.videoId;
-        // console.log(vidId);
-        // console.log("video", el);
-        dataArr.push(vidId);
-        localStorage.setItem("video", JSON.stringify(dataArr));
-        window.location.href = "video.html";
+    let vidId = el.videoId;
+    // console.log(vidId);
+    // console.log("video", el);
+    dataArr.push(vidId);
+    localStorage.setItem("video", JSON.stringify(dataArr));
+    window.location.href = "video.html";
 
+}
+
+let sort = async() => {
+        let data = await getData(q);
+        data = data.sort((a, b) => {
+            return a.snippet.title - a.snippet.title;
+        })
+        append(data)
     }
     // console.log(video);
