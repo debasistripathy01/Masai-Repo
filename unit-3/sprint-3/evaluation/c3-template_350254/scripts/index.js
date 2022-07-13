@@ -6,8 +6,6 @@
 
 
 
-
-
 let q = "";
 
 let search = async() => {
