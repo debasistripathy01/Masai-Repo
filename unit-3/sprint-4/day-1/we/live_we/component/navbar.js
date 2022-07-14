@@ -12,10 +12,10 @@ let navbar = () => {
                 <a href="electronics.html">Electroics</a>
             </h3>
             <h3>
-                <a href="">./Sign-Up</a>
+                <a href="./signup.html">Sign-Up</a>
             </h3>
             <h3>
-                <a href="">./Login</a>
+                <a href="./login.html">Login</a>
             </h3>`;
 }
 
