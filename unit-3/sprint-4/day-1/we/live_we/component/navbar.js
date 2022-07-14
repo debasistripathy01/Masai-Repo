@@ -3,19 +3,19 @@
 
 let navbar = () => {
     return `<h3>
-                <a href="/">Home</a>
+                <a href="./index.html">Home</a>
             </h3>
             <h3>
                 <a href="./jewellery.html">Jewelery</a>
             </h3>
             <h3>
-                <a href="./electronics.html">Electroics</a>
+                <a href="electronics.html">Electroics</a>
             </h3>
             <h3>
-                <a href="">./Sign-Up</a>
+                <a href="./signup.html">Sign-Up</a>
             </h3>
             <h3>
-                <a href="">./Login</a>
+                <a href="./login.html">Login</a>
             </h3>`;
 }
 

@@ -9,9 +9,9 @@ const url = `https://fakestoreapi.com/products/category/jewelery`;
 
 let container = document.getElementById("container");
 
-display(data).then((res)=>{
+display(url).then((res)=>{
     console.log(res);
-    append(data)
+    append(res, container)
 })
 
 

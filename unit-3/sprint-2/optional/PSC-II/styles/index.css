@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar{
+    height: 70px;
+    width: 100%;
+    border: 1px solid yellow;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    justify-items: flex-end;
+}
+#navbar>div{
+    border: 1px solid red;
+    margin: auto;
+    
+
+}
+
+img{
+    width: 2%;
+    height: 4%;
+}
