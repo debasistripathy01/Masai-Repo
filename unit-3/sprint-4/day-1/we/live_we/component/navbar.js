@@ -3,13 +3,13 @@
 
 let navbar = () => {
     return `<h3>
-                <a href="/">Home</a>
+                <a href="./index.html">Home</a>
             </h3>
             <h3>
                 <a href="./jewellery.html">Jewelery</a>
             </h3>
             <h3>
-                <a href="./electronics.html">Electroics</a>
+                <a href="electronics.html">Electroics</a>
             </h3>
             <h3>
                 <a href="">./Sign-Up</a>

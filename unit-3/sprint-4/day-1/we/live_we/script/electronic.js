@@ -10,9 +10,9 @@ const url = `https://fakestoreapi.com/products/category/electronics`;
 
 let container = document.getElementById("container");
 
-display(data).then((res)=>{
-    console.log(data);
-    append(data)
+display(url).then((res)=>{
+    console.log(res);
+    append(res, container)
 })
 
 // let display = async ()=>{
