@@ -15,8 +15,8 @@ async function display(){
     let res = await fetch(url);
     let data = await res.json();
     console.log(data);
-    return data.results
-    
+    return data.res
+
 }
 
 function append(data){
