@@ -1,7 +1,4 @@
 
-
-
-
 function sideBar(){
     return `<h2>Sign-Up</h2>
     <h2>Login</h2>
