@@ -69,14 +69,14 @@ function single(x) {
     document.querySelector(".left").append(div1, date, temp, tempMax, tempMin, cloud);
 
 
-    // let hum = document.createElement("p");
-    // hum.textContent = `Humidity: ${x.main.humidity} %rh`;
+    let hum = document.createElement("p");
+    hum.textContent = `Humidity: ${x.main.humidity} %rh`;
 
     let pressure = document.createElement("p");
     pressure.textContent = `Pressure: ${x.main.pressure} millibars`;
 
-    // let seaLevel = document.createElement("p");
-    // seaLevel.textContent = `Sea Level: ${x.main.sea_level} millibars`;
+    let seaLevel = document.createElement("p");
+    seaLevel.textContent = `Sea Level: ${x.main.sea_level} millibars`;
 
     let wind = document.createElement("p");
     wind.textContent = `Wind Speed: ${x.wind.speed} km/h`;
@@ -96,5 +96,5 @@ function single(x) {
     let visibility = document.createElement("p");
     visibility.textContent = `Visibility: ${x.visibility}`;
 
-    document.querySelector(".right").append( pressure, visibility,wind, cor, lon, lat);
+    document.querySelector(".right").append( pressure, hum, seaLevel, visibility,wind, cor, lon, lat);
 }
