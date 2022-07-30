@@ -89,3 +89,21 @@ kitchen.cookfood.call(lr, 'maggie', 'shubham');
 kitchen.cookfood.apply(lr, ['maggie', 'shubham']);
 
 kitchen.cookfood.call(bedroom, 'maggie');
+
+
+
+function variavble(){
+    console.log(x); //x 
+}
+variavble();
+
+let variavble = ()=>{
+    console.log(x);
+}
+
+variavble();
+
+
+
+
+

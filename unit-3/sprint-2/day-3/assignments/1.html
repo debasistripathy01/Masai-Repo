@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    const changeToUpperCase = (arr)=>{
+    const newArr = [];
+    for(const element of arr){
+        newArr.push(element.toUpperCase())
+    }
+    return newArr;
+}
+
+const countries = ["Finland", "sweden", 'Norway', 'Denmark', 'Iceland']
+console.log(changeToUpperCase(countries));
+
+const printFullName = (firstName, lastName)=>{
+
+    return `${firstName} ${lastName}`;
+}
+
+console.log(printFullName('Debasis', "Yateh"))
+
+const PrintFullName = (firstName, lastName ) => `${firstName} ${lastName}`
+
+
+// Declaring a function
+function functionName(param =  value){
+    //codes
+}
+functionName()
+functionName(arg);
+
+function greetings(name = "Peter"){
+    let message = `${name}, welcome to Home`;
+    return message;
+}
+
+console.log(greetings());
+// Here goes my name 
+
+console.log(greetings("Debasis"));
+
+
+</script>
