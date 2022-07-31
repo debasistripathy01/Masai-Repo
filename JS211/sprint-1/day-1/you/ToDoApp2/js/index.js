@@ -8,7 +8,7 @@ Display(ListArr);
             
             ListArr.forEach((el, index)=>{
                 let boxEl = document.createElement("div");
-                // boxEl.id = "boxEl";
+                boxEl.id = "boxEl";
 
                 let td1 = document.createElement("td");
                 td1.innerText = el.Text;
