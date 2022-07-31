@@ -1,0 +1,105 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: var(--title);
+}
+
+#anything{
+    border: 2px solid red;
+    width: 70%;
+    height: 500px;
+    /* display: flex; */
+    margin: auto;
+    justify-content: center;
+}
+
+#cntainer{
+    /* justify-content: center; */
+
+    width: 30%;
+    height: auto;
+    margin: auto;
+    /* display: flex;  */
+    flex-direction: column;
+}
+
+#form{
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    /* align-items: center; */
+    /* border:2px solid purple; */
+    /* display: flex; */
+    justify-content: center;
+}
+#container>h2{
+    text-align: center;
+    font-size: 18px;
+}
+
+#form>#submit{
+    height: 40px;
+    width: 20%;
+    margin: auto;
+    margin-top: 10px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    border-radius: 4px;
+
+}
+#submit:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+
+#form>input:first-child{
+    width: 60%;
+    height: 250px;
+    font-size: 25px;
+}
+
+#boxEl{
+    width: 30%;
+    height: auto;
+    /* margin: 2%; */
+    /* margin: auto; */
+    display: flex;
+
+}
+#boxEl>td{
+    /* margin-top: 2%; */
+    
+    width: auto;
+    height: 40px;
+    font-size:20px;
+    text-align:center;
+
+}
+#boxEl>#complete{
+    margin: auto;
+    height: 40px;
+    width: 40%;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#complete:hover{
+    background-color: blue;
+
+}
+
+#complete+button{
+    /* margin: auto; */
+    height: 40px;
+    width: 40%;
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+#complete+button:hover{
+    background-color: red;
+}
