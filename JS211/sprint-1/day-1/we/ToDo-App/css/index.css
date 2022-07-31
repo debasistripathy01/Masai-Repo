@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: var(--color);
+}
+
+#container{
+    width: 30%;
+    height: 200px;
+    border: 1px solid red;
+    margin: auto;
+    display: flex;
+    font-family: 'Robot', sans-serif;
+    justify-content: center;
+    background-color: var(--title);
+}
+
+body, html{
+    background-color: var(--body);
+}
+
+#container #box{
+    padding: 25px;
+    z-index: 2;
+    border-radius: 5px;
+    margin: 25px 25px 50px;
+
+}
