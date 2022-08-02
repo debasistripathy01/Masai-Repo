@@ -17,7 +17,7 @@ var prevSlide = function() {
       count++;
     }
   
-    else if(count = 1) {
+    else if(count === 1) {
       count = items - 1;
       slideList.style.left = "-" + count * sliderWidth + "px";
       count++;
@@ -29,8 +29,8 @@ var prevSlide = function() {
       slideList.style.left = "-" + count * sliderWidth + "px";
       count++;
     }
-    else if(count = items) {
-      slideList.style.left = "0px";
+    else if(count === items) {
+      slideList.style.left = "1px";
       count = 1;
     }
   };
@@ -46,7 +46,7 @@ var prevSlide = function() {
 
   setInterval(function() {
     nextSlide()
-  }, 5000);
+  }, 4300);
 
 
   window.onload = function() {
