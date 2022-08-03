@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App for All</title>
+    <link rel="stylesheet" href="../MovieApp/style/index.css">
+
+</head>
+<body>
+    
+    <div id="container">
+        <div id="navbar">
+            <a href="../MovieApp/index.html">AMAZON PRIME</a>
+            <form id="navbarForm" action="" role="search">
+                <input type="text" oninput="debounceSearch(search, 1000)" id="search" placeholder="Search" type="search">
+            </form>
+        </div>
+        <div id="box">
+            <div id="row">
+                <div id="bodySearch">
+                    <input type="text" oninput="debounceSearch(normalSearch, 1000)" id="normalSearch" placeholder="Search Any Movie" type="search">
+                    <button id="searchBtn">Search Movie</button>
+                </div>
+
+            </div>
+            <div>
+
+                <h2 id="SearchTerm"></h2>
+
+                <div id="movieSearchResults">
+                            <!-- Append All Movie Search Results HEre -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="../MovieApp/js/index.js" type="module"></script>
