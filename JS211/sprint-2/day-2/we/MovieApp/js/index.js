@@ -147,7 +147,7 @@ let MovieError = ()=>{
     return card;
 }
 let id;
-let debounceSearch = (func, delay)=>{
+let debounceSearchFunction = (func, delay)=>{
     if(event.target === null ){
         let searchTerm = document.getElementById("SearchTerm");
         let movieSearchResult = document.getElementById("movieSearchResults");
@@ -178,8 +178,49 @@ function normalSearchFunction(elem){
             elem.blur();
         }, 1000);
         normalSearchFunction.value =null;
-        movieSearchRequest(elem);
+       
     }
-
+    movieSearchRequest(anyName);
 
 }
+
+let navBarSearch  = document.getElementById("searchBtnNavbar");
+navBarSearch.addEventListener("click", (event)=>{
+    navBarSearchFunction(event);
+})
+
+function navBarSearchFunction(elem, event){
+    if(event === true){
+        event.preventDefault();
+
+    }
+    let navBarSearchInput  =  document.getElementById("search")
+    let description = navBarSearchInput.value;
+    if(elem===true){
+        setTimeout(()=>{
+            elem.blur();
+        }, 1000);
+        navBarSearch.value = null;
+    }
+    movieSearchRequest(description);
+}
+
+
+// Sample 
+
+// {
+//     "Title": "The Avengers",
+//     "Year": "2012",
+//     "imdbID": "tt0848228",
+//     "Type": "movie",
+//     "Poster": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+//     "rating": "8.0"
+// },
+// {
+//     "Title": "Avengers: Endgame",
+//     "Year": "2019",
+//     "imdbID": "tt4154796",
+//     "Type": "movie",
+//     "Poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+//     "rating": "8.4"
+// },
