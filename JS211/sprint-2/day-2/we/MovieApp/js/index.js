@@ -101,11 +101,15 @@ let movieSearchRequest = async(name)=>{
             let data = await res.json();
 
             if(data.res !== false){
-                alert("NO such Movie in the List");
+                alert("No such Movie in the List");
                 noMovieFound();
             }
+            else{
+                console.log(data);
+                Display(data.Search);
+            }
         }catch(err){
-
+            console.log(err)
         }
     }
 }
@@ -115,3 +119,48 @@ let movieSearchRequest = async(name)=>{
 // function debounceSearch(func, delay){
 //     if(event.target.)
 // }
+
+let noMovieFound=()=>{
+    let searchReasult = document.getElementById("movieSearchResults");
+    searchReasult.innerHTML = null;
+    searchReasult.append(MovieError());
+
+}
+
+let MovieError = ()=>{
+    let card = document.createElement("div");
+    card.classList = "MovieCard";
+    card.style.width = "20px";
+
+    let img = document.createElement("img");
+    img.classList = "errorImage";
+    img.src = "https://knowyourmeme.com/photos/28712-funny-error-messages";
+
+    let bodyCard = document.createElement("div");
+    bodyCard.classList = "body-card";
+
+    let title = document.createElement("h3");
+    title.innerText = "Movie Not Fount (-_-)"
+
+    bodyCard.append(title);
+    card.append(img,bodyCard);
+    return card;
+}
+let id;
+let debounceSearch = (func, delay)=>{
+    if(event.target === null ){
+        let searchTerm = document.getElementById("SearchTerm");
+        let movieSearchResult = document.getElementById("movieSearchResults");
+        movieSearchResult.innerHTML = null;
+        return;
+    }
+    if(id){
+        clearTimeout(id);
+
+    }
+    else{
+        id = setTimeout(()=>{
+            func();
+        }, delay);
+    };
+}
