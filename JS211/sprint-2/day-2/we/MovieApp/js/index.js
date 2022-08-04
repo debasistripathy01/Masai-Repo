@@ -164,3 +164,22 @@ let debounceSearch = (func, delay)=>{
         }, delay);
     };
 }
+
+let normalSearchBtn = document.getElementById("normalSearch");
+normalSearchBtn.addEventListener("click", ()=>{
+    normalSearchFunction(elem);
+})
+
+function normalSearchFunction(elem){
+    let normalSearchFunction = document.getElementById("normalSearch");
+    let anyName = normalSearchFunction.value;
+    if(elem){
+        setTimeout(()=>{
+            elem.blur();
+        }, 1000);
+        normalSearchFunction.value =null;
+        movieSearchRequest(elem);
+    }
+
+
+}
