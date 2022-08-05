@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Reminder App</title>
+</head>
+<body>
+    <div id="timeChoose">
+        <h3 id="updateTimeHere">CHoose time from Here</h3>
+        <input type="time" id="time">
+        <button onclick="timeSubmitFunc()">Remind</button>
+    </div>
+</body>
+</html>
+
+<script>
+    var arr = []
+    let timeID;
+    let time  = document.getElementById("time").value;
+    console.log(time)
+    let timeSubmitFunc=()=>{
+        let [Hour, Min, Seconds] = time.split(":");
+        arr.push(`${Hour}:${Min}:${Seconds}`);
+        console.log(`${Hour}:${Min}:${Seconds}`);
+        let timeID = setInterval(()=>{
+            let currentTimeDate = new Date();
+            let Hours = currentTimeDate.getHours();
+            let Mins = currentTimeDate.getMinutes();
+            let Sec = currentTimeDate.getSeconds();
+
+            document.getElementById("updateTimeHere").innerHTML = `${Hours}:${Mins}:${Sec}`;
+            if(+Hour == Hours && +Min == Mins && +Seconds == Sec){
+                alert("Bhai kya Kar raha hey Tu ?? Time to DO something Dude");
+                clearInterval(timeID);
+            }
+        }, 1000)
+    }
+    console.log(arr)
+
+
+    // COnverting the Input Time Format into 24 Hour FOrmat using DSA
+
+    function timeConversion(s) {
+    // Write your code here
+    var h1 = Number(s[1]-"0");
+    var h2 = Number(s[0]-"0");
+    var hh = h2 * 10 + h1%10;
+    var sum ="";
+    if(s[8]==="A"){
+        if(hh ===12){
+            sum += ("00");
+            for(var i=2; i<= 7; i++){
+                sum += s[i];
+            }
+        }
+        else{
+            for(var i=0; i <= 7; i++){
+                sum += s[i];
+            }
+        }
+    }
+    else{
+        if(hh ===12){
+            sum += "12";
+            for(var i=2; i <=7; i++ ){
+                sum += s[i];
+            }
+            
+        }
+        else{
+            hh += 12;
+            sum += hh;
+            for(var i=2; i <= 7; i++){
+                sum += s[i];
+            }
+        }
+    }
+    return sum;
+
+}
+</script>
