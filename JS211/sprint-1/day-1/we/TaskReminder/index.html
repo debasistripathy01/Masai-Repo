@@ -16,14 +16,16 @@
 </html>
 
 <script>
-    var arr = []
+    // var arr = []
     let timeID;
-    let time  = document.getElementById("time").value;
-    console.log(time)
+    
+    
     let timeSubmitFunc=()=>{
-        let [Hour, Min, Seconds] = time.split(":");
-        arr.push(`${Hour}:${Min}:${Seconds}`);
-        console.log(`${Hour}:${Min}:${Seconds}`);
+        let time  = document.getElementById("time").value;
+        console.log(time)
+        let [Hour, Min] = time.trim().split(":");
+        // arr.push(`${Hour}:${Min}:${Seconds}`);
+        console.log(`${Hour}:${Min}`);
         let timeID = setInterval(()=>{
             let currentTimeDate = new Date();
             let Hours = currentTimeDate.getHours();
@@ -31,13 +33,13 @@
             let Sec = currentTimeDate.getSeconds();
 
             document.getElementById("updateTimeHere").innerHTML = `${Hours}:${Mins}:${Sec}`;
-            if(+Hour == Hours && +Min == Mins && +Seconds == Sec){
+            if(Hour == Hours && Min == Mins ){
                 alert("Bhai kya Kar raha hey Tu ?? Time to DO something Dude");
                 clearInterval(timeID);
             }
         }, 1000)
     }
-    console.log(arr)
+    // console.log(arr)
 
 
     // COnverting the Input Time Format into 24 Hour FOrmat using DSA
