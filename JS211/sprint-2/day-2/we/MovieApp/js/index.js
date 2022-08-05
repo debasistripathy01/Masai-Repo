@@ -167,7 +167,7 @@ let debounceSearchFunction = (func, delay)=>{
 
 let normalSearchBtn = document.getElementById("normalSearch");
 normalSearchBtn.addEventListener("click", ()=>{
-    normalSearchFunction(elem);
+    normalSearchFunction(this);
 })
 
 function normalSearchFunction(elem){

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDb Movie App SImple version to check my API key</title>
+</head>
+<body>
+    <div id="navbar">
+        <div id="headBox">
+
+            <div>
+                <a href="">IMDb</a>
+            </div>
+            <div>
+                <a href="">SignUp</a>
+            </div>
+            <div>
+                <a href="">Login</a>
+            </div>
+            <div id="navbarSearch">
+                <input type="text" id="navSearch" oninput="debounceSearchFunction(func, 1000)" placeholder="Enter Any Movie Name">
+            </div>
+            <div id="moviesCards">
+                <!-- Append All movies HEre -->
+            </div>
+        </div>
+
+    </div>
+    <div id="headForRecentMovies">
+        <p>All Recent Movies</p>
+    </div>
+    <div id="bodyMovieCards">
+        <!-- APpend All the Recent MOvie cards HEre -->
+    </div>
+
+
+</body>
+</html>
+
+<script>
+
+let KEY = "660da246";
+let url  = "http://www.omdbapi.com/?i=tt3896198&apikey="
+let anyhting = "N/A";
+
+let bodyMovieCards = document.getElementById("bodyMovieCards")
+
+let fetchID = async (movieSearchResults)=>{
+    let data = await fetch(`${url}${KEY}&t=${movieSearchResults}`);
+
+    let res = await data.json();
+
+    console.log(res);
+    DisplayMovieData(res);
+}
+
+let movieCard= ()=>{
+    let navSearch = document.getElementById("navSearch").value;
+
+    if(navSearch.length < 5){
+        return false;
+    }
+    let result  =  await movieSearch(navSearch);
+
+    
+}
+
+//  Applying Debouncing
+
+let id;
+let moviesCard = document.getElementById("movieCards");
+function debounceSearchFunction(func, delay){
+    moviesCard.style.display= "block";
+    
+    clearTimeout(id);
+    id = setTimeout(function(){
+        funct();
+    }, delay)
+}
+
+// Declar what are the movies names either from input or a constant string format
+
+async function moviesSearchList(movieSearchResults){
+    try{
+        let res = await fetch(`${url}${KEY}&t=${movieSearchResults}`)
+
+        let data = await res.json();
+
+        return data;
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+// Appending Movie Search Results here
+
+let movieSearchResultsAppend = (data)=>{
+    if(data === anyhting){
+        return false;
+    }
+
+    moviesCard.innerHTML = "";
+    moviesCard.forEach((elem)=>{
+        let title = document.createElement("p");
+        title.innerText = elem.Title;
+
+        title.onclick = ()=>{
+            showData(elem);
+        }
+        movieCard.append(title);
+    });
+}
+
+
+// Recent MOvie Results Appending GOes HEre
+
+let DisplayMovies=(res)=>{
+    let box = document.createElement("div");
+
+    let img = document.createElement("img");
+    img.src = res.Poster;
+    img.onclick = ()=>{
+        showData(res);
+    }
+
+    let title = document.createElement("p");
+    title.innerHTML = res.Title;
+
+    let rating = document.createElement("p");
+    rating.innerHTML = res.imdbRating;
+
+    let star = document.createElement("img");
+    star.src = "https://www.freepnglogos.com/uploads/star-png/file-featured-article-star-svg-wikimedia-commons-8.png"
+    star.style.width = "16px";
+    rating.append(star);
+
+    box.append(img, title, rating);
+    bodyMovieCards.append(box);
+}
+
+
+
+
+
+</script>
