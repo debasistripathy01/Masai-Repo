@@ -20,7 +20,7 @@
                 <a href="">Login</a>
             </div>
             <div id="navbarSearch">
-                <input type="text" id="navSearch" oninput="debounceSearchFunction(func, 1000)" placeholder="Enter Any Movie Name">
+                <input type="text" id="navSearch" oninput="main(func, 1000)" placeholder="Enter Any Movie Name">
             </div>
             <div id="moviesCards">
                 <!-- Append All movies HEre -->
@@ -71,7 +71,7 @@ let movieCard= ()=>{
 
 let id;
 let moviesCard = document.getElementById("movieCards");
-function debounceSearchFunction(func, delay){
+function main(func, delay){
     moviesCard.style.display= "block";
     
     clearTimeout(id);
