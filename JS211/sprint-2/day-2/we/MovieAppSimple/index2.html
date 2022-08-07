@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        input{
+            width: 200px;
+
+            
+        }
+        #movies{
+            border: 1px solid red;
+            height: 500px;
+            width: 200px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+
+    </div>
+    <div>
+        <input oninput="main()" type="text" id="queries">
+    </div>
+    <div id="movies">
+        <!-- Append Results -->
+    </div>
+</body>
+</html>
+
+
+<script>
+    //input box
+    // add oninput eventListiener
+    //grab the value
+let KEY = "660da246";
+let url  = "http://www.omdbapi.com/?i=tt3896198&apikey="
+let anyhting = "N/A";
+
+
+   async function main(){
+    try{
+
+        let queries = document.getElementById("queries").value;
+        // console.log(queries)
+    
+
+    let res = await fetch (`${url}${KEY}&t=${queries}`);
+    let data = await res.json();
+
+    let actual_data = data.Search ;
+    console.log('actual_data ;',actual_data)
+    // 
+    console.log('data ;',data);
+
+    if(actual_data!== undefined){
+        Display(actual_data);
+    }
+    
+   } catch(err){
+        console.log(err);
+   }
+    // Display(data);
+
+   
+}
+
+
+
+function Display(data){
+    // let movies_div  = document.getElementById("movies")
+    movies_div.innerHTML = null;
+    data.forEach(function (elem){
+        let box = document.getElementById("div");
+        
+        let p = document.getElementById("p");
+        p.innerText = elem.Title;
+
+        // box.append(p);
+        movies_div.append(p);
+    });
+}
+
+</script>
