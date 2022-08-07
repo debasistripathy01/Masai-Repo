@@ -25,7 +25,7 @@
   <body>
     <div id="navbar"></div>
     <div>
-      <input oninput="main()" type="text" id="queries" />
+      <input oninput="debounce(main, 1000)" type="text" id="queries" />
     </div>
     <div id="movies">
       <!-- Append Results -->
@@ -62,6 +62,17 @@
     }
     // Display(data);
   }
+  let id;
+  function debounce(func, delay){
+    
+
+    if(id){
+        clearTimeout(id);
+    }
+    id = setTimeout(()=>{
+        func();
+    },2000);
+  }
 
   function Display(data) {
     let movies_div = document.getElementById("movies");
@@ -69,10 +80,15 @@
     data.forEach(function (elem) {
       let box = document.createElement("div");
 
+      
+
+      let img = document.createElement("img");
+      img.src = elem.Poster
+
       let p = document.createElement("p");
       p.innerText = elem.Title;
 
-      box.append(p);
+      box.append(img, p);
       movies_div.append(box);
     });
   }
