@@ -12,9 +12,17 @@ function addToWalletFunc(el){
 
     // let amnt = document.getElementById("wallet").value
     let addedAmount = document.getElementById("amount").value
-    for(var i=0; i < amountArr.length; i++){
-        sum = amountArr[amountArr.length-1] +(+addedAmount);
+    if(amountArr.length >=0){
+        for(var i=0; i < amountArr.length; i++){
+            sum = amountArr[amountArr.length-1] +(+addedAmount);
+        }
     }
+    else if(amountArr.length ===undefined ){
+        for(var i=0; i < amountArr.length; i++){
+            sum +=  +(+addedAmount);
+        }
+    }
+
     
     arr.push(sum);
     localStorage.setItem("Amount", JSON.stringify(arr));

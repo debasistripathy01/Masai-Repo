@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+#navbar{
+    width: 98%;
+    height: auto;
+    margin: auto;
+    border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    
+}
+#wallet{
+    text-align: center;
+    flex-direction: row-reverse;
+    margin: 2%;
+    display: flex;
+}
+
+#search_bar{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 4%;
+    border: 1px solid teal;
+}
+#search_bar>input{
+    width: 100%;
+    height: 70px;
+    margin: auto;
+    font-size: 30px;
+}
+
+#movies{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3,1fr) ;
+
+}
+
+

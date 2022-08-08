@@ -6,7 +6,8 @@ let moviesArr = JSON.parse(localStorage.getItem("movie"))||[];
 
 let amountArr = JSON.parse(localStorage.getItem("Amount"))||[];
 
-document.getElementById("wallet").innerHTML = `${amountArr[amountArr.length-1]||amountArr}`;
+
+document.getElementById("wallet").innerHTML = `${amountArr[amountArr.length-1]||amountArr[amountArr.length-2]}`;
 
 displayMovies(moviesArr);
 
@@ -48,11 +49,14 @@ let updatedValue =0;
 function confirmTicket(el){
     
 
-    if(amountArr[amountArr.length-1] >= 100){
+    if(amountArr[amountArr.length-1] >= 100 && amountArr[amountArr.length-1]!== null){
         let numOfTickets = document.getElementById("number_of_seats").value;
 
         ticketValue += (+ numOfTickets)*100;
-        updatedValue = updatedValue+ amountArr[amountArr.length]-ticketValue; 
+        updatedValue = amountArr[amountArr.length-1]-ticketValue;
+        if(amountArr[amountArr.length-1] < ticketValue ){
+            alert("Insufficient Balance !")
+        } 
         amountArr.push(updatedValue);
         
         alert("Booking Successful!");
