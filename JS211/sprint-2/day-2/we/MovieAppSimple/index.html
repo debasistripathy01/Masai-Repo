@@ -42,7 +42,7 @@
 <script>
 
 let KEY = "660da246";
-let url  = "http://www.omdbapi.com/?i=tt3896198&apikey="
+let url  = "http://www.omdbapi.com/&apikey="
 let anyhting = "N/A";
 
 let bodyMovieCards = document.getElementById("bodyMovieCards")
@@ -73,8 +73,10 @@ let id;
 let moviesCard = document.getElementById("movieCards");
 function main(func, delay){
     moviesCard.style.display= "block";
+    if(id){
+        clearTimeout(id);
+    }
     
-    clearTimeout(id);
     id = setTimeout(function(){
         funct();
     }, delay)
@@ -98,7 +100,7 @@ async function moviesSearchList(movieSearchResults){
 // Appending Movie Search Results here
 
 let movieSearchResultsAppend = (data)=>{
-    if(data === anyhting){
+    if(data === anything){
         return false;
     }
 
