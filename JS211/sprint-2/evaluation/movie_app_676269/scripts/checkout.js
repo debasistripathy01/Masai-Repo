@@ -18,7 +18,7 @@ function displayMovies(new_data){
     new_data.forEach((elem, index)=>{
 
         let box = document.createElement("div")
-        box.setAttribute("class", "movie_tab");
+        box.setAttribute("class", "movie_tabs");
 
         let title = document.createElement("p");
         title.innerText = elem.Title;
