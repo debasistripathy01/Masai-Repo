@@ -1,0 +1,48 @@
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: "https://media.istockphoto.com/photos/hunting-rebels-picture-id544671790?k=20&m=544671790&s=612x612&w=0&h=OR_O6-Dh_NS6ndjYtHWF8rc_P0Qh4okpgG03NgioirI=";
+
+}
+
+#navbar{
+    width: 99%;
+    height: 70px;
+    border: 1px solid red;
+}
+
+#container{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    margin: auto;
+    flex-direction: row-reverse;
+}
+#container>div{
+    display: flex;
+    margin: auto;
+
+}
+#container>div:nth-child(3)>input{
+    width: 100%;
+    height: 70px;
+    /* overflow: scroll; */
+    margin: auto;
+    font-size: 18px;
+
+}
+#names{
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}

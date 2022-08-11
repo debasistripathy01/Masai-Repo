@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Characters Search DEtails</title>
+</head>
+<body>
+    
+    <div id="container">
+
+        <div id="appendInfo">
+            <!-- APPend ALL Info HEre -->
+        </div>
+
+    </div>
+
+    <h3>
+        
+        <a href="./index.html">HOme</a>
+    </h3>
+
+</body>
+</html>
+
+<script>
+    
+    let DataArr = JSON.parse(localStorage.getItem("star-war-data"))||[];
+    DisplayData(DataArr);
+
+    function DisplayData(data){
+
+        let container = document.getElementById("appendInfo");
+        container.innerHTML = null;
+        data.forEach((elem, index)=>{
+
+            let box = document.createElement("div");
+            box.setAttribute("class", "box");
+
+            let name = document.createElement("div");
+            name.innerText = "Full Name : " + `${elem.name}`;
+
+            let mass = document.createElement("p");
+            mass.innerText = "Body Mass : " + `${elem.mass}`;
+
+            let skin_color = document.createElement("p");
+            skin_color.innerText = "Skin Color :" + `${elem.skin_color}`;
+
+            let button = document.createElement("button");
+            button.innerText = "Remove";
+            button.setAttribute("class", "remove");
+            button.addEventListener("click", ()=>{
+                removeItem(elem, index);
+            });
+
+            // let total_films = document.createElement("div");
+            // elemImg(elem);
+            
+            // function elemImg(el){
+            //     let url;
+            //     for(var i=0; i < el.films.length; i++){
+            //         url = el.films[i];
+            //     }
+            //     console.log(url)
+            //     el.films.forEach((el)=>{
+            //         let card = document.getElementById("div");
+                    
+            //         let img = document.createElement("img");
+            //         img.src = `${url}`;
+
+            //         card.append(img);
+            //         total_films.append(card);
+            //     });
+            // }
+            // total_films.innerText = elem.films;
+
+
+
+            box.append(name, mass, skin_color, button);
+            container.append(box);
+        });
+    }
+
+    
+    
+    function removeItem(elem, index){
+        DataArr.splice(index, 1);
+        // DataArr.push(DataArr);
+        localStorage.setItem("star-war-data", JSON.stringify(DataArr));
+        window.location.reload();
+    }
+    // localStorage.setItem("star-war-data", JSON.stringify(DataArr))
+
+    
+
+</script>
