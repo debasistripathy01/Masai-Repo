@@ -17,7 +17,7 @@ function debounceSearchFunc(DisplayData, delay){
     }
     id = setTimeout(function(){
         DisplayData();
-    },1000);
+    },2000);
 }
 
 async function DisplayData(){
@@ -38,4 +38,8 @@ async function DisplayData(){
     catch(error){
 
     }
+}
+
+function DisplayData(data){
+    
 }
