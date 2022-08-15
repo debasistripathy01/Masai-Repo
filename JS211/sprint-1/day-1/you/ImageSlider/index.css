@@ -5,23 +5,28 @@
 }
 
 #container{
-    width: 100%;
     position: relative;
-    height: 700px;
+  width: 100%;
+  height: 700px;
+
     overflow: hidden;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 #container>div{
     height: 100%;
+    /* list-style: none; */
     width: 100%;
-    transition-delay: 750ms;
+    transition: all 750ms ease;
+    left: 0;
     /* transition: all 750ms ease; */
 }
 
 #container>div>div{
     position: relative;
     height: 100%;
+    float: left;
 }
 
 #container>div>div>img{
@@ -30,16 +35,33 @@
 
 }
 
-#prev, #next{
-    width: 120px;
+#prev{
+    width: 70px;
     line-height: 80px;
-    color: white;
+    text-align: center;
+    color: rgb(70, 243, 31);;
     text-decoration: none;
-    border-radius: 50%;
+    position: absolute;
     top: 50%;
-    font-size: 2px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: all 160ms ease;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-shadow: 0 0 20px rgba(117, 208, 158, 0.6);
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+} 
+#next{
+    width: 70px;
+    line-height: 80px;
+    text-align: center;
+    color: rgb(70, 243, 31);
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-shadow: 0 0 20px rgba(118, 239, 138, 0.6);
+    transform: translateY(-50%);
+    transition: all 150ms ease;
 }
 
 
