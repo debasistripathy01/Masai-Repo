@@ -44,7 +44,7 @@ async function DisplayData(){
 function displayNews(data){
 
     let container = document.getElementById("news_result");
-    container.value = null;
+    container.innerHTML = null;
 
     data.forEach((elem)=>{
         let box = document.createElement("div");
