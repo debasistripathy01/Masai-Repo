@@ -8,7 +8,7 @@ displayNews(data);
 function displayNews(data){
 
     let container = document.getElementById("detailed_news");
-    container.value = null;
+    container.innerHTML = null;
 
     data.forEach((elem)=>{
         let box = document.createElement("div");
