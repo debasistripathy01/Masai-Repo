@@ -4,8 +4,8 @@ let slideNow = function () {
   let sliderwidth = container.offsetWidth;
   let listOfImages = document.getElementById("box");
   let count = 1;
-  let items = listOfImages.querySelectorAll("#box>div").length;
-  // console.log(items);
+  let items = listOfImages.querySelectorAll("div").length;
+  console.log(items);
   var  prev = document.getElementById("prev");
   var next = document.getElementById("next");
 
