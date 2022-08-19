@@ -81,14 +81,41 @@ let addToDo = async ()=>{
 
 }
 
+// UPDATE ( PUT & PATCH request )
 
 
-function deleteToDo(){
+//PUT == replaces the data
 
+//PAtch == Modifies the Data
+
+let toggleToDo = async(id)=>{
+    let todo = await fetch(`http://localhost:3000/api/todo/${id}`);
+    todo = await todo.json()
+    console.log(todo);
+
+    let data = {status : !todo.status};
+
+    let res = await fetch("`http://localhost:3000/api/todo/${id}`",{
+        method : "PATCH",
+        body : JSON.stringify(data),
+        headers : {
+            "Content-Types" : "application/json",
+        },
+    });
+
+    getData();
+    res = await res.json();
+    console.log(res);
+
+};
+
+
+let deleteToDo = async(id)=>{
+    let res = await fetch(`http://localhost:3000/api/todo/${id}`,{
+        method : "DELETE",
+        headers : {
+            "Content-Types" : "application/json",
+        },
+    });
+    getData();
 }
-function toggleToDo(){
-
-}
-
-
-
