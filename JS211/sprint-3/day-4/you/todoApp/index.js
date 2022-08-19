@@ -119,3 +119,15 @@ let deleteToDo = async(id)=>{
     });
     getData();
 }
+
+
+
+// 1. CHagning the status
+// i.  status id
+// 1st check Status
+
+// FOr check status 
+
+function request(url, type, body){
+    
+}
