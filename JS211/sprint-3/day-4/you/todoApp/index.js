@@ -10,8 +10,8 @@ window.addEventListener("load",()=>{
 });
 
 let getData=async()=>{
-    // let res =  await fetch("https://calm-badlands-50809.herokuapp.com/api/todo");
-    let res = await fetch("http://localhost:3000/api/todo");
+    let res =  await fetch("https://calm-badlands-50809.herokuapp.com/api/todo");
+    // let res = await fetch("http://localhost:3000/api/todo");
     let data = await res.json();
     renderDom(data);
     console.log(data);
@@ -65,7 +65,7 @@ let addToDo = async ()=>{
         id : Date.now()
     };
 
-    let res = await fetch("http://localhost:3000/api/todo",{
+    let res = await fetch("https://calm-badlands-50809.herokuapp.com/api/todo",{
         method:"POST",
         body : JSON.stringify(data),
         headers : {
@@ -89,17 +89,17 @@ let addToDo = async ()=>{
 //PAtch == Modifies the Data
 
 let toggleToDo = async(id)=>{
-    let todo = await fetch(`http://localhost:3000/api/todo/${id}`);
+    let todo = await fetch(`https://calm-badlands-50809.herokuapp.com/api/todo/${id}`);
     todo = await todo.json()
-    console.log(todo);
+    // console.log(todo);
 
     let data = {status : !todo.status};
 
-    let res = await fetch("`http://localhost:3000/api/todo/${id}`",{
+    let res = await fetch(`https://calm-badlands-50809.herokuapp.com/api/todo/${id}`,{
         method : "PATCH",
         body : JSON.stringify(data),
         headers : {
-            "Content-Types" : "application/json",
+            "Content-Type" : "application/json",
         },
     });
 
@@ -111,7 +111,7 @@ let toggleToDo = async(id)=>{
 
 
 let deleteToDo = async(id)=>{
-    let res = await fetch(`http://localhost:3000/api/todo/${id}`,{
+    let res = await fetch(`https://calm-badlands-50809.herokuapp.com/api/todo/${id}`,{
         method : "DELETE",
         headers : {
             "Content-Types" : "application/json",
@@ -119,3 +119,26 @@ let deleteToDo = async(id)=>{
     });
     getData();
 }
+
+let sort = async()=>{
+    let res = await fetch("https://calm-badlands-50809.herokuapp.com/api/todo?_sort=title&_order=asc");
+    res = await res.json();
+    renderDom(res);
+    console.log(res);
+};
+
+
+
+
+// 1. CHagning the status
+// i.  status id
+// 1st check Status
+
+// FOr check status 
+
+function request(url, type, body){
+
+}
+
+let person = prompt("Your name");
+console.log(person)
