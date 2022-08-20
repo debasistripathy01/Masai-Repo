@@ -7,14 +7,113 @@
     <title>Document</title>
 </head>
 <body>
+
+    
+
+        <div id="box">
+            <input type="number" id="id" placeholder="Page No." oninput="submit()">
+
+        </div>
+        <div id="sorting">
+            <button id="sort">Sort</button>
+        </div>
+        <div id="container"></div>
+
+
+    <!-- By default it gives the data of page=1;
+Your task is to fetch all the articles
+Total number of pages available is 5.
+Fetch all the articles using only a single async function.
+Append all articles onto the DOM, with Title, Author and Number of comments
+Create a sort button which will sort the articles based on number of comments -->
+
+
+
     
 </body>
 </html>
 
 <script>
 
-    
+    const url = "https://jsonmock.hackerrank.com/api/articles?page=";
+    // let Data = JSON.parse(localStorage.getItem("articles")) || [];
+
+    let new_data;
+
+    async function displayData(){
+        // let data = document.getElementById("").value;
+        let id = document.getElementById("id").value
+        try{
+            let res = await fetch(`${url}${id}`);
+            let data = await res.json();
+
+            
+            new_data = data.data;
+            console.log("data : ", new_data);
+            if(new_data !== undefined){
+                display(new_data);
+            }
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+
+    function submit(){
+        displayData();
+
+    }
+
+    //with Title, Author and Number of comments
+    function display(data){
+        let container = document.getElementById("container");
+        container.value = null;
+
+        data.forEach((elem)=>{
+
+            let box = document.createElement("div");
+            box.setAttribute("class", "box");
+
+            // let img = document.createElement("img");
+            // img.src = elem.url;
+
+            let Title = document.createElement("h3");
+            Title.innerText = elem.title;
+
+            let Author = document.createElement("h2");
+            Author.innerText = elem.author;
+
+            let comments = document.createElement("h3");
+            comments.innerText = elem.num_comments;
+
+            
+
+            box.append( Author, Title, comments);
+            container.append(box);
+        })
+    }
 
 
+    document.getElementById("sort").addEventListener("click", sortFunc());
+
+
+    function sortFunc(){
+
+    }
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
