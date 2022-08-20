@@ -114,7 +114,7 @@ let deleteToDo = async(id)=>{
     let res = await fetch(`https://calm-badlands-50809.herokuapp.com/api/todo/${id}`,{
         method : "DELETE",
         headers : {
-            "Content-Types" : "application/json",
+            "Content-Type" : "application/json",
         },
     });
     getData();
@@ -126,6 +126,14 @@ let sort = async()=>{
     renderDom(res);
     console.log(res);
 };
+
+//SOrt BAsed on Descending ORder will take _sort=title&_order=dsc
+
+// Applying  Pagination
+
+// GET/posts?_page=7   // Paginate
+// GET/posts?_page=7&_limit=20
+
 
 
 
