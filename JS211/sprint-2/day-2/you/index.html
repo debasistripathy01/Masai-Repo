@@ -15,7 +15,11 @@
 
         </div>
         <div id="sorting">
-            <button id="sort">Sort</button>
+            <select name="sort comment" id="sortComment" onChange="handleCommentSort()">
+                <option value="">Sort by Comment</option>
+                <option value="HTL">High to Low</option>
+                <option value="LTH">Low to High</option>
+            </select>
         </div>
         <div id="container"></div>
 
@@ -90,15 +94,32 @@ Create a sort button which will sort the articles based on number of comments --
 
             box.append( Author, Title, comments);
             container.append(box);
-        })
+        });
     }
 
 
-    document.getElementById("sort").addEventListener("click", sortFunc());
 
+    // document.getElementById("sort").addEventListener("click", sortFunc());
 
-    function sortFunc(){
+    // let selected = document.getElementById("sortComment").value;
 
+    function handleCommentSort() {
+
+        let selected = document.querySelector("#sortComment").vlaue;
+        if (selected == "HTL") {
+            new_data.sort(function(a, b) {
+                return b.num_comments - a.num_comments;
+            });
+            // console.log(jobArr)
+            displayData(new_data);
+        }
+        if (selected == "LTH") {
+            new_data.sort(function(a, b) {
+                return a.num_comments - b.num_comments;
+            });
+            // console.log(jobArr)
+            displayData(new_data);
+        }
     }
 
 </script>
