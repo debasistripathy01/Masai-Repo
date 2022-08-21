@@ -15,6 +15,7 @@ let seats = 100;
 setInterval(()=>{
     waiting--;
     console.log(waiting);
+    alert("Your ticket is cancelled");
 }, 3000);
 
 let id;
