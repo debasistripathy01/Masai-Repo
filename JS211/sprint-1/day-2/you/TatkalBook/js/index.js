@@ -33,6 +33,7 @@ let submit=()=>{
 
             }else{
                 rej("Waiting");
+                alert("YOur ticket is not confirmed yet")
             }
         }, 3000)
         
