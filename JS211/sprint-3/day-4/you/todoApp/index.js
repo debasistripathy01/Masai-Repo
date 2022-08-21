@@ -40,12 +40,19 @@ let renderDom = (data)=>{
         removeBtn.onclick=()=>{
             deleteToDo(id);
         };
+
+        let edit_btn = document.createElement("button");
+        edit_btn.onclick(()=>{
+            edit(id);
+        });
+
         h3.innerText = title;
         p.innerText = status;
         toggleBtn.innerText = "Toggle";
         removeBtn.innerText = "Remove";
+        edit_btn.innerText = "Edit Text";
         
-        div.append(h3,p,toggleBtn,removeBtn);
+        div.append(h3,p,toggleBtn,removeBtn, edit_btn);
         container.append(div);
     });
     
@@ -120,12 +127,60 @@ let deleteToDo = async(id)=>{
     getData();
 }
 
+
+// function edit(id){
+
+// }
+
+let edit = async(id)=>{
+    let new_text = window.prompt("Enter Edit Texts");
+
+    let data = {title: new_title || todo.title};
+
+    let res = await fetch(`${url}${id}`,{
+        method : "PATCH",
+        body : JSON.stringify(data),
+        headers : {
+            "Content-Type" : "application/json",
+        },
+    });
+    getData();
+};
+
+let filter = async()=>{
+    let value = document.getElementById("filter").value;
+
+    let res = await fetch(`https://calm-badlands-50809.herokuapp.com/api/todo?status=${value}`);
+
+    res = res.json();
+    renderDom(res);
+}
+
+
 let sort = async()=>{
     let res = await fetch("https://calm-badlands-50809.herokuapp.com/api/todo?_sort=title&_order=asc");
     res = await res.json();
     renderDom(res);
     console.log(res);
 };
+
+// PAGINATION likke THis
+
+let page1 = async()=>{
+    let res = await fetch("https://calm-badlands-50809.herokuapp.com/api/todo?_page=1&_limit=3");
+
+    res = await res.json();
+
+    renderDom(res);
+};
+
+let page2 = async()=>{
+    res = await fetch("https://calm-badlands-50809.herokuapp.com/api/todo?_page=1&_limit=3");
+
+    res = await res.json();
+    renderDom(res);
+}
+
 
 //SOrt BAsed on Descending ORder will take _sort=title&_order=dsc
 
