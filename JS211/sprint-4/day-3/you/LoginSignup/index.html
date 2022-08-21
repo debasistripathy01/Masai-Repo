@@ -90,8 +90,10 @@
 </html>
 <script>
   //api link - https://masai-api-mocker.herokuapp.com/
-  //login url = https://masai-api-mocker.herokuapp.com/auth/login
-  //registation url = https://masai-api-mocker.herokuapp.com/auth/register
+  let registerData = "https://calm-badlands-50809.herokuapp.com/api/Signup/";
+  let loginData = "https://calm-badlands-50809.herokuapp.com/api/login/";
+  //login url = https://masai-api-mocker.herokuapp.com/auth/login             // login link
+  //registation url = https://masai-api-mocker.herokuapp.com/auth/register      // register link 
 
   let Register = async () =>{
       try{
@@ -106,7 +108,7 @@
 
     register_data = JSON.stringify(register_data);
 
-        let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/register",{
+        let res = await fetch(registerData,{   // register
             method: "POST",
             body:register_data,
             headers:{
@@ -131,7 +133,7 @@
           };
           let login_data_json = JSON.stringify(login_data);
 
-          let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
+          let res = await fetch(loginData,{       //login linkk
               method:"POST",
               body:login_data_json,
               headers:{
