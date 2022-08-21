@@ -35,7 +35,7 @@ let submit=()=>{
                 rej("Waiting");
                 alert("YOur ticket is not confirmed yet")
             }
-        }, 3000)
+        }, 3000);
         
     });
     p.then((res)=>{
@@ -45,7 +45,7 @@ let submit=()=>{
         console.log(error);
         alert(`${name}${res}`)
     });
-}
+};
 
 
 // within every Minute every ticket will be cancelled
