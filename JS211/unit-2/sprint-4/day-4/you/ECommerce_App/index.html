@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="navbar.css">
+
+
+</head>
+
+<body>
+    <!------------------- Navbar---------------->
+    <div id="nav">
+        <div class="text">
+            <h2 id="logo"><a href="index.html">Reebook</a></h2>
+        </div>
+        <p lang="en-GB"> </p>
+        <form action="" type=" hidden"></form>
+        <div class="text">
+            <h2><a href="men.html"> Men</a></h2>
+            <h2><a href="women.html"> women</a></h2>
+            <h2><a href="signup.html"> Signup</a></h2>
+            <h2><a href="signin.html">Login</a></h2>
+        </div>
+    </div>
+
+    <!------------------------------- Landing Page ------------------->
+
+    <div id="container">
+        <div></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let user = document.querySelector(".user");
+    var signinData = JSON.parse(localStorage.getItem("signin"));
+
+    if (signinData !== null) {
+        user.innerHTML = `<h2><a href="#">User</a></h2>
+            <h2><a href="cart.html">Cart</a></h2>`;
+    }
+</script>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+
+</head>
+<style>
+    #image {
+        width: 100%;
+        height: 700px;
+    }
+    
+    #kimaye-recommend {
+        background-color: rgb(238, 238, 233);
+    }
+    
+    .kr_1 {
+        padding-top: 60px;
+    }
+    
+    .kr_1>h3 {
+        font-weight: bolder;
+        font-size: 30px;
+        text-align: center;
+        margin-left: 20px;
+        padding: 10px;
+    }
+    
+    #kimaye-recommend>div:nth-child(2) {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    #fruits-div {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        margin-left: 120px;
+    }
+    
+    #all-fruits {
+        padding: 40px;
+    }
+    
+    #all-fruits>div:nth-child(2)>h4 {
+        /* margin-left: 218px; */
+        text-align: center;
+        font-weight: bolder;
+        font-size: 22px;
+        padding: 2%;
+    }
+    
+    #all-fruits>div:nth-child(3)>p {
+        text-align: center;
+        font-size: 20px;
+        padding: 2%;
+    }
+    
+    #all-fruits>div:last-child {
+        align-items: center;
+        margin: auto;
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+        color: whitesmoke;
+    }
+    
+    #all-fruits>div:last-child>button {
+        background-color: rgb(205, 23, 32);
+        padding: 2%;
+        border-radius: 7px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    #all-fruits>div:first-child>img {
+        border-radius: 32px;
+        height: auto;
+    }
+    
+    #instruction-kimaye>div:first-child>img {
+        width: 30%;
+    }
+    
+    #instruction-kimaye>div+div>div:first-child>h1 {
+        text-align: center;
+        padding-top: 5%;
+        /* @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap'); */
+        font-family: 'Caveat', cursive;
+        font-size: 30px;
+    }
+    
+    #instruction-kimaye>div+div>div:nth-child(2)>p {
+        text-align: center;
+        font-size: 25px;
+        margin: 2%;
+    }
+    
+    #instruction-kimaye>div+div>div:nth-child(3) {
+        /* border: 1px solid red; */
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    
+    #instruction-kimaye>div+div>div:nth-child(3)>div {
+        width: 30%;
+        /* border: 3px solid rgb(42, 41, 38); */
+        height: auto;
+        margin: auto;
+    }
+    
+    #instruction-kimaye>div+div>div:nth-child(3)>div>img {
+        width: 100%;
+        display: flex;
+        border-radius: 3%;
+    }
+    
+    .carousal {
+        background-color: rgb(236, 205, 101);
+    }
+    
+    .carousal>div:first-child>h3 {
+        padding-top: 40px;
+        text-align: center;
+        font-size: 25px;
+    }
+    
+    #fruits-h1-tag {
+        margin-left: 520px;
+    }
+    
+    .displayproduct {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .slides-container {
+        display: flex;
+        gap: 10px;
+        overflow-x: hidden;
+        padding: 24px;
+        position: relative;
+    }
+    
+    .displayproduct>div:first-child>button {
+        width: 50px;
+        height: 30px;
+        border: none;
+        background-color: rgb(236, 205, 101);
+    }
+    
+    .displayproduct>div:last-child>button {
+        width: 50px;
+        height: 30px;
+        border: none;
+        background-color: rgb(236, 205, 101);
+    }
+    
+    .displayproduct>div:first-child>button>img {
+        width: 50px;
+        height: 30px;
+    }
+    
+    .displayproduct>div:last-child>button>img {
+        width: 50px;
+        height: 30px;
+    }
+    
+    .displayproduct>div:nth-child(2) {
+        border: 1px solid red;
+        display: flex;
+    }
+    
+    .displayproduct>div:nth-child(2)>div>div>img {
+        border-radius: 10px;
+        width: 100%;
+        position: relative;
+        object-fit: cover;
+        height: 400px;
+    }
+    
+    .carousal+div>h3 {
+        padding-top: 2%;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+    
+    .carousal+div+div>p {
+        margin-left: 630px;
+        font-size: 42px;
+    }
+    
+    #last-div {
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 25px;
+        margin-left: 150px;
+    }
+    
+    #last-div>div>img {
+        border-radius: 15px;
+        height: 300px
+    }
+    /*sliding advertisement start*/
+    
+    .slider {
+        margin-top: 30px;
+        width: 100%;
+        height: 500px;
+        background-size: 100% 100%;
+        animation: 30s linear 1s infinite running slider;
+        cursor: pointer;
+        background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x.png?v=1596288204");
+    }
+    
+    @keyframes slider {
+        0% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Indian-plum-and-peach-banner_1080x.jpg?v=1653914762 ");
+            background-size: 100% 100%;
+        }
+        10% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Date-launch-post-whatsapp-banner-desktop_1080x.jpg?v=1654259038");
+            background-size: 100% 100%;
+        }
+        20% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Tarty-Sweetness-banner.jpg?v=1653914749");
+            background-size: 100% 100%;
+        }
+        30% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Delhi-launch-banner_1080x.jpg?v=1649917692");
+            background-size: 100% 100%;
+        }
+        40% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerArtboard_1_720x.jpg?v=1650952002");
+            background-size: 100% 100%;
+        }
+        50% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerAssured_safety_1_720x.jpg?v=1650952014");
+            background-size: 100% 100%;
+        }
+        60% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerWe_serve_you_1_1512x.jpg?v=1650952015");
+            background-size: 100% 100%;
+        }
+        70% {
+            background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerWe_serve_you_1.jpg?v=1650952015");
+            background-size: 100% 100%;
+        }
+    }
+</style>
+
+<body>
+    <!----------------- HEADER --------------->
+    <header>
+        <div id="container1">
+            <div id="sign-div">
+                <div id="topinfo">
+                    <div id="sign-name">Sign in</div>
+                    <div id="closein">Close</div>
+                </div>
+                <div id="details">
+                    <label for="">Email Address</label><br>
+                    <input type="text"><br><br>
+                    <label for="">Password</label><br>
+                    <input type="text"><br><br>
+                    <p id="passtag">Lost Your Password?</p>
+
+                    <button id="loginbtn">Login</button><br><br>
+                    <button class="socialbtnfb">Sign in with Facebook <img src="https://w7.pngwing.com/pngs/69/315/png-transparent-computer-icons-facebook-inc-logo-facebook-blue-text-rectangle.png" alt="" class="social"></button>
+
+
+                    <button class="socialbtng">Sign in with Google <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/google-plus-512.png" alt="" class="social"></button>
+
+
+                    <a href="sigup.html"><img src="https://icon-library.com/images/user-login-icon/user-login-icon-2.jpg" alt="" class="loginicon"></a>
+                    <h4 style="margin-left:135px;">Not Account yet?</h4>
+
+                    <div class="text">
+                        Welcome to Kimaye! Help us with a few details to know you better as you take the journey of enjoying our safe and tasty fruits.
+                    </div>
+                    <div>
+                        <button id="accbtn">Create An Account</button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="signupdiv">
+                <div id="topinfo">
+                    <div id="sign-name">Sign in</div>
+                    <div id="closeup">Close</div>
+                </div>
+                <div id="details">
+                    <button class="socialbtnfb">Sign in with Facebook <img src="https://w7.pngwing.com/pngs/69/315/png-transparent-computer-icons-facebook-inc-logo-facebook-blue-text-rectangle.png" alt="" class="social"></button><br><br>
+                    <button class="socialbtng">Sign in with Google <img src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/google-plus-512.png" alt="" class="social"></button>
+                    <label for="">First Name</label>
+                    <input type="text" id="fname">
+                    <label for="">Last Name</label>
+                    <input type="text" id="lname">
+                    <label for="">Email Address</label>
+                    <input type="text" id="email">
+                    <label for="">Password</label>
+                    <input type="text" id="password">
+                    <button id="registerbtn">Register</button>
+                    <hr>
+                    <img src="https://icon-library.com/images/user-login-icon/user-login-icon-2.jpg" alt="" class="loginicon">
+                    <h4 style="margin-left:135px;">Not Account yet?</h4>
+                    <div id="text">
+                        Welcome to Kimaye! Help us with a few details before you begin enjoying our safe and tasty fruits.
+                    </div>
+                    <button id="sign-login">Login</button>
+
+                </div>
+
+
+
+            </div>
+            <div id="top">
+                <p>Currently available in Mumbai & Delhi | Same day delivery available</p>
+            </div>
+            <div id="down">
+                <div id="navbar">
+                    <div id="shop">SHOP </div>
+                    <div id="learn">LEARN </div>
+                    <div>GROW </div>
+                </div>
+                <div id="kimaye_image">
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x.png?v=1596288204" alt="">
+                </div>
+                <div id="search_login_bag_icon">
+                    <div>
+                        <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-512.png" alt="" class="search-icon">
+                    </div>
+                    <div>
+                        <a href="signup.html"><img src="https://cdn2.vectorstock.com/i/1000x1000/08/56/user-profile-login-or-access-authentication-icon-vector-28920856.jpg" alt="" class="left_nav" id="login">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="cart.html">
+                            <img src="https://cdn3.vectorstock.com/i/1000x1000/31/72/line-shopping-bag-icon-on-white-background-vector-17683172.jpg" alt="" class="left_nav"></a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="dropdowndiv">
+                <div id="popupdiv">
+                    <div class="toggledisp">
+                        <p>ALL FRUITS</p>
+                        <a href="fresh-cuts.html">
+                            <p>FRESH CUTS</p>
+                        </a>
+                        <p>FRESH COMBOS</p>
+                        <p>GIFTS BY KIMAYE</p>
+                        <p>GRAPES FAMILY</p>
+                        <p>KIMAYE RETURN and REPLACEMENT</p>
+                        <p>FRUITS SUBSCRIPTION</p>
+                        <p>COMMUNITY BUYING</p>
+                    </div>
+                </div>
+                <div id="popupdivsec">
+                    <div class="toggledispsec">
+                        <p>OUR STORY</p>
+                        <p> WHY KIMAYE</p>
+                        <p>TRACEABILITY</p>
+                        <p>BEYOND FRUITS</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!------------------- BODY PART ----------------------->
+
+    <div id="slideshow">
+        <div class="slider">
+
+            <!-- Sliding button start -->
+            <div class="navigation-auto">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!--Sliding button end-->
+        </div>
+    </div>
+    <div id="kimaye-recommend">
+        <div class="kr_1">
+            <h3>KIMAYE RECOMMENDS</h3>
+        </div>
+        <div>
+            <p>A Handpicked and Curated Fruit offering</p>
+        </div>
+
+        <div id="fruits-div">
+            <div id="all-fruits">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-1-min_570x.png?v=1614338437" alt="">
+                </div>
+                <div>
+                    <h4>ALL FRUITS</h4>
+                </div>
+                <div>
+                    <p>Pick and choose from a wide range of delicious fruits</p>
+                </div>
+                <div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div id="all-fruits">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-3-min_570x.png?v=1614338730" alt="">
+                </div>
+                <div>
+                    <a href="pomeg.html"></a>
+                    <h4>FRESH CUTS</h4>
+                </div>
+                <div>
+                    <p>We want to spoon-feed you… quite literally</p>
+                </div>
+                <div>
+                    <button><a href="pomeg.html">Shop Now</a></button>
+                </div>
+            </div>
+            <div id="all-fruits">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-2-min_570x.jpg?v=1614339080" alt="">
+                </div>
+                <div>
+                    <h4>FRUIT COMBOS</h4>
+                </div>
+                <div>
+                    <p>Indulge in fruit combinations created by us</p>
+                </div>
+                <div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div id="all-fruits">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/2I8A6078_570x.jpg?v=1631516874" alt="">
+                </div>
+                <div>
+                    <h4>GIFTS BY KIMAYE</h4>
+                </div>
+                <div>
+                    <p>Healthy & memorable gifts for your loved ones</p>
+                </div>
+                <div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="instruction-kimaye">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kimahi_570x_2db87855-9260-47c2-a80e-3759af77dbea_570x.png?v=1622009438" alt="">
+            </div>
+            <div>
+                <div>
+                    <h1>THE SECRET’S OUT: WE’RE SUPER SAFE</h1>
+                </div>
+                <div>
+                    <p>Witness Our Journey</p>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-5_guetzli-min.jpg?v=1622009925" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-1_guetzli-min.jpg?v=1614755149" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/secret-2_guetzli-min.jpg?v=1622009925" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousal">
+            <div>
+                <h3>JAZZ IT UP WITH FRUITS</h3>
+            </div>
+
+            <div class="displayproduct">
+                <div>
+                    <button><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-left-512.png" alt=""></button>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/MangoCover_908c34e6-fcdb-4564-918e-48d7baeaf628_360x.jpg?v=1645445684" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/Mahashivratri-Combo-cover_360x.jpg?v=1645619337" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/cape-gooseberries_360x.jpg?v=1645205791" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/combo-1_360x.jpg?v=1644479793" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/463b5516-614a-4a66-9556-f4a09e45afbc_360x.png?v=1614326370" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/royal-gala-apple-cover_360x.jpg?v=1643012816" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/9ebb0dfa-3897-42a3-97be-5a0ecb8491f8_360x.png?v=1615016898" alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/grapefruit-cover_360x.jpg?v=1639461484" alt="">
+                    </div>
+                </div>
+
+                <div>
+                    <button><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angle-right-512.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>PSST… LOOKIN’ FOR US?</h3>
+        </div>
+        <div>
+            <p>We are here</p>
+        </div>
+        <div id="last-div">
+            <div>
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/286476421_5512742678790182_9133878254313440813_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=lb_ZGm3wyeUAX8jYSln&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-74U3HrBQQfU5WttYkXPl-Q2rkSz8OuP9X5z-28spHcw&oe=62B10515"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/287661335_435396271444075_5269129130906661203_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=chNto7ljN2QAX9RDh8n&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-2_MuSy4369qooQUFt4uLUUeq3jDPZfgtP8YC9dWAXsg&oe=62B06C84"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/287777520_709043673687257_3035340965363558444_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=qcpWAq8zICEAX-Q2OuT&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9Izjbk_K86ZXJoIG9btxbf4H3KyuEoN58QHeYea2obmQ&oe=62AFC2FF"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://scontent.cdninstagram.com/v/t51.29350-15/287998135_425802062515036_1538122002023877767_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=hfGoh_qdnkgAX8hvKtc&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_QfblYPFo48THgOqFmP5jctuLzJRw6tFUZENyVGZEP6Q&oe=62B022B7"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="footer">
+            <div>
+                <h4>FAQ'S</h4>
+                <h4>Contact Us</h4>
+                <h4>Shipping & Return Policy</h4>
+                <h4>Terms & Conditions</h4>
+                <h4>Privacy Policy</h4>
+            </div>
+            <div>
+                <div>
+                    <h4>Follow us on</h4>
+                    <div id="social_media_image">
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756" alt="">
+                        </div>
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756" alt="">
+                        </div>
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+        </div>
+        <div>
+            <p>Copyrigth© All rights Reserved</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="./scripts/landing.js">
+</script>
+<script>
+    import {
+        header,
+        footer
+    } from "./components/header-footer.js";
+    document.querySelector("footer").innerHTML = footer();
+    document.querySelector("header").innerHTML = header();
+
+
+    document.querySelector("#login").addEventListener("click", function() {
+        document.querySelector("#sign-div").style.display = "block";
+    });
+
+    document.querySelector("#closein").addEventListener("click", function() {
+        document.querySelector("#sign-div").style.display = "none";
+    })
+
+    document.querySelector("#accbtn").addEventListener("click", function() {
+        document.querySelector("#sign-div").style.display = "none";
+        document.querySelector("#signupdiv").style.display = "block";
+    })
+
+    document.querySelector("#closeup").addEventListener("click", function() {
+        document.querySelector("#signupdiv").style.display = "none";
+    })
+
+    document.querySelector("#sign-login").addEventListener("click", function() {
+        document.querySelector("#signupdiv").style.display = "none";
+        document.querySelector("#sign-div").style.display = "block";
+    })
+
+    //    Register part
+
+    document.querySelector("#registerbtn").addEventListener("click", register);
+    var userdata = JSON.parse(localStorage.getItem("userdatabase")) || [];
+
+    function register() {
+        var firstname = document.querySelector("#fname").value;
+        var lastname = document.querySelector("#lname").value;
+        var email = document.querySelector("#email").value;
+        var password = document.querySelector("#password").value;
+
+
+        var usercred = {
+            fname: firstname,
+            lname: lastname,
+            emailId: email,
+            pass: password,
+
+        };
+
+        userdata.push(usercred);
+        localStorage.setItem("userdatabase", JSON.stringify(userdata));
+        window.location.href = "landing.html";
+    }
+
+    //--------------------------- login section-------------------//
+
+    document.querySelector("#loginbtn").addEventListener("click", login);
+    var regduser = JSON.parse(localStorage.getItem("userdatabase"));
+
+    function login() {
+        var email = document.querySelector("#email").value;
+
+        var password = document.querySelector("#password").value;
+
+        let user_found = false;
+        for (var i = 0; i < regduser.length; i++) {
+            if (regduser[i].emailId === email && regduser[i].pass === password) {
+                user_found = true;
+                window.location.href = "account.html";
+
+            }
+        }
+        if (user_found === false) {
+            alert("wrong credientials");
+        }
+    }
+
+
+    //----------------------------- dropdown functionallity---------------
+
+    document.querySelector("#shop").addEventListener("mouseover", function() {
+        document.querySelector("#popupdivsec").style.display = "none";
+        document.querySelector("#popupdiv").style.display = "block";
+    })
+    document.querySelector(".toggledisp").addEventListener("mouseleave", function() {
+        document.querySelector("#popupdiv").style.display = "none";
+    })
+
+    document.querySelector("#learn").addEventListener("mouseover", function() {
+        document.querySelector("#popupdiv").style.display = "none";
+        document.querySelector("#popupdivsec").style.display = "block";
+    })
+    document.querySelector(".toggledispsec").addEventListener("mouseleave", function() {
+        document.querySelector("#popupdivsec").style.display = "none";
+    })
+</script>

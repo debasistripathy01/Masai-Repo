@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page of COnstructor Functions</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #form {
+            width: 50%;
+            height: auto;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+        
+        #form>div {
+            margin: auto;
+            /* justify-content: center; */
+            /* border: 1px solid red; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            color: black;
+            height: auto;
+            font-size: 30px;
+        }
+        
+        #form>div>input {
+            display: flex;
+            margin: auto;
+            margin-top: 4%;
+            width: 50%;
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            height: 40px;
+            box-shadow: rgba(40, 40, 120, 0.3) 0px 6px 18px 0px;
+        }
+        
+        #form>div>select {
+            width: 50%;
+            margin: auto;
+            margin-top: 4%;
+            height: 40px;
+            display: flex;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        #form>div>input:last-child {
+            /* border: 1px solid rebeccapurple; */
+            width: 20%;
+            height: 50px;
+            margin-top: 2%;
+            display: flex;
+            justify-content: center;
+            padding: 3%;
+            border-radius: 4px;
+        }
+        
+        #form>div>input:last-child:hover {
+            background-color: rgb(145, 82, 205);
+        }
+        
+        #name {
+            background-color: rgb(136, 215, 182);
+            /* margin-bottom: 20px; */
+            margin-left: 200px;
+            /* margin-top: 50px; */
+        }
+        
+        #category {
+            background-color: rgb(95, 148, 148);
+            /* margin-bottom: 20px; */
+            margin-left: 200px;
+        }
+        
+        #image {
+            background-color: rgb(72, 70, 209);
+        }
+        
+        #price {
+            background-color: rgb(187, 166, 214);
+        }
+        
+        #gender {
+            background-color: rgb(223, 168, 16);
+        }
+        
+        #sold {
+            background-color: rgb(94, 255, 0);
+        }
+        
+        #add {
+            background-color: rgb(171, 190, 190);
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="form">
+        <div>
+            <input type="text" placeholder="name" id="name">
+            <input type="text" placeholder="category" id="category">
+            <input type="text" placeholder="image_url" id="image">
+            <input type="number" placeholder="price" id="price">
+            <select name="gender" id="gender">
+                <option value="">gender</option>
+                <option value="">Female</option>
+                <option value="">Male</option>
+            </select>
+            <select id="sold">
+                <option value="">select</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+            <input type="submit" id="submit"></input>
+        </div>
+    </form>
+
+</body>
+
+</html>
+<script src="./scripts/admin.js"></script>
+<script>
+</script>

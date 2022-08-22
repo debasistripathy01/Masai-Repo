@@ -1,0 +1,275 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    width: 100%;
+    height: 200px;
+    background-color: #437111;
+}
+
+#container>div {
+    /* border: 1px solid red; */
+    /* overflow: visible; */
+    overflow-x: visible;
+}
+
+#top {
+    height: 50px;
+    align-content: center;
+}
+
+#top>p {
+    color: white;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+
+#down {
+    display: flex;
+    background-color: rgb(238, 238, 234);
+}
+
+#navbar {
+    display: flex;
+    margin-left: 38px;
+    position: relative;
+}
+
+#search_login_bag_icon {
+    display: flex;
+    width: auto;
+    margin-right: 4%;
+    overflow: visible;
+    background-color: rgb(190, 102, 102);
+}
+
+#search_login_bag_icon>div {
+    /* margin-left: 20px; */
+    width: 60px;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+    justify-content: space-evenly;
+}
+
+.left_nav {
+    height: 35px;
+}
+
+.search-icon {
+    height: 40px;
+}
+
+#navbar {
+    /* border: 1px solid rgb(45, 221, 145); */
+    justify-content: left;
+}
+
+#navbar>div {
+    /* border: 1px solid red; */
+    height: 60px;
+    display: flex;
+    margin-left: 10px;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#kimaye_image {
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#kimaye_image>img {
+    height: 60px;
+    width: auto;
+    padding-top: 10px;
+}
+
+#sign-div {
+    position: absolute;
+    display: none;
+    margin-left: 1452px;
+    width: 350px;
+    margin-top: 0%;
+    height: 100%;
+}
+
+#topinfo {
+    display: flex;
+    background-color: black;
+    color: whitesmoke;
+    gap: 170px;
+    cursor: pointer;
+}
+
+#sign-name {
+    font-size: 38px;
+}
+
+#closein {
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+#closeup {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+#details {
+    background-color: whitesmoke;
+}
+
+#details>input {
+    margin-left: 30px;
+    height: 37px;
+    width: 297px;
+}
+
+label {
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+#loginbtn {
+    height: 30px;
+    width: 300px;
+    background-color: whitesmoke;
+    margin-left: 30px
+}
+
+#passtag {
+    margin-left: 30px;
+}
+
+.social {
+    height: 30px;
+    margin-left: 95px;
+}
+
+.socialbtnfb {
+    width: 300px;
+    height: 38px;
+    margin-left: 30px;
+    background-color: blue;
+    color: whitesmoke;
+    font-size: 13px;
+    border: none;
+    padding-bottom: 5px;
+}
+
+.socialbtng {
+    width: 300px;
+    height: 40px;
+    margin-left: 30px;
+    background-color: red;
+    color: whitesmoke;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+}
+
+.loginicon {
+    height: 50px;
+    margin-left: 150px;
+}
+
+.text {
+    font-size: 14px;
+    /* margin-left: 50px; */
+    width: 50%;
+    margin: auto;
+}
+
+.text+div {
+    margin: auto;
+    border: 1px solid yellow;
+    display: flex;
+}
+
+#accbtn {
+    width: 50%;
+    margin: auto;
+    height: 40px;
+    background-color: teal;
+    font-size: 15px;
+    text-align: center;
+}
+
+#signupdiv {
+    position: absolute;
+    display: none;
+    margin-left: 1452px;
+    width: 350px;
+    margin-top: 0%;
+}
+
+#sign-login {
+    cursor: pointer;
+    margin-left: 30px;
+    height: 37px;
+    width: 297px;
+}
+
+#registerbtn {
+    cursor: pointer;
+    height: 37px;
+    width: 297px;
+    margin-left: 30px;
+    background-color: whitesmoke;
+}
+
+#popupdiv {
+    margin-left: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 140px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: whitesmoke;
+}
+
+.toggledisp>p {
+    margin-left: 0%;
+}
+
+.toggledisp:hover,
+p {
+    color: green;
+}
+
+.toggledisp>a {
+    text-decoration: none;
+    margin-left: 0%;
+}
+
+#popupdivsec {
+    margin-left: 90px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 140px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: whitesmoke;
+}
+
+.toggledispsec>p {
+    margin-left: 0%;
+}
+
+.toggledispsec:hover,
+p {
+    color: green;
+}
+
+#dropdowndiv {
+    display: flex;
+    gap: 30px;
+}

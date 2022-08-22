@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar {
+            width: 100%;
+            /* border: 1px solid red; */
+            height: 60px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        #navbar>div:first-child {
+            width: 10%;
+            height: 100%;
+            /* border: 1px solid teal; */
+        }
+        
+        #navbar>div:last-child {
+            width: 70%;
+            height: 100%;
+            /* border: 1px solid teal; */
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        #navbar>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+        
+        div>p {
+            /* /color: black; */
+            text-decoration: none;
+        }
+        
+        p+div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 20px;
+            border-radius: 7px;
+            background-color: rgb(154, 241, 241);
+        }
+        
+        p+div>img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+        
+        button {
+            background-color: rgb(23, 113, 209);
+            width: 7%;
+            height: 30px;
+            border-radius: 6px;
+        }
+        
+        select {
+            text-decoration: none;
+            border-style: none;
+            width: 10%;
+            border-radius: 7px;
+            height: 30px;
+            background-color: rgb(202, 231, 242);
+        }
+        
+        a {
+            /* color: aquamarine; */
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div>
+            <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="masai login">
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <select>
+                <option value="">Courses</option>
+                <option value="">FSD</option>
+                <option value="">Android Development</option>
+                <option value="">Data Science</option>
+            </select>
+            <p><a href="#"> fees & isa</a></p>
+            <p><a href="#">about us</a></p>
+            <p><a href="#">hire from us</a></p>
+            <p><a href="#">faq</a></p>
+            <p><a href="#">events</a></p>
+            <div>
+                <p><a href=""> refer & earn</a></p>
+                <img src="https://www.masaischool.com/img/referral/hand.png" alt="refer">
+            </div>
+            <button><a href=""> Login</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

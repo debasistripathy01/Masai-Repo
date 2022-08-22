@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media all and (min-width: 450px) and (max-width: 750px) {
+            body {
+                background-color: blueviolet;
+            }
+            #keypads>div:hover {
+                background-color: turquoise;
+                color: red;
+            }
+        }
+        
+        @media all and (min-width: 80px) and (max-width: 449) {
+            body {
+                background-color: burlywood;
+            }
+            #keypads>div:hover {
+                background-color: royalblue;
+                color: salmon;
+            }
+        }
+        
+        @media all and (min-width: 750px) and (max-width: 1050px) {
+            body {
+                background-color: cadetblue;
+            }
+            #keypads>div:hover {
+                background-color: sandybrown;
+                color: black;
+            }
+        }
+        
+        #container {
+            /* border: 1px solid red; */
+            height: 600px;
+            width: 400px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            flex-wrap: wrap;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: rgb(38, 57, 77);
+        }
+        
+        .screen {
+            border: 1px solid yellow;
+            width: 98%;
+            height: 70px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            border-radius: 8px;
+        }
+        
+        #keypads {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap: 10px;
+            /* border-radius: 15px; */
+            margin-top: 70px;
+            padding: 30px;
+            /* margin: auto; */
+        }
+        
+        #keypads>div {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 10px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        #keypads>div:hover {
+            background-color: thistle;
+        }
+        
+        #first {
+            background-color: black;
+            color: white;
+        }
+        
+        #second {
+            background-color: black;
+            color: white;
+        }
+        
+        #third {
+            background-color: black;
+            color: honeydew;
+        }
+        
+        #fourth {
+            background-color: rgb(228, 56, 56);
+            color: honeydew;
+        }
+        
+        #fifth {
+            background-color: rgb(231, 54, 54);
+            color: white;
+        }
+        
+        #equal {
+            background-color: violet;
+            color: white;
+        }
+        
+        .screen {
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="container">
+        <div class="screen">
+
+        </div>
+        <div id="keypads">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div id="first">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div id="second">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div id="third">*</div>
+            <div id="fourth">C</div>
+            <div>0</div>
+            <div id="equal">=</div>
+            <div id="fifth">/</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var keys = document.querySelectorAll("#keypads > div")
+    var bag = "";
+    for (var i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", MyCalci)
+    }
+
+    function MyCalci() {
+        var targetNumber = event.target.innerText;
+        var bag2 = "";
+        if (targetNumber == "C") {
+            bag = "";
+            document.querySelector(".screen").innerText = ""; //event.target.ParentNode.remove()
+        } else if (targetNumber == "=") {
+            document.querySelector(".screen").innerText = eval(bag)
+            console.log(eval(bag))
+        } else {
+            bag = (bag + targetNumber);
+            // console.log(event.target.innerText);
+            document.querySelector(".screen").innerText = bag;
+        }
+    }
+</script>

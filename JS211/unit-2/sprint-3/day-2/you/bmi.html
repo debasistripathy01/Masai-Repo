@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            align-items: center;
+        }
+        
+        div {
+            text-align: center;
+        }
+        
+        input {
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>CHECK YOUR BMI</h1>
+        <p>Enter your weight and height below to check your BMI results</p>
+    </div>
+    <h3>Put your weight in Kg here</h3>
+    <input type="number" placeholder="input weight" id="weight">
+    <h3>Height in cm here</h3>
+    <input type="number" name="height" placeholder="input height" id="height">
+    <button id="submit">Calculate BMI</button>
+    <h1 id="out"></h1>
+</body>
+
+</html>
+
+<script>
+    var weight = document.getElementById("weight");
+    var height = document.getElementById("height");
+    var submit = document.getElementById("submit");
+    var result = document.getElementById("out");
+
+
+    function calculateBMI() {
+        var weightVal = +(weight.value);
+        var heightVal = +(height.value) / 100;
+
+        var resultVal = (weightVal) / (heightVal * heightVal);
+        var displayValue = ""
+            // result = displayValue;
+        if (resultVal <= 18.4) {
+            displayValue = "Under Weight";
+        } else if (resultVal >= 18.5 && resultVal <= 24.9) {
+            displayValue = "Normal Weight";
+        } else if (resultVal >= 25 && resultVal <= 29.9) {
+            displayValue = "over Weight";
+        } else {
+            displayValue = "Obese";
+        }
+        //console.log(resultVal);
+        result.textContent = "Your BMI is " + resultVal + "which means you are" + displayValue;
+        result.textContent.fontsize = "20px"
+    }
+    submit.addEventListener("click", calculateBMI);
+</script>
