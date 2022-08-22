@@ -73,7 +73,7 @@ let DisplayData =(data)=>{
         let updatePriceBtn = document.createElement("button");
         updatePriceBtn.setAttribute("class", "update_price");
         updatePriceBtn.innerText = "Update Price";
-        updatePriceBtn.onclick(()=>{
+        updatePriceBtn.addEventListener("click",(id)=>{
             editBtn(id);
         });
 
@@ -103,7 +103,7 @@ let addProduct = async()=>{
         id : Date.now()
     };
 
-    let res = await fetch(`https://calm-badlands-50809.herokuapp.com/api/Products`,{
+    let res = await fetch("https://calm-badlands-50809.herokuapp.com/api/Products",{
         method : "POST",
         body : JSON.stringify(data),
         headers : {
