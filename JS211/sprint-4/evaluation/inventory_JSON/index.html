@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <h1>Admin Panel</h1>
+    </div>
+
+    <div id="main_continer">
+      <div id="side_bar">
+        <h3>Add Product</h3>
+        <form action="" id="form">
+          <input type="text" id="name" placeholder="Input Name of Product">
+          <input type="number" id="price" placeholder="Input Price">
+          <input type="text" id="description" placeholder="Input Description">
+          <!-- <input type="date" id="date" placeholder="Choose Date"> -->
+          <input type="date" id="delivery" placeholder="Delivery Date">
+          <input type="url" id="image" placeholder="Image URL">
+          <button id="add_product"  onclick="prodData()">Add Product</button>
+        </form>
+        <h1>Sort Based on Price</h1>
+        <div id="sort" onclick="sort()">
+          <button id="sort-low-to-high">Sort Low to High</button>
+          <button id="sort-high-to-low">Sort High to Low</button>
+        </div>
+
+        <h1>Filter By Prices</h1>
+        <select name="" id="filter" onchange="filter()">
+          <option id="greater-than">Price > 4000</option>
+          <option id="less-than">Price < 4000</option>
+        </select>
+      </div>
+
+      <div id="container"></div>
+    </div>
+    <!-- 1. Product form input boxes will have IDs as "name", "price", "description", "delivery" & "image" respectively.
+ 2. Add Product button ID :- "add_product".
+ 3. Sort Low to High button ID :- "sort-low-to-high"
+ 4. Sort High to Low button ID :- "sort-high-to-low"
+ 5. Price > 4000 button ID :-  "greater-than"
+ 6. Price < = 4000 button ID :- "less-than"
+ 7. All the products will be appended inside div with ID :- "container".
+ 8. Every product card will have class :- "item",
+ 9. The price in every card will have class :- "product_price" ,
+ NOTE:- Show only price amount in number, no extra tesxt should be there.
+ 10.The delivery in every card will have class :- "product_delivery" 
+ 11. The remove button will have class :- "remove_item",
+ 12. The update button will have class :- "update_price" -->
+  </body>
+</html>
+
+<script src="../inventory_JSON/main.js"></script>
