@@ -1,20 +1,20 @@
 // Use deployed URL.
 
-// document.getElementById("submit").addEventListener("click", submitFunc());
+document.getElementById("add_product").addEventListener("click", submitFunc);
 
 // function submitFunc(){
     // window.location.reload();
     // document.getElementById("form").innerHTML = null;
 // }
 
-function prodData(event){
-    retrieveData(event);
+function submitFunc(el){
+    retrieveData();
 }
 
 
-window.addEventListener("load",()=>{
-    retrieveData();
-});
+// window.addEventListener("load",()=>{
+//     retrieveData();
+// });
 
 
 const url = "https://calm-badlands-50809.herokuapp.com/api/Products";
