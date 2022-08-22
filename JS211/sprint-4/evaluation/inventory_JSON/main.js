@@ -56,7 +56,7 @@ let DisplayData =(data)=>{
         let Desc = document.createElement("p");
         Desc.innerText = description;
 
-        let Delivery = document.createElement("");
+        let Delivery = document.createElement("p");
         Delivery.setAttribute("class", "product_delivery");
         Delivery.innerText = delivery;
 
@@ -89,7 +89,7 @@ let addProduct = async()=>{
     let Name = document.getElementById("name").value;
     let Price  = document.getElementById("price").value;
     let Description = document.getElementById("description").value;
-    let Date  = document.getElementById("").value;
+    // let Date  = document.getElementById("").value;
     let Delivery = document.getElementById("delivery").value;
     let Image = document.getElementById("image").value;
     // "name", "price", "description", "delivery" & "image" respectively.
@@ -154,7 +154,7 @@ let sort = async()=>{
 
 
 let edit = async(price)=>{
-    let new_price = window.prompt("Enter Edit Texts");
+    let new_price = window.prompt("Enter Edit Price");
 
     let data = {price: new_price || data.price};
 
