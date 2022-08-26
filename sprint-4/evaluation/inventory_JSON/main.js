@@ -8,6 +8,7 @@ document.getElementById("add_product").addEventListener("click", submitFunc);
 // }
 
 function submitFunc(el){
+    el.preventDefault();
     retrieveData();
 }
 
