@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sortLTH()">low to high Age</button>
+    <button onclick="sortHTL()">high to low Age</button>
+    <button onclick="filterweb()">wed develpoment</button>
+    <div id="conatainer"></div>
+    
+  </body>
+</html>
+<script>
+
+    let url = "https://calm-badlands-50809.herokuapp.com/api/login";
+
+let sortLTH = async () => {
+    let res = await fetch(
+      `${url}/?_sort=age&_order=asc`
+    );
+    let data = await res.json();
+    // console.log(data);
+    append(data);
+  };
+  let sortHTL = async () => {
+    let res = await fetch(
+      `${url}/?_sort=age&_order=desc`
+    );
+    let data = await res.json();
+    // console.log(data);
+    append(data);
+  };
+  let filterweb = async () => {
+    alert("clicked")
+    let res = await fetch(
+      `${url}/?course=web`
+    );
+    let data = await res.json();
+    // console.log(data);
+    append(data);
+  };
+
+  async function display() {
+    let res = await fetch(`${url}`);
+    let data = await res.json();
+    console.log(data);
+    append(data);
+  }
+  display();
+
+  function append(data) {
+    let dox = document.getElementById("conatainer");
+    dox.innerHTML = null;
+    data.forEach((elem, index) => {
+      let div = document.createElement("div");
+
+      let name = document.createElement("p");
+      name.innerHTML = elem.name;
+      let course = document.createElement("p");
+      course.innerHTML = elem.course;
+      let batch = document.createElement("p");
+      batch.innerHTML = elem.batch;
+      let age = document.createElement("p");
+      age.innerHTML =`Age is : ${elem.age}`;
+      let marks = document.createElement("p");
+      marks.innerHTML = elem.evalution;
+      // let indexs = document.createElement("p");
+      // indexs.innerHTML = elem.id;
+
+      let button = document.createElement("button");
+      button.innerHTML = "Delete";
+      button.addEventListener("click", async function (e) {
+        // console.log(elem.id);
+        let id = elem.id;
+        let respone = await fetch(`${url}/${id}`, {
+          method: "DELETE",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        let data = await respone.json();
+      });
+
+      div.append(name, course, batch, age, marks, button);
+      dox.append(div);
+    });
+  }
+</script>

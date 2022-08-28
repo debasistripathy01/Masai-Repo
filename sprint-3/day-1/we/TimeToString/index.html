@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIme to String</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Write test cases for the below given function using jest
+    // write a function for converting time into a string
+    // it should accept in milliseconds
+    // return hours, minutes and seconds in string
+    // following are some examples
+
+    String.prototype.ConvertToString = function(){
+        let Num = parseInt(this, 10);
+        let Min = Math.floor((Num -(hours * 3600))/ 60);
+        let hours = Math.floor(Num / 3600);
+        let seconds = Num - (hours * 3600) - (Min * 60);
+        if(hours < 10){hours = "0"+hours;}
+        if(Min < 10){Min = "0"+Min;}
+        if(seconds < 10){seconds = "0"+seconds;}
+        return hours+":" +Min+":"+seconds;
+    }
+
+    export default ConvertToString;
+
+    
+
+</script>
