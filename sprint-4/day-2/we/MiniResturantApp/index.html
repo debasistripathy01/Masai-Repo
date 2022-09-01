@@ -4,18 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini REsturant App USing Crud II </title>
+    <title>Mini Resturant App USing Crud II </title>
 </head>
 <body>
 
+    <div id="navbar">
+
+        <div id="logo">
+            <h2>Mini Resturant Application</h2>
+            
+        </div>
+        <div id="home">
+            <p>Home</p>
+        </div>
+        <div id="parts">
+            <p>Login</p>
+            <p>SignUp</p>
+            <p>HOME</p>
+        </div>
+        <div>
+            <h2>Name</h2>
+        </div>
+    </div>
+
+    <!-- Image
+- Title
+- Description
+- Price
+- Ratings
+- You can add some additional info as well to make it look more realistic. -->
+
     <div id="container">
 
-        <form action="">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
+        <form action="" id="form">
+            <input type="image" id="img" placeholder="Image">
+            <input type="text" id="title" placeholder="Product Title">
+            <input type="text" id="desc" placeholder="Product Description">
+            <input type="number" id="price" placeholder="Input Product Prices">
+            <input type="number" id="rating" placeholder="Input Rating" max="4">
+            <button id="submit">Submit</button>
         </form>
 
     </div>
