@@ -48,9 +48,16 @@ MyArray.prototype.pop = function(){
 
 //Object has a property of creating called ENumerable
 
-MyArray.prototype.map = function(){
-
+MyArray.prototype.map = function(el){
+    for(index in this){
+        if(this.hasOwnProperty(index)){
+            result.push(el(this[index], index, this));
+        }
+    }
+    return result
 }
+
+// var arr = [1,2,3,4,5]
 
 //0,1,2,3
 
@@ -59,6 +66,18 @@ var arr = new MyArray()
 arr.push("Masai");
 arr.push("SChool");
 arr.push("Bangalore")
-console.log(arr[0])
+// console.log(arr[0])
+// console.log(arr);
+
+var res = arr.map(function(val){
+    console.log(val);
+    return val * val;
+})
+
+console.log(res);
+
+for(key in arr){
+    console.log(key, arr[key]);
+}
 
 </script>
