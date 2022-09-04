@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Pollyfills</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+
+
+// Create your custom map method (myMap), which will work exactly similar to Array.map().
+// Create your custom forEach method (myForEach), which will work exactly similar to Array.forEach().
+// Create your custom filter method (myFilter), which will work exactly similar to Array.filter().
+// Create your custom reduce method (myReduce), which will work exactly similar to Array.reduce().
+
+function MyArray(){
+    this.length =0
+    Object.defineProperty(this, "length",{
+        value : 0,
+        enumerable : false,
+        writable : true
+    });
+}
+
+//push
+//pop
+//arr.map()
+
+MyArray.prototype.push = function (elem){
+    this[this.length] = elem;
+    this.length++;
+    return this.length;
+}
+
+MyArray.prototype.pop = function(){
+    this.length--;
+    var popELem = this[this.length];
+    delete this[this.length];
+    return popELem;
+}
+
+//Object has a property of creating called ENumerable
+
+MyArray.prototype.map = function(){
+
+}
+
+//0,1,2,3
+
+var arr = new MyArray()
+
+arr.push("Masai");
+arr.push("SChool");
+arr.push("Bangalore")
+console.log(arr[0])
+
+</script>
