@@ -17,6 +17,7 @@ let Display=(Data)=>{
 
         let img = document.createElement("img");
         img.src = Image_url;
+        img.setAttribute("class", "image_pic")
 
         let brand = document.createElement("h2");
         brand.innerText = Brand;
@@ -28,7 +29,7 @@ let Display=(Data)=>{
         price.innerText =Price;
 
         let btn = document.createElement("button");
-        btn.innerText = "Remove";
+        btn.innerText = "Remove Product";
         btn.id = "remove_product";
 
         btn.onclick=()=>{
