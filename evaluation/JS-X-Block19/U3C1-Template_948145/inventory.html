@@ -7,7 +7,51 @@
     <title>Document</title>
   </head>
 
-  <style></style>
+  <style>
+    *{
+        margin:0px;
+        padding: 0px;
+        /* box-sizing: border-box; */
+      }
+
+      #menu{
+        margin: auto;
+        /* border: 1px solid red; */
+        width: 30%;
+        height: auto;
+        margin-top: 2%;
+        text-decoration: none;
+        font-size: 24px;
+        text-align: center;
+        background-color: aquamarine;
+      }
+      #menu>button>a{
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      #products_data{
+        width: 95%;
+        height: auto;
+        margin: auto;
+        border: 1px solid red;
+        display: grid;
+
+      }
+      #products_data>div{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto);
+
+
+      }
+      .image_pic{
+        width: 80px;
+        height: 50px;
+        margin: auto;
+        /* display: flex; */
+      }
+  </style>
 
   <body>
     <div id="menu">
@@ -18,7 +62,7 @@
     </div>
     <div id="products_data">
 
-      
+
       <!--append all products data here in grid format-->
     </div>
   </body>
