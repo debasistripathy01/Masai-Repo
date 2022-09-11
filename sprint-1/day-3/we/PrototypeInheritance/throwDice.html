@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #winner {
+        inline-size: 400px;
+        block-size: 50px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-weight: 700px;
+        margin-inline-start: 27px;
+        }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, auto);
+        gap: 20px;
+        inline-size: 400px;
+        margin: 30px;
+      }
+      .box {
+        border: 2px solid black;
+        inline-size: 150px;
+        block-size: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 700;
+      }
+      #roll {
+        padding: 10px;
+        font-weight: 800;
+        border: 2px solid rgb(4, 3, 3);
+        background-color: rgb(159, 184, 206);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="winner">winner</div>
+    <div id="container">
+      <div class="box" id="member-1">Box 1</div>
+      <div class="box" id="member-2">Box 2</div>
+      <div class="box" id="member-3">Box 3</div>
+    </div>
+    <button id="roll">ROLL THE DICE</button>
+  </body>
+</html>
+<script>
+  document.querySelector("#roll").addEventListener("click", Dice);
+  function Dice() {
+    var arr = [1, 2, 3, 4, 5, 6];
+    var a = Math.floor(Math.random() * arr.length);
+    var b = Math.floor(Math.random() * arr.length);
+    var c = Math.floor(Math.random() * arr.length);
+    var box1 = arr[a];
+    var box2 = arr[b];
+    var box3 = arr[c];
+    var l = document.querySelector("#member-1");
+    l.innerText = box1;
+    var m = document.querySelector("#member-2");
+    m.innerText = box2;
+    var n = document.querySelector("#member-3");
+    n.innerText = box3;
+    // ---------------------------
+    if (box1 < box2 && box1 < box3) {
+      l.style.backgroundColor = "red";
+    }
+    if (box2 < box1 && box2 < box3) {
+      m.style.backgroundColor = "red";
+    }
+    if (box3 < box1 && box3 < box2) {
+      n.style.backgroundColor = "red";
+    }
+    // -----------------
+    if ((box1 < box2 && box1 > box3) || (box1 < box3 && box1 > box2)) {
+      l.style.backgroundColor = "yellow";
+    }
+    if ((box2 < box1 && box2 > box3) || (box2 < box3 && box2 > box1)) {
+      m.style.backgroundColor = "yellow";
+    }
+    if ((box3 < box2 && box3 > box1) || (box3 < box1 && box3 > box2)) {
+      n.style.backgroundColor = "yellow";
+    }
+    // -------------------
+    if (box1 > box2 && box1 > box3) {
+      l.style.backgroundColor = "green";
+      document.querySelector("#winner").innerText = "winner is box1";
+    }
+    if (box2 > box1 && box2 > box3) {
+      m.style.backgroundColor = "green";
+      document.querySelector("#winner").innerText = "winner is box2";
+    }
+    if (box3 > box1 && box3 > box2) {
+      n.style.backgroundColor = "green";
+      document.querySelector("#winner").innerText = "winner is box3";
+    }
+    if ((box1 == box2) == box3) {
+      l.style.backgroundColor = "blue";
+      m.style.backgroundColor = "blue";
+      n.style.backgroundColor = "blue";
+      document.querySelector("#winner").innerText = "winner are all";
+    }
+    if (box1 == box2) {
+      l.style.backgroundColor = "blue";
+      m.style.backgroundColor = "blue";
+      document.querySelector("#winner").innerText = "winner are box1 & box2";
+    }
+    if (box1 == box3) {
+      l.style.backgroundColor = "blue";
+      n.style.backgroundColor = "blue";
+      document.querySelector("#winner").innerText = "winner are box1 & box3";
+    }
+    if (box2 == box3) {
+      m.style.backgroundColor = "blue";
+      n.style.backgroundColor = "blue";
+      document.querySelector("#winner").innerText = "winner are box2 & box 3";
+    }
+  }
+</script>

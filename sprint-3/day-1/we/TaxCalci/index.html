@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+</head>
+<body>
+    
+    <div id="container">
+
+        <input type="number" id="amount" placeholder="Input number">
+        <button id="submit">Submit</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    
+    let Btn = document.getElementById("submit");
+    Btn.addEventListener("click", ()=>{
+        let price = document.getElementById("amount");
+    });
+
+    function Calculator(data){
+
+        if(price < 250000){
+            console.log("No Tax");
+        }
+        else if(price < 25000 && price <= 250000){
+            price *= (10/100);
+            let tax = price * (10/100);
+            console.log(tax);
+        }
+        else if (price > 500000 && price<=1000000){
+            price -= 250000
+            let tax=0
+            if(price>500000){
+                price -= 500000
+                tax=(500000*(10/100)) + (price*(20/100))
+            }
+            else{
+                tax = price * (10/100);
+            }
+            console.log(tax);
+        }
+        else if(price > 1000000){
+            price -= 250000;
+            let tax =0;
+            if(price > 1000000){
+                price -= 1000000;
+                tax = (500000 * 0.1) + (1000000 * 0.2) + (price * 0.3);
+            }
+        }
+        else{
+            tax = price * 0.1;
+        }
+        console.log(tax);
+    }
+    export default Calculator;
+    
+
+</script>

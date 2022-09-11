@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array </title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// Create a custom Array constructor which will return an array object.
+// It should have a property size based on the length of arguments passed.
+// Add the arguments as key(index) value pairs in the Array object.
+// Use the “.prototype” property to add custom methods to the Array.
+// Add following methods :-
+// pop
+// push
+
+
+    class stack{
+        constructor(){
+            this.length = 0;
+            this.stack = []
+        }
+
+    // push 
+
+    push(el){
+        this.stack[this.length] = el;
+        this.length++;
+    }
+    // pop
+
+    pop() {
+    this.stack.pop();
+    this.length--;
+    }
+
+    // top
+
+    top(){
+        return this.stack(this.length-1);
+    }
+
+    // print
+
+    print(){
+        return this.stack;
+    }
+
+    // printReverse
+
+    printReverse(){
+        let arr = []
+        for(let i = this.length-1;i>=0;i--)
+        {
+            arr.push(this.stack[i])
+        }
+        return arr
+    }
+
+    // size
+
+
+    size(){
+        return this.length;
+    }
+
+}
+    let s1 = new stack()
+    s1.push(10)
+    s1.push(2)
+    s1.push(4)
+    console.log(s1.print())
+    console.log(s1.printReverse())
+    console.log(s1.size())
+</script>

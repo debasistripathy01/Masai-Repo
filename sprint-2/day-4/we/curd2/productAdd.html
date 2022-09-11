@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product HTML</title>
+  </head>
+  <body>
+        <!-- Name,
+            Batch,
+            course,
+            Age,
+            Mobile No.,
+            Evaluation_Score -->
+    <h1>Add Details of Students</h1>
+    <form action="">
+      <input type="text" id="name" placeholder="Enter  name" />
+      <input type="text" id="batch" placeholder="Enter batch" />
+      <input type="text" id="course" placeholder="Enter course" />
+      <input type="number" id="age" placeholder="Enter age" />
+      <input type="number" id="mobile" placeholder="Enter mobile number" />
+      <input type="number" id="evaluation_score" placeholder="Enter your evaluation score"/>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <h2>Delete user with using ID</h2>
+    <div>
+      <!-- <input type="number" id="deleteID" /> -->
+      <button id="deleteID" onclick="deleProducts()">Delete</button>
+    </div>
+    <div>
+        <h3>Updtae product</h3>
+        <!-- <input type="number" id="put_id" placeholder="chnage only score" /> -->
+        <button onclick="updtaeproduct()">Update</button>
+      </div>
+      <div>
+  </body>
+</html>
+<script>
+  let data = document.getElementById("submit");
+  data.onclick = (el) => {
+    alert("please click");
+    DisplayData(el);
+  };
+  async function DisplayData(event) {
+    event.preventDefault();
+    let form_data = {
+      name: document.getElementById("name").value,
+      batch: document.getElementById("batch").value,
+      course: document.getElementById("course").value,
+      age: document.getElementById("age").value,
+      mobile: document.getElementById("mobile").value,
+      evalution: document.getElementById("evaluation_score").value,
+    };
+
+    form_data = JSON.stringify(form_data);
+    let url ="https://calm-badlands-50809.herokuapp.com/api/Products";
+    let response = await fetch(url, {
+      method: "POST",
+      body: form_data,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log("response:", response);
+  }
+
+  async function deleProducts() {
+    let id = document.getElementById("deleteID").value;
+
+    let respone = await fetch(`${url}/${id}`, {
+      method: "DELETE",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    let data = await respone.json();
+  }
+
+  async function updtaeproduct() {
+    let id = document.getElementById("put_id").value;
+    let todo = await fetch(
+      `${url}/${id}`
+    );
+    todo = await todo.json();
+    console.log(todo);
+
+    let data = prompt();
+    data = { evalution: data };
+    // data = {batch :data}
+    console.log(data);
+
+    let res = await fetch(
+      `${url}/${id}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    res = await res.json();
+    console.log(res);
+
+  
+  }
+
+
+//  
+</script>

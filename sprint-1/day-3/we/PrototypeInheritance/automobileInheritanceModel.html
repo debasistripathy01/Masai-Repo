@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Inheritance Model</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+// Implement an inheritance model for four wheeler automobiles.
+// Implement using both object.create() and constructor functions().
+// Think of properties of what can be inherited.
+
+
+    class Automobile{
+        constructor(wheels,glass,engine){
+            this.wheels = wheels;
+            this.glass = glass;
+            this.engine = engine;
+        }
+    }
+    let s1 = new Automobile("MRF","SUNGLASS","MOT-10")
+    console.log(s1)
+
+    class Suzuki extends Automobile{
+        constructor(wheels,glass,engine,logo,sitbelt){
+            super(wheels,glass,engine)
+            this.logo = logo;
+            this.sitbelt = sitbelt;
+        }
+
+    }
+    let p1 = new Suzuki("MRF","SUNGLASS","MOT-10","Suzuki","10m")
+    console.log(p1)
+
+    class Tata extends Suzuki{
+        constructor(wheels,glass,engine,logo,sitbelt,brand){
+            super(wheels,glass,engine,logo,sitbelt)
+            this.brand = brand;
+        }
+
+    }
+    let t1 = new Tata("MRF","SUNGLASS","MOT-10","Suzuki","10m","TATA")
+    console.log(t1)
+
+</script>
