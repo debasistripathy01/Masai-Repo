@@ -1,11 +1,11 @@
 // Implement debouncing for network request
 // On clicking book now store the selected movie in localstorage as key "movie"
 // so that you can retrive it on checkout.html page
-let amountArr = JSON.parse(localStorage.getItem("Amount"))||[];
+let amountArr = JSON.parse(localStorage.getItem("amount"))||[];
 
-document.getElementById("wallet").innerHTML = `${amountArr[amountArr.length-1]}`;
+document.getElementById("wallet").innerText = amountArr;
 
-
+let moviesArr =[];
 
 let KEY = "660da246";
 let url = "http://www.omdbapi.com/?apikey=";
@@ -20,11 +20,14 @@ async function main(){
         let data = await res.json();
 
         let new_data = data.Search;
-        console.log("data :", new_data);
+        
+        // console.log("data :", new_data);
 
         
         if(new_data !== undefined){
+            moviesArr = new_data;
             displayMovies(new_data);
+            
         };
     }
     catch(error){
@@ -53,18 +56,19 @@ function displayMovies(new_data){
         btn.innerText = "Book now";
         btn.setAttribute("class","book_now");
         btn.addEventListener("click", ()=>{
-            BookNow(elem, index);
+            BookNow(index);
         });
         
         box.append(image, title, year, btn);
         movies.append(box);
     });
 }
-let moviesArr = JSON.parse(localStorage.getItem("movie"))||[];
 
-function BookNow(elem, index){
-    moviesArr.push(elem);
-    localStorage.setItem("movie", JSON.stringify(moviesArr));
+
+function BookNow(index){
+    // moviesArr.push(elem);
+    
+    localStorage.setItem("movie", JSON.stringify(moviesArr[index]));
     window.location.href="./checkout.html";
 }
 
@@ -76,6 +80,6 @@ let debounceSearchFunc=(main, delay)=>{
     }
     id = setTimeout(()=>{
         main();
-    }, 2000)
+    }, delay);
     
 }

@@ -9,16 +9,17 @@
   </head>
   <body>
     <div id="navbar">
-      <h1 id="wallet">Add Money to wallet</h1>
+      <h1>Add Money to wallet</h1>
+      <h1 id="wallet"></h1>
       <!-- Display the wallet amount here inside h1 tag with id as "wallet". Note only amount, no extra text. Like 500 not Rs 500 -->
     </div>
     <div id="add-money">
       <input type="number" id="amount" placeholder="Add Money Here">
       <!-- input box for accepting money with id as "amount" -->
       <!-- button with id as "add_to_wallet" -->
-      <button id="add_to_wallet">Add Money</button>
+      <button id="add_to_wallet" onclick="addToWalletFunc()">Add Money</button>
       <!-- button with id as "book_movies" to go to movies.html -->
-      <button id="book_movies">Browse Movies</button>
+      <button id="book_movies">Book Movies</button>
     </div>
   </body>
 </html>

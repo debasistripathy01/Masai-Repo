@@ -1,0 +1,75 @@
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket Home</title>
+    <style>
+        #total_amount{
+        display: flex;
+        block-size: 50px;
+        inline-size: 100%;
+        background-color: beige;
+        padding: 10px;
+        margin-block-end: 20px;
+        justify-content: center;
+        font-size: 35px;
+        }
+
+        #bucket{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        inline-size: 80%;
+        margin-block-start: 40px;
+        gap: 20px;
+        margin: auto;
+        align-items: center;
+        }
+        #bucket>div{
+        block-size: 450px;
+        inline-size: 80%;
+        margin-block-end: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+        #bucket>div>img{
+        inline-size: 100%;
+        block-size: 65%;
+        }
+        #bucket>div>h3{
+        text-align: center;
+        }
+        #confirm_chekout{
+        display: block;
+        margin: auto;
+        padding: 11px;
+        background-color: pink;
+        color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-color: chartreuse;
+        cursor: pointer;
+        }
+        #bucket>div>button{
+        display: block;
+        margin: auto;
+        padding: 11px;
+        background-color: rgba(255, 0, 0, 0.651);
+        color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-color: chartreuse;
+        cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="total_amount"></div>
+
+    <div id="bucket"></div>
+
+    <button id="confirm_chekout"><a href="./checkout.html">Checkout</a></button>
+</body>
+</html>
+
+<script src="./scripts/bucket.js">
+    
+</script>

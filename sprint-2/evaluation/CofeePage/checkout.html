@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #order_form{
+        block-size: auto;
+        margin: auto;
+        padding: 30px;
+        margin-block-start: 50px;
+        inline-size: 40%;
+        text-align: center;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      #confirm{
+        padding: 10px;
+        background-color: green;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <div id="order_form">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Number" id="number">
+        <input type="text" placeholder="Address" id="address">
+        <button onclick="confirm()" id="confirm">Confirm</button>
+    </div>
+</body>
+</html>
+
+<script src="./scripts/chekout.js"></script>
