@@ -1,0 +1,34 @@
+#order-form{
+    block-size: auto;
+    margin: auto;
+    padding: 30px;
+    margin-block-start: 50px;
+    inline-size: 40%;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  #order-form>input{
+    inline-size: 60%;
+    block-size: 50px;
+    margin: auto;
+    margin-block-start: 4%;
+    
+  }
+
+  #order-form>button{
+    border-radius: 10%;
+    margin-block-start: 4%;
+  }
+
+  #order-form>button:hover{
+    background-color: aquamarine;
+    color: red;
+
+  }
+
+
+  #submit{
+    padding: 10px;
+    background-color: green;
+    color: white;
+  }

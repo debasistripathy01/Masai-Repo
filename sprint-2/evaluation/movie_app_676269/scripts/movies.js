@@ -21,7 +21,8 @@ async function main(){
 
         let new_data = data.Search;
         
-        // console.log("data :", new_data);
+        console.log(typeof(new_data))
+        console.log("data :", new_data);
 
         
         if(new_data !== undefined){
