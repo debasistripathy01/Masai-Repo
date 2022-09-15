@@ -22,9 +22,6 @@ async function getPuppy(){
         // var keys = $.map(new_data, function(v, i){
         //     return i;
         // });
-
-        // console.log(keys);
-
         // console.log("Data : ", new_data["message"]);
         // console.log(typeof(new_data));
 
@@ -34,7 +31,7 @@ async function getPuppy(){
             pupppyNames = keys;
             DisplayData(pupppyNames);
         }
-
+        console.log(keys);
     }
     catch(error){
         console.log(error);
@@ -68,8 +65,9 @@ function DisplayData(new_data){
 
 
 function submitNamesBtn(el){
-    localStorage.setItem("namesOfPuppy", JSON.stringify(el));
+    localStorage.setItem("namesOfPuppy", JSON.stringify(el.value));
     window.location.href="./puppy.html";
 }
+
 
 
