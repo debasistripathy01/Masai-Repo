@@ -19,7 +19,7 @@ async function getItems() {
             
         };
         // console.log(typeof(new_data))
-        // console.log("ALl data :", new_data);
+        console.log("ALl data :", new_data);
     } 
     catch (error) {
         console.log(error);
