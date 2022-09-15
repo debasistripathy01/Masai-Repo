@@ -14,15 +14,25 @@ async function getPuppy(){
     let url = "https://dog.ceo/api/breeds/list/all";
 
     try{
-        let res  = await fetch(url);
+        let res  = await fetch(`${url}`);
         let Data = await res.json();
 
         let new_data = Data.message;
-        console.log("Data : ", new_data);
+
+        // var keys = $.map(new_data, function(v, i){
+        //     return i;
+        // });
+
+        // console.log(keys);
+
+        // console.log("Data : ", new_data["message"]);
+        // console.log(typeof(new_data));
 
         if(new_data!==undefined){
-            pupppyArr = new_data;
-            DisplayData(new_data);
+            var keys = Object.keys(new_data);
+            
+            pupppyNames = keys;
+            DisplayData(pupppyNames);
         }
 
     }
@@ -46,11 +56,20 @@ function DisplayData(new_data){
 
         let btn = document.createElement("button");
         btn.innerText = el;
+        btn.addEventListener("click", ()=>{
+            submitNamesBtn(el);
+        });
 
 
         box.append(btn);
         container.append(box);
     });
+}
+
+
+function submitNamesBtn(el){
+    localStorage.setItem("namesOfPuppy", JSON.stringify(el));
+    window.location.href="./puppy.html";
 }
 
 
