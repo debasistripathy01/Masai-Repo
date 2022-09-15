@@ -65,7 +65,7 @@ function DisplayData(new_data){
 
 
 function submitNamesBtn(el){
-    localStorage.setItem("namesOfPuppy", JSON.stringify(el.value));
+    localStorage.setItem("namesOfPuppy", JSON.stringify(el))||[];
     window.location.href="./puppy.html";
 }
 

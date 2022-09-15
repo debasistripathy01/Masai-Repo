@@ -4,10 +4,50 @@
     box-sizing: border-box;
 }
 
+#container>h1{
+    text-align: center;
+    font-size: 25px;
+    margin-block-start: 5%;
+}
+
 #container{
     inline-size: 100%;
     block-size: auto;
     border: 1px solid red;
     margin: auto;
+    text-align: center;
     display: flex;
+}
+
+#names{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.puppyNames{
+    margin: 5%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.puppyNames>button{
+    inline-size: 140px;
+    block-size: 40px;
+    margin: auto;
+    margin-block-start: 4%;
+    display: flex;
+    gap: 5px;
+    background-color: aquamarine;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8%;
+}
+
+.puppyNames>button:hover{
+    background-color: blueviolet;
+    cursor: pointer;
 }

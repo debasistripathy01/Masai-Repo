@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#puppy{
+    inline-size: 100%;
+    block-size: auto;
+    border: 1px solid red;
+    margin-block-start: 10%;
+
+}
+
+#puppy{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.puppyImages{
+    margin: 5%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.puppyImages>img{
+    inline-size: 350px;
+    block-size: 150px;
+    margin: auto;
+    display: flex;
+    gap: 5px;
+    border-radius: 6%;
+}
