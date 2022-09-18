@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Fetch</title>
+
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #navbar{
+            margin: auto;
+            inline-size: 100%;
+            block-size: 60px;
+            
+        }
+        h1{
+            display: flex;
+            flex-direction: row;
+
+        }
+        #navbar>div{
+            display: flex;
+            flex-direction: row-reverse;
+            margin-inline-start: 4%;
+        }
+        #articles{
+            inline-size: 95%;
+            block-size: auto;
+            margin-block-start: 5%;
+
+            border: 1px solid red;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            margin: auto;
+            /* inline-size: 80%;
+            block-size: auto; */
+            /* border: 1px solid yellow; */
+        }
+        #box>img{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        #box>p{
+            text-align: center;
+            margin: auto;
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <h2>All the Articles</h2>
+
+        <div>
+            <h1>Home</h1>
+            <h3>Login</h3>
+            <p>Sign Up</p>
+            <p>My Profile</p>
+
+        </div>
+    </div>
+    
+    <div id="articles">
+        <!-- APppend All Articles Using Fetch and singel try -->
+    </div>
+</body>
+</html>
+<script src="./index.js" type="module"></script>
+
