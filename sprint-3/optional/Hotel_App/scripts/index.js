@@ -1,24 +1,27 @@
-//  url = "https://masai-mock-api.herokuapp.com/hotels/search?city=${query}"
+//  url = "https://masai-api.herokuapp.com/hotels/search?city="
 
 
 
 let q = "";
-
+let query = document.getElementById("query").value;
 let search = async() => {
-    let query = document.getElementById("query").value;
+    
     let items = showData(query);
     q = query;
-    display(items);
+    // display(items);
     showData(query)
 }
 
-let display = async(query) => {
+search();
+
+let showData = async(query) => {
     try {
-        let url = `https://masai-mock-api.herokuapp.com/hotels/search?city=${query}`;
+        let url = `https://masai-api.herokuapp.com/hotels/search?city=${query}`;
         let res = await fetch(url);
         let items = await res.json();
-        console.log(items);
-        display(items);
+        let new_data = items.hotels;
+        console.log(items.hotels);
+        display(new_data);
     } catch (err) {
         console.log(err);
     }
@@ -75,16 +78,16 @@ function display(items) {
 
 var dataArr = [];
 
-function showData(el) {
-    let data = el.items;
+// function showData(el) {
+//     let data = el.items;
 
-    dataArr.push(data);
-    localStorage.setItem("hotelsData", JSON.stringify(dataArr));
-    window.location.reload();
-}
+//     dataArr.push(data);
+//     localStorage.setItem("hotelsData", JSON.stringify(dataArr));
+//     window.location.reload();
+// }
 
 let sort = async() => {
-    let data = await showData(q);
+    let data = showData(q);
     data = data.sort((a, b) => {
         return a.price - b.price;
     });

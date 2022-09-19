@@ -1,0 +1,37 @@
+
+* , html , body , div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+
+
+.navbar__div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-block-end: 1rem;
+    border-block-end: 1px solid white;
+    padding-block-start: 1rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-inline-end: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: teal;
+}

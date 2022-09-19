@@ -5,15 +5,17 @@ var userData = JSON.parse(localStorage.getItem("users")) || [];
 function submitUser(el) {
     el.preventDefault();
 
-    var email = document.querySelector("email").value;
-    var password = document.querySelector("password").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
 
-    if (userData.Email === el.email && userData.Password === el.password) {
+    if (userData.Email === email && userData.Password === password) {
         alert("Login successful!");
-        window.location.href = "./checkout.html"
-    } else if (userData.Password !== el.password) {
+        // document.getElementById("NAME").innerText = userData.Name;
+        window.location.href = "./index.html";
+    } else if (userData.Password !== password) {
         alert("Wrong credentials");
-    } else if (userData.Email !== el.email) {
+    } else if (userData.Email !== email) {
         alert("User doesn't exist, Sign Up")
+        window.location.href="./signup.html";
     }
 }

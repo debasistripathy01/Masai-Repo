@@ -13,12 +13,9 @@ function signUp(e) {
         Email: document.getElementById("email").value,
         Password: document.getElementById("password").value
     }
-    if (userRegistrationData.Email === document.querySelector("email").value) {
-        alert("Same email is not allowed");
-        window.location.reload();
-    } else {
-        alert("signup is successful");
+    if (userRegistrationData.Email === document.getElementById("email").value && userRegistrationData.Password === document.getElementById("password").value ) {
         localStorage.setItem("users", JSON.stringify(userRegistrationData))
-        window.location.reload();
-    }
+        alert("signup is successful");
+        window.location.href="./login.html";
+    } 
 }
