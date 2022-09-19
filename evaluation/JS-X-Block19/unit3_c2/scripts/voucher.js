@@ -69,25 +69,26 @@ function DisplayData(new_data){
 };
 
 let sum = 0;
-
+let dataArr=[];
 function submitBtn(el, index){
     
-    let user_Data = JSON.parse(localStorage.getItem("user"));
-    userData.push(el);
-    
-    wallet= userData.amount - (+el.amount);
+    let userData = JSON.parse(localStorage.getItem("user"))||[];
+    let Data = userData.splice(el,index)
+    dataArr.push(Data);
+    console.log(dataArr);
+    // wallet= userData.amount - (+el.amount);
 
     
     
-    if(wallet > 0){
-        document.getElementById("wallet").innerText = `${wallet}`;
-        let userData = JSON.parse(localStorage.getItem("user"));
-        userData.amount = wallet;
-        localStorage.setItem("user", JSON.stringify(userData));
-        alert("Hurray! Purchase Successful");
-        window.location.href = "purchase.html";
-    }
-    else{
-        alert("Sorry! Insufficient Balance");
-    }
+    // if(wallet > 0){
+    //     document.getElementById("wallet").innerText = `${wallet}`;
+    //     let userData = JSON.parse(localStorage.getItem("user"));
+    //     userData.amount = wallet;
+    //     localStorage.setItem("user", JSON.stringify(userData));
+    //     alert("Hurray! Purchase Successful");
+    //     window.location.href = "purchase.html";
+    // }
+    // else{
+    //     alert("Sorry! Insufficient Balance");
+    // }
 }
