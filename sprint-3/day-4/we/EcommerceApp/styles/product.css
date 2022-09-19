@@ -1,0 +1,33 @@
+#product__div {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 2rem;
+    padding-block-start: 1rem;
+}
+
+#product__div > div {
+    margin: 2rem;
+}
+
+
+img {
+    block-size: 350px;
+    inline-size: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    background-color: grey;
+    padding-inline-start: .5rem;
+    padding-inline-end: .5rem;
+    block-size: 2rem;
+    border-radius: 5px;
+}
+
+#product__div > div > div:nth-child(2) > div {
+    display: flex;
+    justify-content: center;
+}
