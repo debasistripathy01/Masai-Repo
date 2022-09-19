@@ -23,8 +23,8 @@ function submitInfo(){
         amount
     };
     localStorage.setItem("user", JSON.stringify(UserData));
-    // window.location.href = "voucher.html";
+    window.location.href = "voucher.html";
     
 }
 
-console.log(Data);
+// console.log(Data);
