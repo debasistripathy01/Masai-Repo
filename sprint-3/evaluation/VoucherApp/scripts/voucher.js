@@ -43,7 +43,7 @@ function DisplayData(new_data){
     let container =document.getElementById("voucher_list");
     container.innerHTML=null;
 
-    new_data.forEach((el, index)=>{
+    new_data.forEach((el)=>{
         let box = document.createElement("div");
         box.setAttribute("class", "voucher");
 
@@ -73,22 +73,23 @@ let array = [];
 
 
 function submitBtn(el){
-    // if(+userData.amount >= el.price){
+    if(+userData.amount >= +el.price){
                 
-        array.push(el.Price);
-        
+        array.push(el);
+        console.log(el.price)
+        localStorage.setItem("vouchers", JSON.stringify(array));
         // userData.amount = +userData.amount - +el.price;
         // localStorage.setItem("user", JSON.stringify(userData));
         // WalletBal.innerText = userData.amount;
         // localStorage.setItem("purchase", JSON.stringify(array));
-        // alert("Hurray! Purchase Successful");
+        alert("Hurray! Purchase Successful");
         // window.location.href="./purchase.html";
-    // }
+    }
     // else{
     //     alert("Sorry! Insufficient Balance")
     // }
 }
-console.log(+userData.amount, array)
+// console.log(+userData.amount >=array[0])
 // let sum = 0;
 // let dataArr=[];
 // function submitBtn(el, index){
