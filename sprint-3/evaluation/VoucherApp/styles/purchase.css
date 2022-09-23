@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#wallet-balance{
+    text-align: end;
+    font-size: 24px;
+    flex-direction: row-reverse;
+}
