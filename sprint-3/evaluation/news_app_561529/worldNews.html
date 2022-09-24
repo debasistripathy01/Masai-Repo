@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World News</title>
-    <link rel="stylesheet" href="./">
+    <link rel="stylesheet" href="./styles/worldnews.css">
   </head>
   <body>
-    <div id="navbar">
+    
+
+      <!-- <input type="text" id="search" placeholder="Search only twitter or Tesla"> -->
       
-      
+
+
+
+
+
+
+    <div id="navbar"></div>
       <!-- - The nav-bar will have following :- 
      * search box with Id as- "search_box"
       
@@ -20,9 +28,9 @@
        - China :- “ch”
        - UK :- “uk”
        - New Zealand :- “nz” -->
-    </div>
-    <div>
-      <img src="" alt="">
+
+    <div id="sidebar">
+      
       <!-- Sidebar will have
          - Image of user (Id:- "user_img")
          - Name of user (Id:- "user_name")
@@ -33,12 +41,16 @@
       <!-- - All the news will be appended inside div with id as "news_result".
       - Every news card will have class as "news" (Show image, title and author only in cards). -->
     </div>
+
+    
   </body>
 </html>
 <script src="./scripts/worldNews.js"></script>
 <script type="module">
-  import navbar from "./scripts/navbar.js";
+  import {navbar, sideBar} from "./scripts/navbar.js";
   let container = document.getElementById("navbar");
   container.innerHTML = navbar();
+
+  document.getElementById("sidebar").innerHTML = sideBar();
   // console.log(container);
 </script>
