@@ -8,29 +8,30 @@ let data = JSON.parse(localStorage.getItem("user")) || [];
 
 //-------------------- DebounceSearch Function Applied-----------------//
 
-document.getElementById("search_box").addEventListener("input", ()=>{
-    debounceSearchFunc(DisplayData, 2000);
-})
+// document.getElementById("search_box").addEventListener("input", ()=>{
+//     debounceSearchFunc(DisplayData, 2000);
+// })
 
 let id;
 
-function debounceSearchFunc(DisplayData, delay){
+let debounceSearchFunc=(DisplayData, delay)=>{
     if(id){
         clearTimeout(id);
     }
     id = setTimeout(()=>{
         DisplayData();
     }, 2000);
-}
+};
 
 //------------------------- For Countries to Click -----------------------//
 
-document.getElementById("in").addEventListener("click", countryNews(this.id));
-document.getElementById("us").addEventListener("click", countryNews(this.id));
-document.getElementById("ch").addEventListener("click", countryNews(this.id));
-document.getElementById("uk").addEventListener("click", countryNews(this.id));
-document.getElementById("nz").addEventListener("click", countryNews(this.id));
+let valueOfCountry = document.getElementById("country_code").value;
 
+document.getElementById("country_code").addEventListener("click", countryNews(valueOfCountry));
+// document.getElementById("us").addEventListener("click", countryNews(valueOfCountry));
+// document.getElementById("ch").addEventListener("click", countryNews(valueOfCountry));
+// document.getElementById("uk").addEventListener("click", countryNews(valueOfCountry));
+// document.getElementById("nz").addEventListener("click", countryNews(valueOfCountry));
 
 
 
@@ -40,7 +41,7 @@ document.getElementById("nz").addEventListener("click", countryNews(this.id));
 
 
 //------------------WoRLD NEWS---------------------//
-let new_data;
+
 
 async function DisplayData(){
     let query = document.getElementById("search_box").value
@@ -50,7 +51,7 @@ async function DisplayData(){
         let res = await fetch(url);
         let data = await res.json();
 
-        new_data = data.articles;
+        let new_data = data.articles;
         console.log("data is :",new_data);
 
         if(new_data !== undefined){
@@ -67,13 +68,13 @@ async function DisplayData(){
 async function countryNews(elm){
     const url2 = `https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${elm}`;
     try{
+
         let res = await fetch(url2);
         let data = await res.json();
 
         if(data.articles !== undefined){
             displayAccordingToCountry(data.articles);
         }
-        
 
     }
     catch(error){
@@ -153,7 +154,7 @@ function displayNews(data){
         box.append(image, link, title, author);
         container.append(box);
     });
-}
+};
 
 function submitFunc(elem){
     data.push(elem);
@@ -193,4 +194,4 @@ function displayAccordingToCountry(data){
         div.append(image,div2)
         box.append(div); 
     });
-}
+};

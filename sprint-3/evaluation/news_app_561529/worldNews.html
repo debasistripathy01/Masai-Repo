@@ -8,17 +8,27 @@
     <link rel="stylesheet" href="./styles/worldnews.css">
   </head>
   <body>
-    
+
 
       <!-- <input type="text" id="search" placeholder="Search only twitter or Tesla"> -->
-      
 
 
 
 
+  <div id="container">
+      <input type="search" id="search_box" oninput="debounceSearchFunc(DisplayData, 2000)" placeholder="Only Search Tesla or Twitter">
 
+      <div id="navbar">
+        <div id="country_code">
+          <button id="in" value="in">India</button>
+          <button id="us" value="us">USA</button>
+          <button id="ch" value="ch">China</button>
+          <button id="uk" value="uk">UK</button>
+          <button id="nz" value="nz">New Zealand</button>
+      </div>
 
-    <div id="navbar"></div>
+      </div>
+    </div>
       <!-- - The nav-bar will have following :- 
      * search box with Id as- "search_box"
       
@@ -38,18 +48,19 @@
          - Country of user (Id:- "user_country) -->
     </div>
     <div id="news_result">
+
       <!-- - All the news will be appended inside div with id as "news_result".
       - Every news card will have class as "news" (Show image, title and author only in cards). -->
     </div>
 
-    
+
   </body>
 </html>
-<script src="./scripts/worldNews.js"></script>
+<script src="./scripts/worldNews.js" type="module"></script>
 <script type="module">
-  import {navbar, sideBar} from "./scripts/navbar.js";
+  import {sideBar} from "./scripts/navbar.js";
   let container = document.getElementById("navbar");
-  container.innerHTML = navbar();
+  // container.innerHTML = navbar();
 
   document.getElementById("sidebar").innerHTML = sideBar();
   // console.log(container);
