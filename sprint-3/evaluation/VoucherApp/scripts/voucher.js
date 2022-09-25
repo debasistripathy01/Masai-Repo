@@ -78,12 +78,13 @@ function submitBtn(el){
         array.push(el);
         console.log(el.price)
         localStorage.setItem("vouchers", JSON.stringify(array));
-        // userData.amount = +userData.amount - +el.price;
-        // localStorage.setItem("user", JSON.stringify(userData));
-        // WalletBal.innerText = userData.amount;
-        // localStorage.setItem("purchase", JSON.stringify(array));
+        userData.amount = +userData.amount - +el.price;
+        localStorage.setItem("user", JSON.stringify(userData));
+        WalletBal.innerText = userData.amount;
+        localStorage.setItem("purchase", JSON.stringify(array));
         alert("Hurray! Purchase Successful");
-        // window.location.href="./purchase.html";
+
+        window.location.href="./purchase.html";
     }
     // else{
     //     alert("Sorry! Insufficient Balance")
