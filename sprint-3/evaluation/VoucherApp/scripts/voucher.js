@@ -78,8 +78,8 @@ function submitBtn(el){
         array.push(el);
         console.log(el.price)
         localStorage.setItem("vouchers", JSON.stringify(array));
-        // userData.amount = +userData.amount - +el.price;
-        // localStorage.setItem("user", JSON.stringify(userData));
+        userData.amount = +userData.amount - +el.price;
+        localStorage.setItem("user", JSON.stringify(userData));
         // WalletBal.innerText = userData.amount;
         // localStorage.setItem("purchase", JSON.stringify(array));
         alert("Hurray! Purchase Successful");
