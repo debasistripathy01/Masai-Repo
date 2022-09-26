@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+  .news {
+    display: flex;
+    border: 1px solid black;
+    gap: 10px;
+    margin-block-end:15px ;
+  }
+  .news>img{
+    block-size: 100px;
+    inline-size: 150px;
+
+  }
+  #news_result {
+    /* margin-block-start: -100px; */
+    margin-inline-start: 21%;
+   /* gap: 10px; */
+  }
+  #sidebar{
+    margin-block-start: 100px;
+    block-size: 550px;
+    inline-size: 20%;
+    border: 1px solid black;
+    position: fixed;
+  }
+  #navbar{
+    block-size: 100px;
+    inline-size: 100%;
+    border: 1px solid black;
+    position: fixed;
+    background-color: antiquewhite;
+    justify-content: flex-end;
+  }
+  #country_links{
+    display: flex;
+    gap: 30px;
+    margin-inline-start: 30%;
+  }
+  #country_links >h3 :hover{
+    cursor: pointer;
+  }

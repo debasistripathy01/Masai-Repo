@@ -98,10 +98,10 @@ if(data.country === "in"){
     document.getElementById("user_country").innerText = "New Zealand"
 }
 
-let country = data.country;
+let country_data = data.country;
 
 async function showCountryNews(){
-    const api = `https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${country}`;
+    const api = `https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${country_data}`;
     try{
 
         let res = await fetch(api);
