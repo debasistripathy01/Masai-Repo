@@ -10,27 +10,33 @@ country: "" (store country code "in", "ch", "nz", "us", "uk")
 
 document.getElementById("form").addEventListener("submit", userData);
 
-var userDataArr = JSON.parse(localStorage.getItem("user")) || [];
+// var userDataArr = JSON.parse(localStorage.getItem("user")) || [];
 
-function fileData(n, i, e, c) {
-  this.name = n;
-  this.pic = i;
-  this.email = e;
-  this.country = c;
-}
+// function fileData(n, i, e, c) {
+//   this.name = n;
+//   this.pic = i;
+//   this.email = e;
+//   this.country = c;
+// }
 
 function userData(event) {
   event.preventDefault();
 
-  let name = form.user_name.value;
-  let pic = form.user_pic.value;
-  let email = form.user_email.value;
-  let country = form.country.value;
+  let data = {
+    name : form.user_name.value,
+    pic : form.user_pic.value,
+    email : form.user_email.value,
+    country : form.country.value
+  }
 
-  let Data = new fileData(name, pic, email, country);
+  console.log(data)
 
-  userDataArr.push(Data);
-  localStorage.setItem("user", JSON.stringify(userDataArr));
-  console.log(userDataArr);
-  window.location.reload();
+  // let Data = new fileData(name, pic, email, country);
+
+
+  // userDataArr.push(Data);
+  localStorage.setItem("user", JSON.stringify(data));
+  document.getElementById("form").innerText = null;
+  console.log(user);
+  window.location.href="worldNews.html";
 }
