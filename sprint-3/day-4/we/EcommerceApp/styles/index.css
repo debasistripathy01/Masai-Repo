@@ -1,4 +1,33 @@
 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 1px;
+    border-bottom: 1px solid white;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-right: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: teal;
+}
 
 .input__div{
     display: flex;

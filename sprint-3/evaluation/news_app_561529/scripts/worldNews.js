@@ -6,22 +6,7 @@
 let data = JSON.parse(localStorage.getItem("user")) || [];
 
 
-//-------------------- DebounceSearch Function Applied-----------------//
 
-// document.getElementById("search_box").addEventListener("input", ()=>{
-//     debounceSearchFunc(DisplayData, 2000);
-// })
-
-let id;
-
-let debounceSearchFunc=(DisplayData, delay)=>{
-    if(id){
-        clearTimeout(id);
-    }
-    id = setTimeout(()=>{
-        DisplayData();
-    }, 2000);
-};
 
 //------------------------- For Countries to Click -----------------------//
 
@@ -63,10 +48,10 @@ async function DisplayData(){
     }
 };
 
-                //-------For Button  Selected Countries--------//
+//-----------------------For Button  Selected Countries---------------------//
 
 async function countryNews(elm){
-    const url2 = `https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${elm}`;
+    let url2 = `https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${elm}`;
     try{
 
         let res = await fetch(url2);
@@ -85,8 +70,8 @@ async function countryNews(elm){
 //------------------------For SignUP Data Selected COuntries----------------//
 
 
-let country = document.createElement("h3");
-country.innerText = data.country;
+// let country = document.createElement("h3");
+// country.innerText = data.country;
 if(data.country === "in"){
     document.getElementById("user_country").innerText = "India"
 }else if(data.country === "ch"){
@@ -194,4 +179,23 @@ function displayAccordingToCountry(data){
         div.append(image,div2)
         box.append(div); 
     });
+};
+
+
+
+//-------------------- DebounceSearch Function Applied-----------------//
+
+// document.getElementById("search_box").addEventListener("input", ()=>{
+//     debounceSearchFunc(DisplayData, 2000);
+// })
+
+let id;
+
+let debounceSearchFunc=(DisplayData, delay)=>{
+    if(id){
+        clearTimeout(id);
+    }
+    id = setTimeout(()=>{
+        DisplayData();
+    }, 2000);
 };
