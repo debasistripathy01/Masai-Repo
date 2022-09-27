@@ -37,6 +37,6 @@ function userData(event) {
   // userDataArr.push(Data);
   localStorage.setItem("user", JSON.stringify(data));
   document.getElementById("form").innerText = null;
-  console.log(user);
+  // console.log(user);
   window.location.href="worldNews.html";
 }
