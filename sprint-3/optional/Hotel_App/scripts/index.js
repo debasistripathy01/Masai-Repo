@@ -1,49 +1,82 @@
-//  url = "https://masai-api.herokuapp.com/hotels/search?city="
 
+let id;
 
+let url1 = "https://masai-api.herokuapp.com/hotels/search?city=goa";
+let url2 = "https://masai-api.herokuapp.com/hotels/search?city=mumbai"
+let data;
+let HotelsDataArr = [];
 
-let q = "";
-let query = document.getElementById("query").value;
-let search = async() => {
+let query = document.getElementById("query").value
+
+let main = async()=>{
+    let res = await fetch(url1);
+// let url = `https://masai-api.herokuapp.com/hotels/search?city=${query}`;
     
-    let items = showData(query);
-    q = query;
-    // display(items);
-    showData(query)
+        if(query==="goa"){
+            res = await fetch("https://masai-api.herokuapp.com/hotels/search?city=goa");
+        }
+        if(query==="mumbai"){
+            res = await fetch("https://masai-api.herokuapp.com/hotels/search?city=mumbai");
+        }
+        data = await res.json();
+
+        console.log("data : ", data.hotels);
+
+        if(data.hotels !==undefined){
+            displayData(data.hotels)
+        }
 }
 
-search();
 
-let showData = async(query) => {
-    try {
-        let url = `https://masai-api.herokuapp.com/hotels/search?city=${query}`;
-        let res = await fetch(url);
-        let items = await res.json();
-        let new_data = items.hotels;
-        console.log(items.hotels);
-        display(new_data);
-    } catch (err) {
-        console.log(err);
-    }
-}
 
-showData();
-let hotelsDataArr = [];
+// let hotelsDataArr = [];
 
-// image, title, price, rating, ac/non-ac status and a book now button
+// let q = "";
+// let query = document.getElementById("query").value;
+// let search = async() => {
+    
+//     let items = showData(query);
+//     q = query;
+//     // display(items);
+//     showData(query)
+// }
 
-// displayData()
+// search();
 
-function display(items) {
-    let container = document.querySelector("hotels_list")
-    container.innerHTML = "";
+// let showData = async() => {
 
-    items.forEach(function(element) {
+//     try {
+//         let url = `https://masai-api.herokuapp.com/hotels/search?city=${query}`;
+//         let res = await fetch(url);
+//         let items = await res.json();
+//         // let new_data = items.hotels;
+//         console.log(items.hotels);
+//         display(new_data);
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+
+// showData();
+
+
+// // image, title, price, rating, ac/non-ac status and a book now button
+
+// // displayData()
+
+function displayData(items) {
+    let container = document.getElementById("hotels_list")
+    container.innerHTML = null;
+
+    items.forEach(function(elem) {
         let box = document.createElement("div");
         box.id = "hotels"
 
         let image = document.createElement("img");
-        image.src = elem.Images;
+        image.src = elem.Images.one;
+
+        let image2 = document.createElement("img");
+        image2.src = elem.Images.two;
 
         let title = document.createElement("p");
         title.innerText = elem.Title;
@@ -55,7 +88,7 @@ function display(items) {
         rating.innerText = elem.Rating;
 
         let status = document.createElement("p");
-        status.innerText = elem.Ac;
+        status.innerText = "AC : "+" " + elem.Ac;
 
         let button = document.createElement("button");
         button.innerText = "Book Now";
@@ -63,12 +96,12 @@ function display(items) {
             showData(elem);
 
         });
-        box.onclick = () => {
-                saveData(el.id);
-            }
-            // box.setAttribute("id", "hotel")
+        // box.onclick = () => {
+        //         saveData(el.id);
+        //     }
+        //     box.setAttribute("id", "hotel")
 
-        box.append(image, title, price, rating, status, button);
+        box.append(image, image2, title, price, rating, status, button);
         container.append(box);
 
 
@@ -78,18 +111,33 @@ function display(items) {
 
 var dataArr = [];
 
-// function showData(el) {
-//     let data = el.items;
+function showData(el) {
+    // let data = el.items;
 
-//     dataArr.push(data);
-//     localStorage.setItem("hotelsData", JSON.stringify(dataArr));
-//     window.location.reload();
-// }
+    dataArr.push(el);
+    localStorage.setItem("hotelsData", JSON.stringify(dataArr));
+    window.location.reload();
+}
+
+
 
 let sort = async() => {
-    let data = showData(q);
-    data = data.sort((a, b) => {
+
+    // let data = showData(q);
+    let data = data.sort((a, b) => {
         return a.price - b.price;
     });
-    display(data);
+    displayData(data);
 }
+
+
+let debounceSearchFunction = (main, delay)=>{
+    if(id){
+        clearTimeout(id);
+    }
+
+        id= setTimeout(()=>{
+            main();
+        }, 2000);
+    
+};

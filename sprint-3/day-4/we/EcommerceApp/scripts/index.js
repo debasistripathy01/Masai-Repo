@@ -8,8 +8,7 @@ container.innerHTML = navbar();
 
 let todoArr =  JSON.parse(localStorage.getItem("todos")) || [];
 
-//[{} , {} , {}]
-//map , filter 
+
 
 
 
@@ -19,7 +18,7 @@ let button = document.querySelector("#addTodo__button").addEventListener("click"
 
 
 function handleClick(){
-    //alert("I am clcked")
+
 
 
     let value = document.querySelector("#todo__input").value;
@@ -33,8 +32,7 @@ function handleClick(){
 
 
 
-    //Create the payload 
-    //payload -> data
+   
     let payload = {
         todo : value,
         status: false,
@@ -96,7 +94,7 @@ function appendTodo () {
 
 
 
-        //Styling 
+
 
         //Append 
         todoDiv.append(todoH3);

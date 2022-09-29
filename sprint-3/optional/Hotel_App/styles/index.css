@@ -1,0 +1,184 @@
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+            color: white;
+        }
+
+        #container{
+            inline-size: 40%;
+            display: flex;
+            flex-direction: row;
+            margin-inline-start: auto;
+            font-size: 24px;
+            /* border: 1px solid white; */
+
+            justify-content: space-around;
+
+        }
+        #container>div{
+            inline-size: 40%;
+            justify-content: space-around;
+        }
+        #container>div>a:hover{
+            color: teal;
+            cursor: pointer;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #container>div>a{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+
+        #navbar {
+            inline-size: 100%;
+            block-size: 50px;
+            /* background-color: aqua; */
+        }
+        
+        #navbar>div>h2 {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        h2:hover{
+            color: aqua;
+            cursor: pointer;
+        }
+
+
+        /* Search Bar of Hotel APp */
+
+
+        #searchBar>input{
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            inline-size: 65%;
+            block-size: 50px;
+            font: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
+            margin-block-start: 4%;
+            padding: 1%;
+            border-radius: 4%;
+            cursor: pointer;
+            display: flex;
+            background-color: white;
+        }
+       
+        #container>div>a{
+            text-decoration: none;
+
+        }
+
+        /* Hotels card and Div Styles */
+
+        #hotels_list{
+            /* background-color: white; */
+            color: teal;
+            /* border: 1px solid red; */
+            margin-block-start: 5%;
+           
+        }
+
+        #hotels{
+                /* border: 1px solid red; */
+                background-color: white;
+                
+
+        }
+        #hotels>div{
+            display: grid;
+            border: 2px solid red;
+            grid-template-columns: repear(3,1fr);
+            grid-template-rows: auto;
+            gap: 1%;
+        }
+
+        #hotels_list>div>button{
+            inline-size: 140px;
+            block-size: 30px;
+            background-color: white;
+            color: rgb(0, 217, 255);
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+        }
+        #hotels_list>div>button:hover{
+            background-color: blue;
+            color: rgb(235, 53, 53);
+
+        }
+
+        #hotels_list>div>img{
+            inline-size: 40%;
+            block-size: 30%;
+            margin-inline-end: 1%;
+
+            justify-content: space-evenly;
+
+
+        }
+
+        #hotels_list>div>img+img{
+            inline-size: 40%;
+            block-size: 30%;
+
+            /* margin: auto; */
+            /* justify-content: center; */
+        }
+
+
+        /* FIlters And SOrting Styles */
+
+        #sorting{
+            inline-size: 40%;
+            block-size: auto;
+            margin: 1%;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #sorting>select{
+            background-color: white;
+            color: black;
+            block-size: 30px;
+            cursor: pointer;
+            /* block-size: 20px;
+            margin: auto; */
+        }
+        #sorting>select:hover{
+            inline-size: 120px;
+            block-size: 30px;
+            cursor: pointer;
+            background-color: blueviolet;
+        }
+        #sorting>button{
+            background-color: rgb(251, 249, 96);
+            font-size: 21px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            margin: auto;
+            /* text-align: center; */
+            /* display: flex; */
+
+        }
+
+        #sorting>button:hover{
+            background-color: teal;
+            cursor: pointer;
+            font-size: 20px;
+        }
