@@ -19,7 +19,7 @@ const Counter2 = () => {
         })
 
     }, 1000)
-  },[count])
+  },[])
    
   return (
       <div>
