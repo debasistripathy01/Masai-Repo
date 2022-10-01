@@ -1,0 +1,124 @@
+*,  html, body, div {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
+}
+
+
+/* NAVBAR CSS properties */
+
+#navbar__div{
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1px;
+  border-bottom: 1px solid white;
+  padding-top: 2rem;
+  /* border: 1px solid red; */
+}
+
+#navbar__div>div>h1{
+  font-size: 30px;
+  margin-left: 1%;
+
+}
+
+#navbar__div>div>h1:hover{
+  color: aqua;
+  cursor: pointer;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+}
+
+li {
+  justify-content: space-around;
+  margin-left: 6%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: teal;
+  cursor: pointer;
+}
+
+
+/*------------ Signup FOrm Styles -----------------*/
+
+#container {
+
+  inline-size: 70%;
+  block-size: 100px;
+  margin: auto;
+  margin-block-start: 2%;
+  /* border: 2px solid ; */
+  
+}
+h1{
+  margin: 2%;
+  text-align: center;
+  list-style: none;
+}
+
+h1:hover{
+  color: teal;
+  cursor: pointer;
+}
+
+form {
+  /* border: 1px solid yellow; */
+  inline-size: 60%;
+  margin: auto;
+  border-radius: 4%;
+  margin-top: 2%;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+
+#form>input {
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+
+
+button{
+  inline-size: 100px;
+  block-size: 30px;
+  background-color: rgb(19, 170, 170);
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  padding: 1%;
+  margin-block-start: 20px;
+}
+
+button:hover{
+  background-color: aqua;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+

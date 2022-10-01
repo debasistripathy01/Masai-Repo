@@ -68,13 +68,12 @@ function append(data){
         let button = document.createElement("button");
         let cartButton = document.createElement("button");
 
-
         //Set attributes or value
         image.src = el.image
         categoryP.innerText = el.category
         priceP.innerText = el.price
         button.innerText = "BUY";
-        cartButton.innerText = "Add to Cart"
+        cartButton.innerText = "Add to Cart";
 
         cartButton.style.backgroundColor = "teal"
         button.style.backgroundColor = "red"
