@@ -1,18 +1,21 @@
 
+
+// let url = "https://fakestoreapi.com/products"
+
 import navbar from "../components/navbar.js";
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+document.getElementById("navbar__div").innerHTML = navbar()
 
+// function renderCartLength(cart){
+//     let length = cart.length;
 
-function renderCartLength(cart){
-    let length = cart.length;
+//     let container = document.querySelector("#navbar");
+//     container.innerHTML = navbar(length);
 
-    let container = document.querySelector("#navbar");
-    container.innerHTML = navbar(length);
+// }
 
-}
-
-renderCartLength(cart)
+// renderCartLength(cart)
 
 
 
@@ -29,11 +32,11 @@ renderCartLength(cart)
 //We have to make net req
 async function getData () {
     try{
-    let api = await fetch(`https://fakestoreapi.com/products`);
-    let data = await api.json();
-    append(data);
-    console.log("Data")
-    console.log(data);
+        let api = await fetch(`https://fakestoreapi.com/products`);
+        let data = await api.json();
+        append(data);
+        console.log("Data : ", data)
+
     }
     catch(err){
         console.log(err);
@@ -41,7 +44,6 @@ async function getData () {
         let h1 = document.createElement("h1");
         h1.textContent = "Some error from server"
         div.append(h1);
-    
     }
 }
 
@@ -67,7 +69,7 @@ function append(data){
         let cartButton = document.createElement("button");
 
 
-        //Sttributes or value
+        //Set attributes or value
         image.src = el.image
         categoryP.innerText = el.category
         priceP.innerText = el.price
@@ -79,7 +81,7 @@ function append(data){
         mainDiv.style.border = "1px solid white"
         mainDiv.style.paddingBottom = "1rem"
 
-        //Event listenee
+        //Event listener
         button.addEventListener("click" , buyButtonClick )
         cartButton.addEventListener("click" , () =>{
             handleAddToCart(el);
