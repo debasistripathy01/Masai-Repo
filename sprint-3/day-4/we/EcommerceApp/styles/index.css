@@ -8,8 +8,8 @@
     box-sizing: border-box;
 }
 
-
-#navbar{
+/*-------- NAVBAR CSS properties -------*/
+#navbar__div{
     display: flex;
     margin-top: 1%;
     justify-content: space-around;
@@ -19,12 +19,12 @@
     padding-top: 1rem;
 }
 
-#navbar>div>h1{
+#navbar__div>div>h1{
     font-size: 30px;
 
 }
 
-#navbar>div>h1:hover{
+#navbar__div>div>h1:hover{
     color: aqua;
     cursor: pointer;
 }
@@ -49,7 +49,7 @@ a:hover {
     cursor: pointer;
 }
 
-
+/* Input__div CSS For TODO APP (Un-necessary) */
 
 .input__div{
     display: flex;

@@ -7,36 +7,29 @@ function navbar ( length = 0 ) {
     }
 
 
-    return`<div class="navbar__div">
-    <div>
-        <h1>
-            <a href="index.html">App Name</a>
-        </h1>
-    </div>
-
-    <div>
-        <ul>
-
-            <li>
-                <a href="index.html">Todo</a>
-            </li>
-            <li>
-                <a href="product.html">Product</a>
-            </li>
-            <li>
-                <a href="registration.html">Register</a>
-            </li>
-            <li>
-                <a href="dog.html">Dogs</a>
-            </li>
-
-            <li>
-                <h4>
-                    <a href="cart.html" >Cart : ${length}</a>
-                </h4>
-            </li>
-        </ul>
-    </div>
+    return`<div>
+    <h1>
+        <a href="./index.html">E-kart</a>
+    </h1>
+</div>
+<div>
+    <ul>
+        <li>
+            <a href="./index.html">Home</a>
+        </li>
+        <li>
+            <a href="./signup.html">Signup</a>
+        </li>
+        <li>
+            <a href="./login.html">Login</a>
+        </li>
+        <li>
+            <a href="./product.html">Products</a>
+        </li>
+        <li>
+            <a href="./cart.html">Cart</a>
+        </li>
+    </ul>
 </div>`
 
 }

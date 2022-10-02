@@ -1,12 +1,12 @@
 //using navbar from navbar.js
 import navbar from "../components/navbar.js";
 
-let container = document.querySelector("#navbar");
+let container = document.querySelector("#navbar__div");
 container.innerHTML = navbar();
 
 
 
-let todoArr =  JSON.parse(localStorage.getItem("todos")) || [];
+// let todoArr =  JSON.parse(localStorage.getItem("todos")) || [];
 
 
 
