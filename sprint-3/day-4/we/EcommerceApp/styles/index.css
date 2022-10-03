@@ -19,12 +19,12 @@
     padding-top: 1rem;
 }
 
-#navbar__div>div>h1{
+#navbar>div>h1{
     font-size: 30px;
 
 }
 
-#navbar__div>div>h1:hover{
+#navbar>div>h1:hover{
     color: aqua;
     cursor: pointer;
 }
