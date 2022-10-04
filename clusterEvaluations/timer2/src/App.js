@@ -2,6 +2,7 @@
 import React from "react";
 import Counter2 from "./components/Counter2";
 import { useState } from "react";
+import Posts from "./components/posts";
 import "./App.css";
 
 import Counter from "./components/Counter";
@@ -21,6 +22,7 @@ function App() {
       <Counter2/>
       {/* <h3>Count:{count}</h3>
       <button onClick={()=>setCount(count+1)}>Add</button> */}
+      <Posts />
     </div>
   );
 }
