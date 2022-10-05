@@ -2,6 +2,7 @@
 import React from "react";
 import Counter2 from "./components/Counter2";
 import { useState } from "react";
+import ChatApp from "./components/ChatApp";
 import Posts from "./components/posts";
 import "./App.css";
 
@@ -23,6 +24,7 @@ function App() {
       {/* <h3>Count:{count}</h3>
       <button onClick={()=>setCount(count+1)}>Add</button> */}
       <Posts />
+      <ChatApp />
     </div>
   );
 }
