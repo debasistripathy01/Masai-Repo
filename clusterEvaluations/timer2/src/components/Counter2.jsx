@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 
@@ -13,7 +13,7 @@ const Counter2 = () => {
         setCount((prevState)=>{
           if(prevState === 0){
             clearInterval(id);
-            return prevState;
+            return prevState-1;
           }    
           return prevState-1
         })
