@@ -1,3 +1,9 @@
+
+let loginData = "https://calm-badlands-50809.herokuapp.com/api/Signup/";
+
+
+
+
 let Login = async()=>{
     try{
         let login_data = {
@@ -18,7 +24,7 @@ let Login = async()=>{
         console.log(data);
         
         getUser(login_data.username,data.token);
-        window.location.href="./index.html"
+        window.location.href="./index.html";
     }
     catch(err){
         console.log(err);
