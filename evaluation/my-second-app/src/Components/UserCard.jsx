@@ -3,47 +3,43 @@
 import React from "react";
 import { useState } from "react";
 
+export default function UserCard(Props) {
+  //user card details
+  const { name, avatar, posts, followers, address } = Props;
+  const [text, setText] = useState(false);
 
-export default function UserCard(Props){
-    //user card details
-    const {name, avatar, posts, followers, address} = Props;
-    const [text, setText] = useState("follow");
+  let handleClick = () => {
+    setText(!text);
+  };
 
-    let handleClick =()=>{
-        setText("following");
-    }
+  const styles = {
+    borderRadius: "50%",
+  };
+  //user Button details
 
-    const styles ={
-        borderRadius: "50%"
-    }
-    //user Button details
-    
+  // function for Click Buttoncd
 
+  return (
+    <div>
+      <img style={styles} src={avatar} alt={name} />
+      <h2 data-testid="user_name">{name}</h2>
+      <p data-testid="user_address">{address}</p>
+      <h3>Posts</h3>
+      <p data-testid="user_posts">{posts}</p>
 
-    // function for Click Buttoncd 
-    
+      <h3>Followers</h3>
 
-    return (
-        <div>
-            <img style={styles} src={avatar} alt={name} />
-            <h2 id="user_name">{name}</h2>
-            <p id="user_address">{address}</p>
-            
-            <p id="user_posts">{posts}</p>
-            
-            <p id="user_followers"> {followers}</p>
-            <h3>{posts}</h3>
-            <h3>{followers}</h3>
-
-            <button onClick={handleClick}>following</button>
-        </div>
-    )
+      <p data-testid="user_followers">{followers}</p>
+      
+      
+      <button onClick={handleClick}>{text ? "following" : "follow"} </button>
+    </div>
+  );
 }
 
-
 // export function Button(){
-    
+
 //     return (
-        
+
 //     )
 // }
