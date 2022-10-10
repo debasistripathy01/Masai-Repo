@@ -4,9 +4,9 @@
 
 export default function Courses(){
 
-    const List = [
+    // const List = [
         
-    ]
+    // ]
 
     return (
         <div>

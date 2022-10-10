@@ -10,10 +10,10 @@ import Courses from "./Components/Courses";
 export default function App() {
   return (
     <div className="App">
-      <Title text="Users Display"/>
+      <Title title="Users Display"/>
 
       <UserCard 
-      avatar="https://i.imgur.com/69OK75n.png"
+      avatar=""
       name="Chirsse"
       address="4018 sach trails"
       posts="1841"
