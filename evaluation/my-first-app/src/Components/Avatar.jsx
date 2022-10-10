@@ -3,7 +3,8 @@
 // do default export
 function Avatar(Props){
     const styles={
-
+        width: "300px",
+        height:"120px",
         borderRadius:"50%"
     }
     const {caption, image} = Props;
