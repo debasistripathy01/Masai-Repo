@@ -1,7 +1,7 @@
 
 import React from "react";
 import Counter2 from "./components/Counter2";
-import { useState } from "react";
+// import { useState } from "react";
 import ChatApp from "./components/ChatApp";
 import Posts from "./components/posts";
 import Counter3 from "./components/counter3"
