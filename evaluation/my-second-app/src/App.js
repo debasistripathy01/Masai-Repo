@@ -14,10 +14,10 @@ export default function App() {
 
       <UserCard 
       avatar=""
-      name="Chirsse"
-      address="4018 sach trails"
-      posts="1841"
-      followers="66868"
+      name={"Chirsse"}
+      address={"4018 sach trails"}
+      posts={"1841"}
+      followers={"66868"}
       />
       {/* <Button /> */}
       <Courses

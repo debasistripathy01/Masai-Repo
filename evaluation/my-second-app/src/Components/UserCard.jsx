@@ -4,13 +4,17 @@ import React from "react";
 import { useState } from "react";
 
 
-export default function UserCard(props){
+export default function UserCard(Props){
     //user card details
-    const {name, avatar, posts, followers, address} = props;
+    const {name, avatar, posts, followers, address} = Props;
     const [text, setText] = useState("follow");
 
     let handleClick =()=>{
         setText("following");
+    }
+
+    const styles ={
+        borderRadius: "50%"
     }
     //user Button details
     
@@ -21,7 +25,7 @@ export default function UserCard(props){
 
     return (
         <div>
-            <img src={avatar} alt={name} />
+            <img style={styles} src={avatar} alt={name} />
             <h2 id="user_name">{name}</h2>
             <p id="user_address">{address}</p>
             
@@ -30,8 +34,8 @@ export default function UserCard(props){
             <p id="user_followers"> {followers}</p>
             <h3>{posts}</h3>
             <h3>{followers}</h3>
-            
-            <button onClick={handleClick}>{text}</button>
+
+            <button onClick={handleClick}>following</button>
         </div>
     )
 }
