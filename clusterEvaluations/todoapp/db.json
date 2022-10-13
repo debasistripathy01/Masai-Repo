@@ -12,7 +12,7 @@
     },
     {
       "title": "How to do it",
-      "status": false,
+      "status": true,
       "id": 5
     },
     {
@@ -22,18 +22,23 @@
     },
     {
       "title": "But",
-      "status": false,
+      "status": true,
       "id": 7
     },
     {
       "title": "het there how",
-      "status": false,
+      "status": true,
       "id": 8
     },
     {
       "title": "Learn Request",
       "status": false,
       "id": 9
+    },
+    {
+      "title": "Loading Done",
+      "status": true,
+      "id": 10
     }
   ]
 }
