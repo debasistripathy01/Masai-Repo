@@ -19,7 +19,9 @@ const AddTodo = ( {handleAdd} ) => {
         <input 
         type="text" 
         placeholder='write something...' 
-        onChange={handleChange} />
+        onChange={handleChange} 
+        
+        />
         <button onClick={handleSubmit}>ADD</button>
     </div>
   )

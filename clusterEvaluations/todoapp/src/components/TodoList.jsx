@@ -1,8 +1,16 @@
 import React from 'react'
 
-const TodoList = () => {
+const TodoList = ({title, status, id}) => {
+
+    // function styles(){
+    //     "backgroundColor"= red,
+    //     "marginRight"= "10px"
+    // }
   return (
-    <div>TodoList</div>
+    <div>
+        <b style={{"backgroundColor":"red", "marginRight":"10px"}}>{title}</b>
+        {status?"DONE" : "Not Done"}
+    </div>
   )
 }
 

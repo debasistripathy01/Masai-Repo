@@ -33,23 +33,34 @@ let Todo = () => {
 
 const[todos, setTodos] = useState([])
 
-  const handleAdd =()=>{
-    const Item ={
-      title:"text",
-      status: false,
-
-    }
-    addTodos().then((res)=>{
-      console.log(res);
-    })
-  }
-
+  
 useEffect(()=>{
+  handleTodos();
+},[]);
+
+const handleTodos=()=>{
   FetchTodo().then((res)=>{
     setTodos(res);
+    // console.log(res);
+
+  }).catch((error)=>{
+    console.log(error);
+  })
+}
+
+const handleAdd =(text)=>{
+  const Item ={
+    title: text,
+    status: false,
+
+  }
+  addTodos(Item).then((res)=>{
+    handleTodos();
     console.log(res);
   })
-},[])
+
+}
+
 
   return (
     <div>
@@ -57,12 +68,12 @@ useEffect(()=>{
       <AddTodo handleAdd={handleAdd}/>
       {
         todos.map((item)=>{
-          <TodoList 
+          return (<TodoList 
           title={item.title}
           key={item.id}
           status={item.status}
           id={item.id}
-          />
+          />)
         })
       }
       {/* <TodoList /> */}
