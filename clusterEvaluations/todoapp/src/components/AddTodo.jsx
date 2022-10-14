@@ -2,14 +2,16 @@
 import React from 'react'
 import { useState } from 'react'
 
-const AddTodo = () => {
+const AddTodo = ( {handleAdd} ) => {
     const [text, setText] = useState("")
 
     const handleChange = (e) =>{
         setText(e.target.value);
     }
 
-    const handleSubmit =()=>{}
+    const handleSubmit =()=>{
+        handleAdd(text)
+    }
 
     console.log(text)
   return (
