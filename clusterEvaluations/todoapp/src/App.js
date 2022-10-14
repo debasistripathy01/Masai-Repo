@@ -1,27 +1,27 @@
 
 import "./App.css";
-import logo from './logo.svg';
-import Child from "./components/ChildComponent";
+import React from "react";
+import Todo from "./components/Todo";
+
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Child />
+      <h1>AddTodo</h1>
+      <Todo />
+      {/* <AddTodo /> */}
     </div>
   );
 }
 
 export default App;
+
+
+
+// Todo.jsx
+    // 1. AddTodo.jsx
+    //2.  TodoList.jsx
+
+//Backend Server 
+  // 1. JSON server
+  // using fetch CRUD to do
