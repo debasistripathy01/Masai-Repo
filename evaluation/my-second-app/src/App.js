@@ -13,11 +13,11 @@ export default function App() {
       <Title title="Users Display"/>
 
       <UserCard 
-      avatar=""
-      name={"Chirsse"}
-      address={"4018 sach trails"}
-      posts={"1841"}
-      followers={"66868"}
+      avatar="https://i.imgur.com/v7bft5g.png"
+      name="Chirsse"
+      address="4018 sach trails"
+      posts="1841"
+      followers="66868"
       />
       {/* <Button /> */}
       <Courses

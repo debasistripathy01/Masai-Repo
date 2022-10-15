@@ -1,13 +1,13 @@
-import InputTags from './components/InputTags';
-import './App.css';
-
-function App() {
-
+import React from "react";
+// import {useState} from "react"
+import InputTags from "./components/InputTags";
+export default function App() {
+  
   return (
-      <div className="App">
-        <InputTags/>
-      </div>
+    <div className="App">
+      <InputTags></InputTags>
+    </div>
   );
 }
 
-export default App;
+
