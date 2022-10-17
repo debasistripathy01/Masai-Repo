@@ -58,8 +58,10 @@ function Restaurants(props) {
         price_starts_from={el.price_starts_from}
         image={el.image}
          />
+        
       )
     })}
+    <LoadingIndicator />
       <div>{/* Pagination Component */}</div>
     </div>
   );

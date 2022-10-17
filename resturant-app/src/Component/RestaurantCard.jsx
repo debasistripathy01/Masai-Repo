@@ -1,5 +1,5 @@
 import styles from "./RestaurantCard.css"
-
+import LoadingIndicator from "./LoadingIndicator";
 
 
 function RestaurantCard({
@@ -21,6 +21,7 @@ function RestaurantCard({
     <div>Type</div>
     <div>Rating</div>
     <>Price Starts From</> */}
+    <div data-testid="loading-indicator">{LoadingIndicator}</div>
     <h1 data-testid="restaurants-header">Restaurants List</h1>
 
     <div data-testid="restaurants-container">
