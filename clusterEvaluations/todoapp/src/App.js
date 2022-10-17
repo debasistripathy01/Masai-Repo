@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <h1>AddTodo</h1>
       <Todo />
+      
       {/* <AddTodo /> */}
     </div>
   );
