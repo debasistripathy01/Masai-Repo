@@ -2,6 +2,7 @@
 import './App.css';
 // import userForm from './Components/userForm';
 import React, { useRef, useState } from 'react';
+import Test from './Components/Scrollable';
 
 // const initState ={
 //   name: "",
@@ -86,7 +87,7 @@ function App() {
       <br/>
       <button onClick={()=>{console.log(data)}}>Submit</button> */}
       {/* <userForm /> */}
-
+      <Test />
     </div>
   );
 }
