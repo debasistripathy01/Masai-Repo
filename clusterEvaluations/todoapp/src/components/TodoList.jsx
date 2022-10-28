@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TodoList = ({title, status, id, handleToggle}) => {
+const TodoList = ({title, status, id, handleToggle, handleDelete}) => {
 
     // function styles(){
     //     "backgroundColor"= red,
@@ -11,6 +11,7 @@ const TodoList = ({title, status, id, handleToggle}) => {
         <b style={{"backgroundColor":"red", "marginRight":"10px"}}>{title}</b>
         {status?"DONE" : "Not Done"}
         <button onClick={()=>{handleToggle(id, !status)}}>Status</button>
+        <button onClick={()=>{handleDelete(id)}}>Delete</button>
     </div>
   )
 }
