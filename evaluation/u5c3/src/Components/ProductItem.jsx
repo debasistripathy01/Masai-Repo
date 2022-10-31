@@ -1,9 +1,10 @@
 import React from "react";
 
-const ProductItem = ({title,price,image,category}) => {
+const ProductItem = ({id,title,price,image,category}) => {
   return (
     <div
       data-testid="product-item"
+      key={id}
       style={{
         display: "flex",
         gap: "1rem",
@@ -15,7 +16,8 @@ const ProductItem = ({title,price,image,category}) => {
         flexDirection: "column",
       }}
     >
-      <img data-testid="product-image" src={image} height="100px" />
+
+      <img data-testid="product-image" src={image} height="100px" alt={title}/>
       <b data-testid="product-title">{title}</b>
       <span data-testid="product-price">{price}</span>
       <div style={{ display: "flex" }}>

@@ -20,7 +20,7 @@ function Pagination() {
       {currentPage}
       {next}
       {totalPagesElem}
-    </div>
+    </div>  
   );
 }
 
