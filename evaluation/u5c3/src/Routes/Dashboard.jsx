@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { ContextApi } from "../Context/AuthContext";
 
 import ProductList from "../Components/ProductList"
-import Pagination from "../Components/Pagination";
+// import Pagination from "../Components/Pagination";
 
 function Dashboard() {
 
@@ -19,13 +19,13 @@ function Dashboard() {
         <button data-testid="logout-btn" onClick={SuccessAuthenti}>Logout</button>
         <p>
           Token:
-          <b data-testid="user-token">{}</b>
+          <b data-testid="user-token"></b>
         </p>
       </div>
       <br />
       <div data-testid ="sort-container">
-      <button data-testid="low-to-high" value={lth}>Sort low to high</button>
-      <button data-testid="high-to-low" value={htl}>Sort high to low</button>
+      <button data-testid="low-to-high">Sort low to high</button>
+      <button data-testid="high-to-low">Sort high to low</button>
       </div>
       <br />
       <br />
@@ -33,7 +33,7 @@ function Dashboard() {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Loader />
         <ProductList />
-        <Pagination />
+        {/* <Pagination /> */}
         {/* Product Listing, remember to show loading indicator when API is loading */}
       </div>
    

@@ -9,8 +9,8 @@ function AllRoutes() {
   return <div>
     <Routes>
       <Route path="/" element={<Home/>}></Route>
-      <Route path="/" element={<Login/>}></Route>
-      <Route path="/" element={<Dashboard/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/dashboard" element={<Dashboard/>}></Route>
     </Routes>
     {/* Add Home, Login and dashboard  */}
 

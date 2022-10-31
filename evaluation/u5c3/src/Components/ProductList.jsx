@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import ProductItem from "./ProductItem";
 import Loader from "./Loader";
 import { useEffect } from "react";
+import axios from "axios";
+// import Pagination from "./Pagination";
 
 // create Product component which contains the list of ProductItem component
-const ProductList = ({products=[title,price,image,category]}) => {
+const ProductList = () => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,10 @@ const ProductList = ({products=[title,price,image,category]}) => {
   let GetApiData = async()=>{
     let apiData = await fetchData();
     setData(apiData);
+
+    // console.log(apiData)
   }
+  console.log(data)
 
   useEffect(()=>{
     GetApiData();
@@ -35,20 +40,33 @@ const ProductList = ({products=[title,price,image,category]}) => {
   if(Loader){
     return <Loader />;
   }
-
-  return <div data-testid="products-container">
-    {[data].map((el) => {
-      return (
-        <ProductItem
-        key={el.id}
-        title={el.title}
-        price={el.price}
-        image={el.image}
-        category={el.category}
-        />
-      );
-    })}
-    </div>;
+  // console.log(data.map((el)=>{return el.id}))
+// console.log(data);
+  return (
+  <div data-testid="products-container">
+    <div>
+      {data.map((el) => {
+        return (
+          <ProductItem
+          key={el.id}
+          title={el.title}
+          price={el.price}
+          image={el.image}
+          category={el.category}
+          />
+        );
+      })}
+    </div>
+    <div>
+      {/* <Pagination 
+      
+      /> */}
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  </div>
+  );
 };
 
 // export

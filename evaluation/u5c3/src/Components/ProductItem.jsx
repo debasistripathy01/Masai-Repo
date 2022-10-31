@@ -15,11 +15,11 @@ const ProductItem = ({title,price,image,category}) => {
         flexDirection: "column",
       }}
     >
-      <img data-testid="product-image" height="100px" />
-      <b data-testid="product-title">title</b>
-      <span data-testid="product-price">₹ 100</span>
+      <img data-testid="product-image" src={image} height="100px" />
+      <b data-testid="product-title">{title}</b>
+      <span data-testid="product-price">{price}</span>
       <div style={{ display: "flex" }}>
-        <b data-testid="product-category">category</b>
+        <b data-testid="product-category">{category}</b>
       </div>
     </div>
   );
