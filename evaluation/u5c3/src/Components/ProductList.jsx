@@ -36,7 +36,7 @@ const ProductList = () => {
 
   useEffect(()=>{
     GetApiData();
-  },[]);
+  },[page]);
 
   if(!Loader){
     return <Loader />;

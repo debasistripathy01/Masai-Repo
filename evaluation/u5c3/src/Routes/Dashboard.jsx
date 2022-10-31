@@ -9,6 +9,7 @@ import ProductList from "../Components/ProductList"
 function Dashboard() {
 
   const {isAuth, SuccessAuthenti } = useContext(ContextApi);
+
   if(!isAuth){
     return <Navigate to="/" />
   }
