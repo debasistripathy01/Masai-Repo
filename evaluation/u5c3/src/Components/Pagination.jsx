@@ -1,4 +1,11 @@
+
+import React from "react";
+
 function Pagination() {
+  // let pages = new Array(next).fill(0).map((a,i)=>{
+
+  // })
+
   const prev = <button data-testid="prev-page">PREV</button>;
   const currentPage = <button data-testid="current-page">1</button>;
   const next = <button data-testid="next-page">NEXT</button>;
