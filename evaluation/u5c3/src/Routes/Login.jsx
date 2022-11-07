@@ -1,11 +1,11 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import AuthContext from "../Context/AuthContext";
+import ContextApi from "../Context/AuthContext";
 
 function Login({ state, handleLogin, handleLogout }) {
   const [data, setData] = useState({ email: "", password: "" });
-  const auth = useContext(AuthContext);
+  const auth = useContext(ContextApi);
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -25,17 +25,21 @@ function Login({ state, handleLogin, handleLogout }) {
       .then((res) => {
         console.log(res);
         auth.handleLogin(res.token);
-        navigate("/Dashboard");
+        navigate("/dashboard");
       });
   }
   return (
     <div className="login-page">
-      <form className="form" data-testid="login-form" onSubmit={handleSubmit}>
+      <form data-testid="login-form" onSubmit={handleSubmit}>
         <div>
           <label>
             Email
-            <input data-testid="email-input" type="email" placeholder="email" onChange={handleChange}
-              value={data.email}/>
+            <input data-testid="email-input"
+            name="email" 
+            type="email" 
+            placeholder="email" 
+            onChange={handleChange}
+            value={data.email}/>
           </label>
         </div>
         <div>
@@ -43,6 +47,7 @@ function Login({ state, handleLogin, handleLogout }) {
           Password
             <input
               data-testid="password-input"
+              name="password"
               type="password"
               placeholder="password"
               onChange={handleChange}
@@ -51,9 +56,9 @@ function Login({ state, handleLogin, handleLogout }) {
           </label>
         </div>
         <div>
-          <button data-testid="form-submit" type="submit" value="SUBMIT">
+          <input data-testid="form-submit" type="submit" value="SUBMIT">
             SUBMIT
-          </button>
+          </input>
         </div>
       </form>
       <div>

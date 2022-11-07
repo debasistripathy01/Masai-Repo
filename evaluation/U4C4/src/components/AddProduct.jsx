@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { Button, Modal, ModalBody, Input, Select, RadioGroup, Radio } from "@chakra-ui/react";
-const AddProduct = () => {
+const AddProduct = ({handleAddProd}) => {
+
+  const [prod, setProd]= useState({
+    title: "",
+    category: "",
+    gender: "",
+    price: ""
+  });
+
+  const handleChange=(e)=>{
+    const {title, category, gender, price} = e.target;
+    const val =type ==="number"? Number(price) : price;
+    setProd({...prod, [title]: val});
+  }
+
+  const handleSubmit=(e)=>{
+
+    console.log(prod);
+    handleAddProd(prod);
+    setProd({
+      title: "",
+      category: "",
+    gender: "",
+    price: ""
+    })
+  }
   // TODO: Remove below const and instead import them from chakra
   // const Button = () => <div />;
   // const Modal = () => <div />;
@@ -11,12 +36,13 @@ const AddProduct = () => {
   // const RadioGroup = () => <div />;
   // const Radio = () => <div />;
 
+
   return (
     <Box>
       <Button my={4} data-cy="add-product-button"></Button>
       <Modal>
         <ModalBody pb={6}>
-          <Input data-cy="add-product-title" />
+          <Input name="title" data-cy="add-product-title" />
           <Select data-cy="add-product-category">
             <option data-cy="add-product-category-shirt"></option>
             <option data-cy="add-product-category-pant"></option>

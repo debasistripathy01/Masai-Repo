@@ -3,21 +3,22 @@ import { createContext, useState } from "react"
 export const ContextApi = createContext();
 
 
-function AuthContextProvider({children}) {
-    const [isAuth, setIsAuth] = useState(true);
-    const [auth, setAuth] = useState("");
+function AuthContextProvider({ children }) {
+    // const [isAuth, setIsAuth] = useState(true);
+    // const [auth, setAuth] = useState("");
+    const [state, setState] = useState({isAuth: true, token: null });
+
     
-    
-    const GetCred = (value) =>{
-        setAuth(value);
+    const handleLogin = (token) =>{
+        setState({...state, isAuth: true, token: token});
     }
 
-    const SuccessAuthenti =()=>{
-        setIsAuth(!isAuth);
+    const handleLogout =()=>{
+        setState( { ...state, isAuth: false, token:null });
     }
 
     return (
-        <ContextApi.Provider value={{isAuth, auth, GetCred, SuccessAuthenti }}>
+        <ContextApi.Provider value={{ state, handleLogin, handleLogout }}>
             {children}
         </ContextApi.Provider>
     )

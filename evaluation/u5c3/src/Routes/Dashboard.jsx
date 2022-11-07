@@ -17,7 +17,7 @@ function Dashboard() {
     <div>
       <h3>Dashboard</h3>
       <div>
-        <button data-testid="logout-btn" onClick={()=>SuccessAuthenti()}>Logout</button>
+        <button data-testid="logout-btn" onClick={SuccessAuthenti}>Logout</button>
         <p>
           Token:
           <b data-testid="user-token"></b>
