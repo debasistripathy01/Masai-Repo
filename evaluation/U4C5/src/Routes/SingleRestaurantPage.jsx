@@ -5,9 +5,9 @@ import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 export const displayResturantsById = ({ id = 1 }) => {
   return fetch(
     `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants/${id}`
-  ).then((res) => {
-    res.json();
-  });
+  ).then((res) => 
+    res.json()
+  );
 };
 
 function SingleRestaurantPage() {

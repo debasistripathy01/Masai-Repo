@@ -46,7 +46,7 @@ function Dashboard() {
     })
   }, [limit, page]);
 
-  console.log("data here",data.data);
+  // console.log("data here",data.data);
 
 
 
