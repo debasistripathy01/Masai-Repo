@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 
-const displayResturantsById=({id=1})=>{
+export const displayResturantsById=({id=1})=>{
 
   return (
     fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants/${id}`).then((res)=>{
@@ -20,7 +20,7 @@ function SingleRestaurantPage() {
   useEffect(()=>{
     setLoading(true);
     displayResturantsById({
-      id: params.id
+      id:params.id
     }).then((res)=>{
       setLoading(false);
       setData(res.data);

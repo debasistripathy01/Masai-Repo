@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
+import { Navigate } from "react-router-dom";
 
-const UserLoginInfo=({email, password})=>{
+const userLoginInfo=({email, password})=>{
   return fetch("https://reqres.in/api/login",{
     method:"POST",
     headers:{
@@ -25,7 +26,7 @@ function Login() {
 
   const handleLogin=(e)=>{
       e.preventDefault();
-      UserLoginInfo({
+      userLoginInfo({
         email: email,
         password: password
       }).then((res)=>res.json())

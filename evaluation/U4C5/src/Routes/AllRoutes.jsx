@@ -9,9 +9,13 @@ function AllRoutes() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={
+        <PrivateRoute>
+          <Dashboard />
+        </PrivateRoute>
+        } />
 
         <Route
           path="/resturants/:id"
@@ -20,7 +24,7 @@ function AllRoutes() {
               <SingleRestaurantPage />
             </PrivateRoute>
           }
-        ></Route>
+        />
       </Routes>
     </div>
   );

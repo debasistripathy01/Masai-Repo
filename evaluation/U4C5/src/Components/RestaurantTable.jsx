@@ -33,7 +33,6 @@ function RestaurantTable({data}){
                             )
                         })
                     }
-                    {/* map through the data */}
                     
                 </tbody>
             </table>

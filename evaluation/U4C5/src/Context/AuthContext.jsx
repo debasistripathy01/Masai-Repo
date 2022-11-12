@@ -15,7 +15,7 @@ function AuthContextProvider({ children }) {
     const toggle=()=>{
         setIsAuth(!isAuth);
     }
-    const LoginUser =()=>{
+    const LoginUser =(email, token)=>{
         setEmail(email);
         setToken(token);
         setIsAuth(true);
@@ -31,7 +31,7 @@ function AuthContextProvider({ children }) {
 
     return(
 
-            <AuthContext.Provider value={{isAuth, LoginUser, LogoutUser, email, token}}>
+            <AuthContext.Provider value={{isAuth, toggle, LoginUser, LogoutUser, email, token}}>
                 {children}
             </AuthContext.Provider>
 

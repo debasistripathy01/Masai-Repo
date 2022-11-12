@@ -7,8 +7,9 @@ import { AuthContext } from "../Context/AuthContext";
 
 
 
-const displayResturants=({page=1, limit=10})=>{
-  return fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants?page=${page}&limit=${limit}`).then((res)=>{
+const displayResturants=({page=1, limit=20})=>{
+  return fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants?page=${page}&limit=${limit}`)
+  .then((res)=>{
     res.json()
   })
 }
@@ -16,7 +17,7 @@ const displayResturants=({page=1, limit=10})=>{
 
 function Dashboard() {
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const {isAuth, token, email, LogoutUser} = useContext(AuthContext);
   console.log(token);
 
