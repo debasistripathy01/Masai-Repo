@@ -4,7 +4,7 @@ import { Text, Image, Box, Heading, Tag,Stack, TagLabel } from "@chakra-ui/react
 
 
 
-const Product = ({Image, Text, TagLabel, Heading, Box}) => {
+const Product = ({ data }) => {
   // TODO: Remove below const and instead import them from chakra
   // const Text = () => <div />;
   // const Image = () => <div />;

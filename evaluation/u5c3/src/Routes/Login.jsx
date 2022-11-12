@@ -2,35 +2,49 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import ContextApi from "../Context/AuthContext";
+import axios from "axios"
+import { type } from "@testing-library/user-event/dist/types/setup/directApi";
 
-function Login({ state, handleLogin, handleLogout }) {
-  const [data, setData] = useState({ email: "", password: "" });
-  const auth = useContext(ContextApi);
+
+
+
+
+function Login() {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setData({ ...data, [name]: value });
-    // console.log(data)
-  }
+  const [state, dispatch] = useContext(ContextApi);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    fetch(`https://reqres.in/api/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+
+const handleSubmit=(e)=>{
+  dispatch({
+    type: "LOGIN_REQUEST"
+  });
+  axios.post("https://reqres.in/api/login",{
+    email, password
+  }).then((res)=>{
+    console.log(res.data.token);
+    dispatch({
+      type: "LOGIN_SUCCESS",
+      payload: {
+        token: res.data.token
+      }
+    });
+    console.log(res);
+    navigate("/dashboard");
+  }).catch(()=>{
+    // console.log(error);
+    dispatch({
+      type:"LOGIN_FAILUER"
     })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        auth.handleLogin(res.token);
-        navigate("/dashboard");
-      });
-  }
-  return (
-    <div className="login-page">
-      <form data-testid="login-form" onSubmit={handleSubmit}>
+  })
+}
+
+  return (          
+    <div className="login-page">    
+      <form data-testid="login-form">     //onSubmit={handleSubmit}
         <div>
           <label>
             Email
@@ -38,8 +52,8 @@ function Login({ state, handleLogin, handleLogout }) {
             name="email" 
             type="email" 
             placeholder="email" 
-            onChange={handleChange}
-            value={data.email}/>
+            onChange={(e)=> setEmail(e.target.value)}
+            value={email}/>
           </label>
         </div>
         <div>
@@ -50,15 +64,15 @@ function Login({ state, handleLogin, handleLogout }) {
               name="password"
               type="password"
               placeholder="password"
-              onChange={handleChange}
-              value={data.password}
+              onChange={(e)=>setPassword(e.target.value)}
+              value={password}
             />
           </label>
         </div>
         <div>
-          <input data-testid="form-submit" type="submit" value="SUBMIT">
+          <button onClick={handleSubmit} data-testid="form-submit" type="submit">
             SUBMIT
-          </input>
+          </button>
         </div>
       </form>
       <div>

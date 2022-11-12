@@ -16,13 +16,12 @@ const getProduct=({ page=1, limit=3})=>{
     params: {
       _page: page,
       _limit: limit,
-      
     }
   })
 }
 
 
-const AddProduct=(data)=>{
+const AddProducts=(data)=>{
   return axios({
     method: "post",
     url: "https://localhost:8080/products",

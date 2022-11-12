@@ -12,9 +12,9 @@ function AllRoutes() {
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/dashboard" element={
           <PrivateRoute>
-                  <Dashboard />
-          </PrivateRoute>}>
-      </Route>
+            <Dashboard />
+          </PrivateRoute>}/>
+
     </Routes>
     {/* Add Home, Login and dashboard  */}
 

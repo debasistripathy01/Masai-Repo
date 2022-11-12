@@ -2,11 +2,14 @@ function createArrayOfSize(n) {
   return new Array(n).fill(0);
 }
 
-function Pagination() {
+function Pagination({ handlePageChange, totalPages, currentPage }) {
   let pages = createArrayOfSize(0).map((a) => {
-    <button data-testid="page-btn">number</button>;
+    <button
+    onClick={() => handlePageChange(i + 1)}
+    disabled={currentPage === i + 1}
+    data-testid="page-btn">{i+1}</button>;
   });
-  return <div></div>;
+  return <div>{pages}</div>;
 }
 
 export default Pagination;
