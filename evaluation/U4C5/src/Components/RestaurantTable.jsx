@@ -1,8 +1,8 @@
 
 import { RestaurantCard } from "./RestaurantCard";
 
-function RestaurantTable({data}){
-    console.log("res_card", data);
+function RestaurantTable({ data }){
+    // console.log("res_card", data);
 
 
 

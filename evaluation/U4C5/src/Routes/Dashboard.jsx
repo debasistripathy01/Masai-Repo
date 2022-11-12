@@ -9,9 +9,10 @@ import { AuthContext } from "../Context/AuthContext";
 
 const displayResturants=({page=1, limit=20})=>{
   return fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants?page=${page}&limit=${limit}`)
-  .then((res)=>{
+  .then((res)=>
     res.json()
-  })
+    // console.log(res.data)
+  )
 }
 
 
@@ -38,13 +39,14 @@ function Dashboard() {
     }).then((res)=>{
       // console.log(res)
       setData(res);
+
     }).catch((error)=>{
       console.log(error);
 
     })
   }, [limit, page]);
 
-  console.log(data.data);
+  console.log("data here",data.data);
 
 
 
@@ -61,7 +63,7 @@ function Dashboard() {
         </p>
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* restaurant table */}
+
         {<RestaurantTable data={data.data}/>}
       </div>
       <div data-testid="pagination-container">

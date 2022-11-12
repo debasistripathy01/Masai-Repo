@@ -3,7 +3,7 @@ function createArrayOfSize(n) {
 }
 
 function Pagination({ handlePageChange, totalPages, currentPage }) {
-  let pages = createArrayOfSize(0).map((a, i) => {
+  let pages = createArrayOfSize(totalPages).map((a, i) => {
     <button data-testid="page-btn"
     onClick={() => handlePageChange(i + 1)}
     disabled={currentPage === i + 1}>{i+1}</button>;

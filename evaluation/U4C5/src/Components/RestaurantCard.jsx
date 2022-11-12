@@ -12,7 +12,7 @@ export function RestaurantCard({
     return (
         <tr data-testid="item">
             <td data-testid="name">
-                <Link to={`/restaurants/${id}`}>{name}</Link>
+                <Link data-testid="name" to={`/restaurants/${id}`}>{name}</Link>
             </td>
             <td data-testid="rating">
                 {rating}
