@@ -22,9 +22,9 @@ const getBooksError =()=>{
 
 }
 
-const getBooks=()=>(dispatch)=>{
+const getBooks=(params)=>(dispatch)=>{
     dispatch(getBooksRequest());
-    return axios.get("http://localhost:8080/books").then((r)=>{
+    return axios.get("http://localhost:8080/books", params).then((r)=>{
         dispatch(getBooksSuccess(r.data))
     }).catch((e)=>{
         dispatch(getBooksError());
