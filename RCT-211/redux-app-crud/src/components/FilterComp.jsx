@@ -8,8 +8,11 @@ export const FilterComp = () => {
 
 
     const initialCategory = searchParams.getAll("category");
+
+    const initalSort = searchParams.getAll("sort")
     const [ category, setCategory] = useState(initialCategory || [])
     // console.log(initialCategory)
+    const [ sort, setSort] = useState(initalSort[0] || "");
 
     const handleFilterCheckBox=(e)=>{
         const newCategories = [...category];
@@ -26,6 +29,10 @@ export const FilterComp = () => {
         setCategory(newCategories)
     }
 
+    const handleSortOut=(e)=>{
+        setSort(e.target.value)
+    }
+
     // console.log(category)
 
     // If the category changes update the values in the URL
@@ -34,7 +41,8 @@ export const FilterComp = () => {
         let params = {};
         params.category = category;
         setSearchParams(params)
-    },[category, setSearchParams])
+        sort && (params.sort = sort)
+    },[category, setSearchParams, sort])
 
   return (
     <div>
@@ -61,11 +69,11 @@ export const FilterComp = () => {
             </div>
         </div>
         <h3>Sort Component</h3>
-        <div>
-            <input type="radio" value="asc" name="Sort By" />
+        <div onChange={handleSortOut}>
+            <input type="radio" value="asc" defaultChecked={sort==="asc"} name="Sort By" />
             <label>Ascending</label>
             <br />
-            <input type="radio" value="dsc" name="Sort By" />
+            <input type="radio" value="dsc" name="Sort By" defaultChecked={sort==="dsc"} />
             <label>Descending</label>
         </div>
     </div>

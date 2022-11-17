@@ -21,10 +21,14 @@ export const BookList = () => {
     useEffect(()=>{
         //if I don't have any books in redux then I have to make an API call here
         if(location || books.length===0){
+            const sort = searchParams.get("sort");
+
             const getBookParams = {
 
                 params:{
-                    category: searchParams.getAll("category")
+                    category: searchParams.getAll("category"),
+                    _sort: sort && "release_year",
+                    _order: sort
                 }
             }
             dispatch(getBooks(getBookParams));
