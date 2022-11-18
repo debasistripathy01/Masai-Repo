@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 
-import { axios } from "axios"
+import axios from "axios"
 
 const getBooksRequest =()=>{
     return {
@@ -22,16 +22,24 @@ const getBooksError =()=>{
 
 }
 
-
-function getBooks(){
-    return function(dispatch){
-        dispatch(getBooksRequest())
-        return axios.get("https://localhost:8080/books").then((r)=>{
-            dispatch(getBooksSuccess(r.data));
-        }).catch((error)=>{
-            dispatch(getBooksError())
-        })
-    }
+const getBooks=()=>(dispatch)=>{
+    dispatch(getBooksRequest());
+    return axios.get("http://localhost:8080/books").then((r)=>{
+        dispatch(getBooksSuccess(r.data))
+    }).catch((e)=>{
+        dispatch(getBooksError());
+    })
 }
 
-export { getBooksError, getBooksRequest, getBooksSuccess}
+// function getBooks(){
+//     return function(dispatch){
+//         dispatch(getBooksRequest())
+//         return axios.get("https://localhost:8080/books").then((r)=>{
+//             dispatch(getBooksSuccess(r.data));
+//         }).catch((error)=>{
+//             dispatch(getBooksError())
+//         })
+//     }
+// }
+
+export { getBooksError, getBooksRequest, getBooksSuccess, getBooks}

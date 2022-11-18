@@ -8,7 +8,7 @@ const initalState ={
 }
 
 
-const reducer = (oldstate= initalState, actionObj)=>{
+const reducer = (oldstate = initalState, actionObj)=>{
     const {type, payload } = actionObj;
     switch(type){
         case types.GET_BOOKS_REQUEST:

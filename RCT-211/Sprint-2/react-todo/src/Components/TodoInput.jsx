@@ -15,7 +15,7 @@ const TodoInput = () => {
     const addTodos = ()=>{
         if(todos){
             const payload ={
-                title: todos,
+                title: "the task typed in input filed",
                 status: false,
             }
             dispatch(addTodosRequest());

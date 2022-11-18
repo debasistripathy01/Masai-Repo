@@ -1,11 +1,9 @@
-
-import './App.css';
-import { MainRoutes } from './pages/MainRoutes';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <MainRoutes />
+      {/* Add the Todo component here */}
     </div>
   );
 }
