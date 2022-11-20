@@ -15,8 +15,8 @@ const reducer = (state, action) => {
       return {...state, email: action.payload}
     case "password":
       return {...state, password: action.payload}
-    // case "reset":
-    //   return initialState
+    case "reset":
+      return initialState
   }
 };
 
@@ -29,9 +29,11 @@ function App() {
   const submitHandler=(e)=>{
     e.preventDefault();
     console.log("SUbmitted data ", submittedData);
-    // setSubmittedData({type: "reset"});
+    setSubmittedData({type: "reset"});
   }
-
+  // if(submittedData===null){
+  //   return <div data-testid = "no-user-container">no details found</div>
+  // }
   return (
     <div className="App">
       <h2>useReducer Hook</h2>
@@ -53,7 +55,7 @@ function App() {
         <div data-testid="submitted-data-password">User Password:{submittedData.password}</div>
       </div>
 
-      <div data-testid="no-details-container"></div>
+      {<div data-testid="no-details-container">{"no details found"}</div>}
     </div>
   );
 }
