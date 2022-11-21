@@ -4,9 +4,9 @@ const reducer = (oldstate, actionObj) => {
     switch(actionObj.type){
 
         case "ADD":
-            return 
+            return {...oldstate, counter: oldstate.counter+actionObj.payload}
         case "REDUCE":
-            return
+            return {...oldstate, counter: oldstate.counter-actionObj.payload}
         default:
             return oldstate;
     }
