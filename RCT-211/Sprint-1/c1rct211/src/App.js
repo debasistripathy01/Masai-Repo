@@ -76,7 +76,7 @@ function App() {
       name:e.target.value,
       payload:e.target.value
     });
-
+    setSubmittedData(initialState)
   }
 
 
