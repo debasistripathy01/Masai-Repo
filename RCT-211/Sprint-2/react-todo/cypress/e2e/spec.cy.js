@@ -1,12 +1,12 @@
-// import data from "../../submissionData.json"; // do not create/change  this file
+import data from "../../submissionData.json"; // do not create/change  this file
 
-const data = [
-  {
-    submission_link: "http://localhost:3000",
-    id: "manish-local",
-    json_server_link: "http://localhost:8080",
-  },
-]
+// const data = [
+//   {
+//     submission_link: "http://localhost:3000",
+//     id: "manish-local",
+//     json_server_link: "http://localhost:8080",
+//   },
+// ]
 // use this ^  to check on local
 
 const mock = {
