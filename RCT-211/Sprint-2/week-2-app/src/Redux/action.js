@@ -1,6 +1,9 @@
-import * as types from "./actionTypes"
+import * as types from "./actionTypes";
 
 
+
+
+//  Counter App todos and Todos Input 
 
 const handleAdd=(payload)=>{
     return{
@@ -17,27 +20,54 @@ const handleReduce =(payload)=>{
     }
 }
 
+
 const getTodosRequest =()=>{
-    return{
-        typs: types.GET_TODOS_REQUEST
+    return {
+        type: types.GET_TODOS_REQUEST
     }
 }
 
 
-const getTodosSuccess =()=>{
-    return{
-        typs: types.GET_TODOS_SUCCESS
+const getTodosSuccess =(payload)=>{
+    return {
+        type: types.GET_TODOS_SUCCESS,
+        payload
     }
 }
 
 
 const getTodosError =()=>{
-    return{
-        typs: types.GET_TODOS_ERROR
+    return {
+        type: types.GET_TODOS_ERROR
     }
 }
 
-export { getTodosError, getTodosRequest, getTodosSuccess}
+
+//  ADD TO DO REquests
 
 
-export { handleAdd, handleReduce }
+
+const addTodosRequest =()=>{
+    return {
+        type: types.ADD_TODO_REQUEST
+    }
+}
+
+
+const addTodosSuccess =(payload)=>{
+    return {
+        type: types.ADD_TODO_SUCCESS,
+        payload
+    }
+}
+
+
+const addTodosError =()=>{
+    return {
+        type: types.ADD_TODO_ERROR
+    }
+}
+
+
+
+export {handleAdd, addTodosError, addTodosRequest, addTodosSuccess, handleReduce, getTodosError, getTodosRequest, getTodosSuccess}

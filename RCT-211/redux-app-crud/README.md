@@ -1,30 +1,21 @@
-### NOtes
 
-1. Installed "Redux", "react-redux", "Axios", "Json-Server"
-2. Created the Redux Architecture
-3. Wrapped our application around "<Provider>" component
-4. useSelector to Access the Redux store
-5. useDispatch to dispatch Action Object
+### Build Folder Structure
 
-
-
-### class Notes 
-
-    1. Setup for Redux Architecture
-    
-     - Redux Folder
+    1. Setup Redux architecture 
+     - Redux Foolder
         - action.js
         - actionTypes.js
-        -store.js
         - reducer.js
-    2. Setup JSON-server usnig Port --8080
-        "server": "json-server --watch db.json --port 8080"
-    3. Redux Folders for Pages and COmponents
-       - Pages
-            - HomePage (Todos)
-       - COmponents
-            - TOdosInput (Fetch the daata using JSOn Server using POST Request)
-            - Todos 
+        - store.js
+    2. Set up JSOn Server using ("server":"json-server --watch db.json --port 8080")
+
+    3. Creating Folder structure for Pages
+        - HomePage
+    - Components Folder
+        - Todos     (Fetch the data present in the db.json file using JSOn server)
+        - TodoInput (POST Request)
+
+
 
 
 

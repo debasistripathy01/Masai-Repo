@@ -1,13 +1,15 @@
 
 import './App.css';
 import { Counter } from './Components/Counter';
-import Todos from './Components/Todos';
+
+import { HomePgae } from './Pages/HomePgae';
 
 function App() {
   return (
     <div className="App">
       <Counter />
-      {/* <Todos /> */}
+
+      <HomePgae />
     </div>
   );
 }

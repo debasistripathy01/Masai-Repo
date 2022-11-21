@@ -4,7 +4,16 @@
       "id": 1,
       "title": "Learn Redux",
       "stats": false
+    },
+    {
+      "title": "HEy there",
+      "stats": false,
+      "id": 2
+    },
+    {
+      "title": "Learn React",
+      "stats": false,
+      "id": 3
     }
   ]
-  
 }

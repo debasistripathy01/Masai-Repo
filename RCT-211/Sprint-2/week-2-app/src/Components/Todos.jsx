@@ -1,45 +1,53 @@
 import React, { useEffect } from 'react'
-import TodoInput from './TodoInput'
-import axios from "axios"
-import { useDispatch, useSelector } from 'react-redux'
 import { getTodosError, getTodosRequest, getTodosSuccess } from '../Redux/action'
-import { store } from '../Redux/store'
+import { TodoInput } from './TodoInput'
+import axios from "axios";
+import { useDispatch, useSelector } from 'react-redux';
+import { store } from '../Redux/store';
 
 const Todos = () => {
-    const dispatch = useDispatch()
-    const todos = useSelector(store=>store.todos);
 
-    const isLoading =useSelector(store=>store.isLoading);
+    const dispatch = useDispatch();
+
+    const todos = useSelector(store => store.todos)
+
+    const isLoading = useSelector(store => store.isLoading);
+
     const getTodos=()=>{
-
-        dispatch(getTodosRequest());
-        axios.get("https://localhost:8080/todos").then(r=>{
-            // successful if then
-            dispatch(getTodosSuccess(r.data))
+        dispatch(getTodosRequest())
+        axios.get("http://localhost:8080/todos").then((item)=>{
+            dispatch(getTodosSuccess(item.data));
         }).catch((error)=>{
-            console.log(error);
-            dispatch(getTodosError());
+            // console.log(error)
+            dispatch(getTodosError())
         })
     }
-    // fetch all the Todos when component mounts
     useEffect(()=>{
-        getTodos()
-    },[])
+        // if(todos.length){
+
+        // }
+        getTodos();
+    }, [])
+
+
+
+    if(isLoading){
+        return <h2>...Loading</h2>
+    }
   return (
     <div>
-        
-        <h1>Todos</h1>
-        <TodoInput />
-        { isLoading && <div>Loading...</div>}
-        {todos.length > 0 && todos.map((item)=>{
+        <h1>Todos</h1> ,
+        <TodoInput getTodos={getTodos} />
+
+        { todos.length >0 && todos.map((items)=>{
             return(
-                <div key={item.id}>
-                    {item.title} - { item.status ? "True": "False"}
+                <div key={items.id}>
+                    { items.title } - { items.stats ? "true" : "false"}
                 </div>
             )
-        })}
+        }) }
     </div>
   )
 }
 
-export default Todos
+export  { Todos }
