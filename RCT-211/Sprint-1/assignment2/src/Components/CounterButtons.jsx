@@ -13,6 +13,7 @@ const [forceUpdate, setForceUpdate] = useState(0);
 
 subscribe(()=>{
     setForceUpdate((prev)=>prev+1);
+    console.log(forceUpdate)
   })
 
   return (
