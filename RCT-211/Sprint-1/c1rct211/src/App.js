@@ -56,7 +56,8 @@ const reducer = (state, action) => {
       return {...state, role: action.payload}
     case "maritalStatus":
       return {...state, maritalStatus: action.payload}
-
+    case "reset":
+      return initialState;
     default:
       return state;
   }
@@ -71,10 +72,11 @@ function App() {
   const handleSubmit=(e)=>{
     e.preventDefault();
     setSubmittedData({
-      type: "name",
+      // type: "name",
       name:e.target.value,
       payload:e.target.value
-    })
+    });
+
   }
 
 
@@ -109,12 +111,11 @@ function App() {
             <div
               className="marital-status-wrapper"
               data-testid="marital-status-wrapper"
-              value={submittedData.name} onClick={(e)=>handleSubmit(e)}
             >
               <legend>Martial Status</legend>
               <div>
                 {/* keep an input tag with type as "checkbox" and name as "maritalStatus" */}
-                <input type={"checkbox"} name="maritalStatus" checked={submittedData.maritalStatus}/>
+                <input type={"checkbox"} name="maritalStatus" checked={submittedData.maritalStatus} onChange={(e)=>setSubmittedData(maritalStatus(e.target.value))}/>
                 <label>Married</label>
               </div>
             </div>
@@ -123,7 +124,7 @@ function App() {
             </div>
           </form>
         </div>
-
+        {!submittedData.name && (<div data-testid = "no-user-container">no users found</div>)}
         {/* map through the submittedData and render UserRow component to display the data in tabular format ELSE print "no users found"  in there is no user data */}
       </div>
     </div>
