@@ -88,11 +88,11 @@ function App() {
             <div className="name-wrapper" data-testid="name-wrapper">
               <label>Name</label>
               {/* keep an input tag with name attribute as "name" type as "text" and placeholder as "Name" */}
-              <input type="text" name="name" placeholder="Name" value={submittedData.name} onChange={(e)=>setSubmittedData(name(e.target.value))} />
+              <input type="text" name="name" placeholder="Name"/>
             </div>
             <div className="gender-wrapper" data-testid="gender-wrapper">
               <label>Gender</label>
-              <select name="gender" data-testid="gender-select" value={submittedData.gender} onChange={(e)=>setSubmittedData(gender(e.target.value))}>
+              <select name="gender" data-testid="gender-select">
                 <option>Male</option>
                 <option>Female</option>
                 <option>Prefer Not to Say</option>
@@ -100,7 +100,7 @@ function App() {
             </div>
             <div className="role-wrapper" data-testid="role-wrapper">
               <label>Role</label>
-              <select name="role" data-testid="role-select" value={submittedData.role} onChange={(e)=>setSubmittedData(role(e.target.value))}>
+              <select name="role" data-testid="role-select">
                 <option>FrontEnd Developer</option>
                 <option>BackEnd Developer</option>
                 <option>FullStack Developer</option>
@@ -114,7 +114,7 @@ function App() {
               <legend>Martial Status</legend>
               <div>
                 {/* keep an input tag with type as "checkbox" and name as "maritalStatus" */}
-                <input type={"checkbox"} name="maritalStatus" checked={submittedData.maritalStatus} onChange={(e)=>setSubmittedData(maritalStatus(e.target.value))}/>
+                <input type={"checkbox"} name="maritalStatus" checked={submittedData.maritalStatus}/>
                 <label>Married</label>
               </div>
             </div>
