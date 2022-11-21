@@ -1,12 +1,13 @@
 //Complete the reducer function logic inside the curly braces {}
-const reducer = (oldstate, actionObj) => {
+import { ADD, REDUCE } from "./actionTypes";
+const reducer = (oldstate, action) => {
 
-    switch(actionObj.type){
+    switch(action.type){
 
-        case "ADD":
-            return {...oldstate, counter: oldstate.counter+actionObj.payload}
-        case "REDUCE":
-            return {...oldstate, counter: oldstate.counter-actionObj.payload}
+        case ADD:
+            return {...oldstate, counter: oldstate.counter+action.payload}
+        case REDUCE:
+            return {...oldstate, counter: oldstate.counter-action.payload}
         default:
             return oldstate;
     }
