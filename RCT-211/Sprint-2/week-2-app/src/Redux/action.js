@@ -17,4 +17,27 @@ const handleReduce =(payload)=>{
     }
 }
 
+const getTodosRequest =()=>{
+    return{
+        typs: types.GET_TODOS_REQUEST
+    }
+}
+
+
+const getTodosSuccess =()=>{
+    return{
+        typs: types.GET_TODOS_SUCCESS
+    }
+}
+
+
+const getTodosError =()=>{
+    return{
+        typs: types.GET_TODOS_ERROR
+    }
+}
+
+export { getTodosError, getTodosRequest, getTodosSuccess}
+
+
 export { handleAdd, handleReduce }
