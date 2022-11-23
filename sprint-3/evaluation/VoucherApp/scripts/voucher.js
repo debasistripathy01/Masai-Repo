@@ -83,7 +83,8 @@ function submitBtn(el){
         // WalletBal.innerText = userData.amount;
         // localStorage.setItem("purchase", JSON.stringify(array));
         alert("Hurray! Purchase Successful");
-        // window.location.href="./purchase.html";
+
+        window.location.href="./purchase.html";
     }
     // else{
     //     alert("Sorry! Insufficient Balance")
