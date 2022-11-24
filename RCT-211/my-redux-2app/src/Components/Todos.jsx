@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import TodoInput from './TodoInput'
 import axios from "axios"
 import { useDispatch, useSelector } from 'react-redux'
-import { getTodosError, getTodosRequest, getTodosSuccess } from '../Redux/action'
+import {  getTodosError, getTodosRequest, getTodosSuccess } from '../Redux/action'
 import { store } from '../Redux/store'
 
 const Todos = () => {
