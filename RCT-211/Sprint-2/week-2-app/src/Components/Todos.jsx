@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { getTodosError, getTodosRequest, getTodosSuccess } from '../Redux/action'
+
 import { TodoInput } from './TodoInput'
-import axios from "axios";
+
+import { getTodos } from '../Redux/action';
 import { useDispatch, useSelector } from 'react-redux';
-import { store } from '../Redux/store';
+// import { store } from '../Redux/store';
 
 const Todos = () => {
 
@@ -13,20 +14,12 @@ const Todos = () => {
 
     const isLoading = useSelector(store => store.isLoading);
 
-    const getTodos=()=>{
-        dispatch(getTodosRequest())
-        axios.get("http://localhost:8080/todos").then((item)=>{
-            dispatch(getTodosSuccess(item.data));
-        }).catch((error)=>{
-            // console.log(error)
-            dispatch(getTodosError())
-        })
-    }
+    
     useEffect(()=>{
         // if(todos.length){
 
         // }
-        getTodos();
+        getTodos(dispatch);
     }, [])
 
 
@@ -37,8 +30,8 @@ const Todos = () => {
   return (
     <div>
         <h1>Todos</h1> ,
-        <TodoInput getTodos={getTodos} />
-
+        <TodoInput />
+s
         { todos.length >0 && todos.map((items)=>{
             return(
                 <div key={items.id}>

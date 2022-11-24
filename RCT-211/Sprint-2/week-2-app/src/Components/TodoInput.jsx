@@ -5,12 +5,12 @@ import { addTodosError, addTodosRequest, addTodosSuccess, getTodosError } from '
 
 
 
-export const TodoInput = ({getTodos}) => {
+export const TodoInput = ({ getTodos }) => {
   const [ todo, setTodo] = useState("")
   const dispatch = useDispatch();
 
 
-  const handleAddTodo =()=>{
+  const addToDo =()=>{
    
 
     if(todo){
@@ -21,23 +21,25 @@ export const TodoInput = ({getTodos}) => {
 
       dispatch(addTodosRequest());
        return axios.post("http://localhost:8080/todos", payload).then((item)=>{
-        dispatch(addTodosSuccess(item.data));
-
+        dispatch(addTodosSuccess());
       }).catch((error)=>{
         dispatch(addTodosError())
       })
     }
   }
 
-  const handleAdd=()=>{
+  const handleAddTodo=()=>{
     // first Add the data using POST request 
     // call the GetToDos function to fetch all the data from db.json
-    const getTodos=()=>{
-    handleAddTodo().then(()=>getTodos())
 
-  }
+    addToDo().then(()=>getTodos())
+
+
 }
 
+/*
+  .then(r => return 'Hello world').then(r => console.log(r));
+*/
 
 
   return (

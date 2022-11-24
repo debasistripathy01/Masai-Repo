@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 
-
+import axios from "axios";
 
 
 //  Counter App todos and Todos Input 
@@ -68,6 +68,14 @@ const addTodosError =()=>{
     }
 }
 
+const getTodos=(dispatch)=>{
+    dispatch(getTodosRequest())
+    axios.get("http://localhost:8080/todos").then((item)=>{
+        dispatch(getTodosSuccess(item.data));
+    }).catch((error)=>{
+        // console.log(error)
+        dispatch(getTodosError())
+    })
+}
 
-
-export {handleAdd, addTodosError, addTodosRequest, addTodosSuccess, handleReduce, getTodosError, getTodosRequest, getTodosSuccess}
+export {handleAdd, addTodosError, getTodos, addTodosRequest, addTodosSuccess, handleReduce, getTodosError, getTodosRequest, getTodosSuccess}
