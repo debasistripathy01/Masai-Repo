@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 // import * as types from "../Redux/AuthReducer/actionTypes";
 // import axios from "axios";
 import { LoginData } from "../Redux/AuthReducer/action";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const isLoading = useSelector((state)=> state.AuthReducer.isLoading);
+  const [email, setEmail] = useState("eve.holt@reqres.in");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const location = useLocation();
-  const Data_coming = location.state?.data || "/";
+  const Data_coming = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
