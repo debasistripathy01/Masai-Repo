@@ -5,6 +5,7 @@ import Filter from "../Components/Filter";
 import ShoeCard from "../Components/ShoeCard";
 import { useEffect } from "react";
 import SingleShoe from "./SingleShoe";
+import { getShoes } from "../Redux/AppReducer/action";
 
 const Shoes = () => {
 
@@ -15,14 +16,14 @@ const Shoes = () => {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    if(location || shoes.length == 0){
+    if(location || shoes.length === 0){
       let shoesParams = {
         params: {
           category: searchParams.getAll("category"),
 
         }
       };
-
+      dispatch(getShoes(shoesParams));
     }
   },[location.search]);
 
