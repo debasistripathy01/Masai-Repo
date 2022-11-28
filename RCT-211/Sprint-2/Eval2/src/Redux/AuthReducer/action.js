@@ -11,7 +11,7 @@ const LoginData = (payload) => (dispatch) => {
     return axios
       .post("https://reqres.in/api/login", payload)
       .then((r) => {
-        return dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
+        return dispatch({ type: types.LOGIN_SUCCESS, payload: r.data });
       })
       .catch((e) => {
         dispatch({ type: types.LOGIN_FAILURE, payload: e });
