@@ -1,11 +1,11 @@
-// import data from "../../submissionData.json"; // do not create this file
-const data = [
-  {
-    submission_link: "http://localhost:3000",
-    id: "manish-local",
-    json_server_link: "http://localhost:8080",
-  },
-];
+import data from "../../submissionData.json"; // do not create this file
+// const data = [
+//   {
+//     submission_link: "http://localhost:3000",
+//     id: "manish-local",
+//     json_server_link: "http://localhost:8080",
+//   },
+// ];
 
 const getAuth = (win) => win.store.getState().AuthReducer;
 const getShoes = (win) => win.store.getState().AppReducer;
