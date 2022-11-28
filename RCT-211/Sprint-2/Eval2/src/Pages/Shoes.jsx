@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useSearchParams } from "react-router-dom";
+import {Link, useLocation, useSearchParams } from "react-router-dom";
 import Filter from "../Components/Filter";
 import ShoeCard from "../Components/ShoeCard";
 import { useEffect } from "react";
@@ -17,7 +17,7 @@ const Shoes = () => {
 
   useEffect(()=>{
     let shoesParams;
-    if(location || shoes.length === 0){
+    if(location.search || shoes.length === 0){
        shoesParams = {
         params: {
           category: searchParams.getAll("category"),

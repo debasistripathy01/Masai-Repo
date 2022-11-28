@@ -13,7 +13,7 @@ const Filter = () => {
 
   const handleFilter=(e)=>{
     const newCategory = [...category];
-
+    // const option = e.target.value;
     if(newCategory.includes(e.target.value)){
       newCategory.splice(newCategory.indexOf(e.target.value), 1);
     }
