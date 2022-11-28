@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 
@@ -12,8 +12,24 @@ const Filter = () => {
   const [category, setCategory ] = useState(initialFilter || []);
 
   const handleFilter=(e)=>{
+    const newCategory = [...category];
 
+    if(newCategory.includes(e.target.value)){
+      newCategory.splice(newCategory.indexOf(e.target.value), 1);
+    }
+    else{
+      newCategory.push(e.target.value);
+    }
+    setCategory(newCategory);
   }
+
+  useEffect(()=>{
+    if(category){
+      let params = {};
+      category && (params.category= category)
+      setSearchParams(params)
+    }
+  }, [category, setSearchParams])
   // DO NOT CHANGE THE ORDER of the category filters: ie. Sneakers, Loafers, Canvas, Boots
   //in the UI
   return (
