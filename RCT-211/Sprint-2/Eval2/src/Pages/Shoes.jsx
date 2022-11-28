@@ -16,8 +16,9 @@ const Shoes = () => {
   const dispatch = useDispatch();
 
   useEffect(()=>{
+    let shoesParams;
     if(location || shoes.length === 0){
-      let shoesParams = {
+       shoesParams = {
         params: {
           category: searchParams.getAll("category"),
 
@@ -25,7 +26,7 @@ const Shoes = () => {
       };
       dispatch(getShoes(shoesParams));
     }
-  },[location.search]);
+  },[location.search, dispatch, shoes.length, searchParams]);
 
 
   return (
