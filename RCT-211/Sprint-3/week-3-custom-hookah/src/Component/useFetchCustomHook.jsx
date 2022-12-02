@@ -6,24 +6,38 @@ import axios from "axios"
 
 import React, { useEffect, useState } from 'react'
 
-export const useFetchCustomHook = () => {
+export const useFetch = ( url ) => {
 
 
-    const url = "https://reqres.in/"
-    const [ fetchElem, setFetchElem ] = useState("");
-    const [ error, setError] = useState("");
-    const [loading, setLoading ] = useState("");
-
+    // const url = "https://reqres.in/"
+    const [ data, setData ] = useState("");
+    const [ error, setError] = useState(false);
+    const [loading, setLoading ] = useState(false);
+    const source = axios.CancelToken.source()
     useEffect(()=>{
         setLoading(<div>...Loading</div>);
-        setFetchElem("");
+        setData("");
+        setError("");
 
-    })
+        axios.get(url, { cancelToken: source.Token} ).then((res)=>{
+            setLoading(false);
+            res.data && setData(res.data)
+        }).catch((error)=>{
+            setLoading(false);
+            setError(true);
 
-  return (
-    <div>
+            console.log("error")
+        })
 
-    </div>
-  )
+        return ()=>{
+            source.cancel();
+        }
+
+    }, [url])
+
+    if(setError){
+        return <div>...Error happened</div>
+    }
+
+  return ({ data, loading, error })
 }
-
