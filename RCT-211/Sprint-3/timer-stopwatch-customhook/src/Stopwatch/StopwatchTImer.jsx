@@ -9,7 +9,7 @@ const element = <FontAwesomeIcon icon={faClock} />
 
 export const StopwatchTImer = () => {
 
-    const [timer, setTimer] = useState(3595);
+    const [timer, setTimer] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const [ isPaused, setIsPaused] = useState(false);
     const increament = useRef(null);
@@ -41,6 +41,7 @@ export const StopwatchTImer = () => {
     }
 
     const formatTime=()=>{
+      // const getMilliSec = `0${(timer % 3600)}`.slice(-2);
       const getSeconds = `0${(timer % 60)}`.slice(-2);
       const minutes = `${Math.floor(timer / 60)}`
       const getMinutes = `0${minutes % 60}`.slice(-2)

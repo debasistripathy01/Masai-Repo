@@ -4,8 +4,6 @@ import { StopwatchTImer } from './Stopwatch/StopwatchTImer';
 
 function App() {
 
-  
-
   return (
 
     <div className="App">
