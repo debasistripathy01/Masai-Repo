@@ -17,7 +17,7 @@ const initialState={
 // const darkMode = window.matchMedia()
 const useDarkMode = () => {
 
-    const [ isDarkMode, toggleDarkMode]= useDarkMode(initialState, );
+    const [ isDarkMode, toggleDarkMode]= useDarkMode(false);
 
 
     useEffect(()=>{
