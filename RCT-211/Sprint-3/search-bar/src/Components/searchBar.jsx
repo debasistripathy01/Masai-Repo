@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from "react";
-import styled from "styled-components";
+import { countries } from '../utils/countries';
+
+import styled from 'styled-components';
 
 export const SearchBar = ( { queryHandler, suggestion } ) => {
 
@@ -20,7 +22,7 @@ export const SearchBar = ( { queryHandler, suggestion } ) => {
             <searchBoxWrapper>
                 <Input value={input} onChange={handleInputChange}/>
             </searchBoxWrapper>
-            <suggestionBox>
+            <suggestionBox limit={5} suggestionLength={suggestion.length}>
                 {suggestion.map((item, index)=>{
                     return ( <div key={index}>{item}</div>)
                 }
@@ -38,14 +40,16 @@ textAlign: center;
 `
 const suggestionBox = styled.div`
     border: 1px solid black;
-    max-height: 200px;
+    max-height: ${({limit})=>`${limit * 39}px`};
     overflow: auto;
-
+    border-top-color: ${({ limit})=>( limit? "transparent":"black")};
+    border-bottom-color: ${({ suggestionLength}) => ( suggestionLength ? "black": "black")};
+    
     & * {
         padding:10px;
         padding-left: 20px;
         text-align: left;
-        
+
     }
 `
 const Input = styled.input`

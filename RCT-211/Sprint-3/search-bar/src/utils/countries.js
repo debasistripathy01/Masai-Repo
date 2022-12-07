@@ -1,5 +1,5 @@
 export const countries = [
-    [
+    
         {
             "country": "Afghanistan",
             "city": "Kabul"
@@ -980,6 +980,6 @@ export const countries = [
             "country": "Zimbabwe",
             "city": "Harare"
         }
-    ]
+    
     
 ]
