@@ -1,13 +1,24 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useState } from "react";
 import styled from "styled-components";
 
-export const SearchBar = () => {
+export const SearchBar = ( {queryHandler} ) => {
+
+    const [ input, setInput] = useState("");
+
+    const handleInputChange =(e)=>{
+        setInput(e.target.value);
+    }
+
+
+    useEffect(()=>{
+        queryHandler(input);
+    },[input, queryHandler]);
   return (
     <div>
         <Wrappper>
             <searchBoxWrapper>
-                <Input />
+                <Input value={input} onChange={handleInputChange}/>
             </searchBoxWrapper>
         </Wrappper>
     </div>
