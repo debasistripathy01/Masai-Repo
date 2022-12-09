@@ -42,8 +42,8 @@ const suggestionBox = styled.div`
     border: 1px solid black;
     max-height: ${({limit})=>`${limit * 39}px`};
     overflow: auto;
-    border-top-color: ${({ limit})=>( limit? "transparent":"black")};
-    border-bottom-color: ${({ suggestionLength}) => ( suggestionLength ? "black": "black")};
+    border-top-color: ${({ limit})=>( limit ? "transparent":"black")};
+    border-bottom-color: ${({ suggestionLength}) => ( suggestionLength ? "black": "transparent")};
     
     & * {
         padding:10px;
@@ -53,11 +53,13 @@ const suggestionBox = styled.div`
     }
 `
 const Input = styled.input`
+    flex: 1;
+    font-size: 20px;
+    border: none;
+    outline: none;
     width: 90%;
     height: 20px;
-    border: 1px soli red;
-
-`
+    border: 1px soli red;`
 
 const Wrappper = styled.div`
 border: 1px solid red;
