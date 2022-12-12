@@ -1,11 +1,11 @@
-// import data from "../../submissionData.json";
-const data = [
-  {
-    submission_link: "http://localhost:3001",
-    id: "manish-local",
-    json_server_link: "http://localhost:8080",
-  },
-];
+import data from "../../submissionData.json";
+// const data = [
+//   {
+//     submission_link: "http://localhost:3001",
+//     id: "manish-local",
+//     json_server_link: "http://localhost:8080",
+//   },
+// ];
 
 const getTasks = (win) => win.reduxStore.getState();
 

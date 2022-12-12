@@ -1,6 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteTask, getTask } from "../Redux/action";
 
-const TaskItems = ({ id }) => {
+const TaskItems = ({ id, item }) => {
+
+  const dispatch = useDispatch();
+
+
+  
+
+  const handleRemovetask=()=>{
+    dispatch(deleteTask(id).then(()=>dispatch(getTask())))
+  }
+
+
+
   return (
     <div
       style={{
@@ -28,7 +42,7 @@ const TaskItems = ({ id }) => {
           justifyContent: "center",
         }}
       >
-        <button data-testid="edit-task">Edit</button>
+        <button data-testid="edit-task" onClick={()=>handleRemovetask(id)}>Edit</button>
         <button data-testid="delete-task">Delete</button>
       </div>
     </div>
