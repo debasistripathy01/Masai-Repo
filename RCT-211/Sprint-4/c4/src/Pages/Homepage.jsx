@@ -9,14 +9,14 @@ const Homepage = () => {
   const taskList = useSelector((store)=>store.tasks);
 
   useEffect(()=>{
-    if(taskList.length===0){
+    
       dispatch(getTask());
-    }
-  }, [dispatch, taskList.length]);
-  console.log(taskList.length);
+
+  }, [dispatch]);
+  // console.log(taskList.length);
   return (
     <div>
-      {taskList.length > 0 && taskList.map((item)=>{return <TaskItems key={item.id} item={item}/>})}
+      {taskList.length > 0 && taskList.map((item)=>{return <TaskItems key={item.id} {...item}/>})}
       {/* Map through the task lists here using the TaskItems component */}
 
     </div>

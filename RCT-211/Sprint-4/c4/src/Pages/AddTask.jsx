@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addTask } from "../Redux/action";
+import { addTask, getTask } from "../Redux/action";
 
 
 const initialState = {
@@ -28,8 +28,8 @@ const AddTask = () => {
 
   const handleClick = (e)=>{
     e.preventDefault();
-    dispatch(addTask(task));
-    navigate("/")
+    dispatch(addTask(task))
+    navigate()
   }
   return (
     <div>

@@ -27,9 +27,12 @@ const getTask = ()=>(dispatch)=>{
 
 const addTask = (payload) => (dispatch)=>{
     dispatch({ type: types.ADD_TASK_REQUEST });
-  
+    // let payload={
+    //     title: payload,
+    //     status: false
+    // };
     return axios
-      .post(`http://localhost:${port}/products`, payload)
+      .post(`http://localhost:${port}/tasks`, payload)
       .then((r) => {
         dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });
       })
@@ -44,7 +47,7 @@ const editTask=(id,payload)=> (dispatch)=>{
     dispatch({ type: types.UPDATE_TASK_REQUEST });
   
     return axios
-      .patch(`http://localhost:${port}/products/${id}`, payload)
+      .patch(`http://localhost:${port}/tasks/${id}`, payload)
       .then((r) => {
         dispatch({ type: types.UPDATE_TASK_SUCCESS, payload: r.data });
       })
