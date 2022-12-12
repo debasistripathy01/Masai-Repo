@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteTask, editTask, getTask } from "../Redux/action";
 
-const TaskItems = ({ id, item }) => {
+const TaskItems = ({id, title, status}) => {
 
   const dispatch = useDispatch();
 
@@ -17,10 +17,11 @@ const navigate = useNavigate()
 
   const handleEdittask=(id)=>{
     // const newTask = item.
-    if(id){
-      dispatch(editTask(id ))
-    }
+    // if(id){
+    //   dispatch(editTask(id ))
+    // }
   }
+  console.log(title);
   return (
     <div
       style={{
@@ -40,8 +41,8 @@ const navigate = useNavigate()
       <div
         data-testid="task-title"
         style={{ fontSize: "24px", fontWeight: "600" }}
-      ></div>
-      <div data-testid="task-status" style={{ fontSize: "18px" }}></div>
+      >{title}</div>
+      <div data-testid="task-status" style={{ fontSize: "18px" }}>{status ? "true":"false"}</div>
       <div
         style={{
           display: "flex",
