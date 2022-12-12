@@ -7,7 +7,7 @@ const TaskItems = ({ id, item }) => {
   const dispatch = useDispatch();
 
 
-  
+
 
   const handleRemovetask=()=>{
     dispatch(deleteTask(id).then(()=>dispatch(getTask())))
@@ -42,8 +42,8 @@ const TaskItems = ({ id, item }) => {
           justifyContent: "center",
         }}
       >
-        <button data-testid="edit-task" onClick={()=>handleRemovetask(id)}>Edit</button>
-        <button data-testid="delete-task">Delete</button>
+        <button data-testid="edit-task" >Edit</button>
+        <button data-testid="delete-task" onClick={()=>handleRemovetask(id)}>Delete</button>
       </div>
     </div>
   );
