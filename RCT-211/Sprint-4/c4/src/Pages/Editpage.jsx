@@ -13,7 +13,7 @@ const Editpage = () => {
   const [ titl , setTitle] = useState("");
   const [ state, setState] = useState(false);
 
-  const updateHandler=(e, url)=>{
+  const updateHandler=(e)=>{
     e.preventDefault();
     let payload={
       status: state,
@@ -31,8 +31,9 @@ const Editpage = () => {
       <form onSubmit={updateHandler}>
         <input data-testid="edit-task-title" onChange={(e)=>setTitle(e.target.value)}/>
         <select data-testid="edit-select-option" onChange={(e)=>setState(e.target.value)}>
-          <option value="true">True</option>
-          <option value="false">False</option>
+          <option value="">select status</option>
+          <option value="true">true</option>
+          <option value="false">false</option>
         </select>
         <button data-testid="edit-update" type="submit">Update</button>
       </form>

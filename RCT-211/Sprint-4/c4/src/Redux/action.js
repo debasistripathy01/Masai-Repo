@@ -15,7 +15,7 @@ const getTask = ()=>(dispatch)=>{
     return axios.get(`http://localhost:${port}/tasks`).then((r) => {
         dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });
       })
-      .then((r) => {
+      .catch((r) => {
         dispatch({ type: types.ADD_TASK_FAILURE, payload: r });
       });
 }
@@ -43,11 +43,8 @@ const addTask = (title) => (dispatch)=>{
 
 //update task
 
-const editTask=(id,title)=> (dispatch)=>{
-    let payload={
-        title: title,
-        status: false
-    };
+const editTask=(id,payload)=> (dispatch)=>{
+    
 
     dispatch({ type: types.UPDATE_TASK_REQUEST });
   
@@ -57,7 +54,7 @@ const editTask=(id,title)=> (dispatch)=>{
         dispatch({ type: types.UPDATE_TASK_SUCCESS, payload: r.data });
       })
       .catch((err) => {
-        dispatch({ type: types.UPDATE_TASK_FAILURE });
+        dispatch({ type: types.UPDATE_TASK_FAILURE, payload:err });
       });
   
   }
@@ -74,7 +71,7 @@ const deleteTask=(id) =>(dispatch)=> {
       .then((r) => {
         dispatch({ type: types.DELETE_TASK_SUCCESS, payload: r.data });
       })
-      .then((e) => {
+      .catch((e) => {
         dispatch({ type: types.DELETE_TASK_FAILURE, payload: e });
       });
   }
