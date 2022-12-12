@@ -36,8 +36,8 @@ const addTask = (title) => (dispatch)=>{
       .then((r) => {
         dispatch({ type: types.ADD_TASK_SUCCESS, payload: r.data });
       })
-      .then((e) => {
-        dispatch({ type: types.ADD_TASK_FAILURE, payload: e });
+      .catch((error) => {
+        dispatch({ type: types.ADD_TASK_FAILURE });
       });
   };
 
