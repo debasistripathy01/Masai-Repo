@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { editTask, getTask } from "../Redux/action";
+import { store } from "../Redux/store";
 
 const Editpage = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const {id} = useParams();
+  const taskList = useSelector((store)=> store.tasks);
+  const [ titl , setTitle] = useState("");
+  const [ state, setState] = useState(false);
+
+  const updateHandler=(e, url)=>{
+    e.preventDefault();
+    let payload={
+      status: state,
+      title: titl
+    }
+
+    dispatch(editTask(id, payload)).then((res)=>{
+      dispatch(getTask()).then((res)=>{
+        navigate("/");
+      })
+    })
+  }
   return (
     <div>
-      <form>
-        <input data-testid="edit-task-title" />
-        <select data-testid="edit-select-option">
-          <option value="true"></option>
-          <option value="false"></option>
+      <form onSubmit={updateHandler}>
+        <input data-testid="edit-task-title" onChange={(e)=>setTitle(e.target.value)}/>
+        <select data-testid="edit-select-option" onChange={(e)=>setState(e.target.value)}>
+          <option value="true">True</option>
+          <option value="false">False</option>
         </select>
-        <button data-testid="edit-update">Update</button>
+        <button data-testid="edit-update" type="submit">Update</button>
       </form>
     </div>
   );

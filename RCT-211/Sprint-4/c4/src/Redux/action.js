@@ -43,7 +43,12 @@ const addTask = (title) => (dispatch)=>{
 
 //update task
 
-const editTask=(id,payload)=> (dispatch)=>{
+const editTask=(id,title)=> (dispatch)=>{
+    let payload={
+        title: title,
+        status: false
+    };
+
     dispatch({ type: types.UPDATE_TASK_REQUEST });
   
     return axios
@@ -51,8 +56,8 @@ const editTask=(id,payload)=> (dispatch)=>{
       .then((r) => {
         dispatch({ type: types.UPDATE_TASK_SUCCESS, payload: r.data });
       })
-      .then((e) => {
-        dispatch({ type: types.UPDATE_TASK_FAILURE, payload: e });
+      .catch((err) => {
+        dispatch({ type: types.UPDATE_TASK_FAILURE });
       });
   
   }
