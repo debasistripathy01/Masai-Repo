@@ -65,7 +65,7 @@ const deleteTask=(id) =>(dispatch)=> {
     dispatch({ type: types.DELETE_TASK_REQUEST });
   
     return axios
-      .delete(`http://localhost:${port}/products/${id}`)
+      .delete(`http://localhost:${port}/tasks/${id}`)
       .then((r) => {
         dispatch({ type: types.DELETE_TASK_SUCCESS, payload: r.data });
       })

@@ -1,11 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Learn Redux- Modif",
-      "status": true
-    },
-    {
       "add": "",
       "id": 2
     },
@@ -20,6 +15,10 @@
     {
       "add": "",
       "id": 5
+    },
+    {
+      "add2": "",
+      "id": 6
     }
   ]
 }

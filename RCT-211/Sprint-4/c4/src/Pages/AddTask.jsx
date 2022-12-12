@@ -4,19 +4,19 @@ import { useNavigate } from "react-router-dom";
 import { addTask, getTask } from "../Redux/action";
 
 
-const initialState = {
-  task: ""
-}
+// const initialState = {
+//   task: ""
+// }
 
 
-const reducerFunction =(state, action)=>{
-  switch(action.type){
-    case "task":
-      return { ...state, task: action.payload}
-    default:
-      return state;
-  }
-}
+// const reducerFunction =(state, action)=>{
+//   switch(action.type){
+//     case "task":
+//       return { ...state, task: action.payload}
+//     default:
+//       return state;
+//   }
+// }
 
 
 const AddTask = () => {
@@ -28,8 +28,8 @@ const AddTask = () => {
 
   const handleClick = (e)=>{
     e.preventDefault();
-    dispatch(addTask(task))
-    navigate()
+    dispatch(addTask(task)).then(()=>dispatch(getTask()));
+    navigate("/")
   }
   return (
     <div>

@@ -1,20 +1,26 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTask, getTask } from "../Redux/action";
+import { useNavigate } from "react-router-dom";
+import { deleteTask, editTask, getTask } from "../Redux/action";
 
 const TaskItems = ({ id, item }) => {
 
   const dispatch = useDispatch();
 
+const navigate = useNavigate()
 
 
-
-  const handleRemovetask=()=>{
-    dispatch(deleteTask(id).then(()=>dispatch(getTask())))
+  const handleRemovetask=(id)=>{
+    dispatch(deleteTask(id)).then(()=>dispatch(getTask())).then(()=>{navigate("/")})
   }
 
 
-
+  const handleEdittask=(id)=>{
+    // const newTask = item.
+    if(id){
+      dispatch(editTask(id ))
+    }
+  }
   return (
     <div
       style={{
@@ -42,7 +48,7 @@ const TaskItems = ({ id, item }) => {
           justifyContent: "center",
         }}
       >
-        <button data-testid="edit-task" >Edit</button>
+        <button data-testid="edit-task" onClick={()=>handleEdittask(id)}>Edit</button>
         <button data-testid="delete-task" onClick={()=>handleRemovetask(id)}>Delete</button>
       </div>
     </div>
