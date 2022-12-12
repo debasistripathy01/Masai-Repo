@@ -25,12 +25,12 @@ const getTask = ()=>(dispatch)=>{
 //add task
 
 
-const addTask = (payload) => (dispatch)=>{
+const addTask = (title) => (dispatch)=>{
     dispatch({ type: types.ADD_TASK_REQUEST });
-    // let payload={
-    //     title: payload,
-    //     status: false
-    // };
+    let payload={
+        title: title,
+        status: false
+    };
     return axios
       .post(`http://localhost:${port}/tasks`, payload)
       .then((r) => {
