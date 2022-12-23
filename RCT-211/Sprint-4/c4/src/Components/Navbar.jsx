@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   let navigate = useNavigate();
 
-  let pendingTask = 0;
+  let pendingTask = tasks.length;
   let CompletedTask=0;
   
 const handleClick =()=>{

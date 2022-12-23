@@ -16,7 +16,7 @@ const Homepage = () => {
   // console.log(taskList.length);
   return (
     <div>
-      {taskList.length > 0 && taskList.map((item)=>{return <TaskItems key={item.id} {...item}/>})}
+      {taskList.length > 0 && taskList.map((item)=>{return <TaskItems key={item.id} {...item} />})}
       {/* Map through the task lists here using the TaskItems component */}
 
     </div>
