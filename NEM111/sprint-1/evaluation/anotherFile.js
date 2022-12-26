@@ -1,3 +1,7 @@
+
+const express = require("express")
+const app = express()
+
 const ipaddress = require("dns");
 
 
@@ -8,33 +12,48 @@ const cowsay = require("cowsay");
 const content = ["Aman", "Albert", "Varun", "Rajat", "Nrupul"];
 
 
+app.get("/",(req,res)=>{
+    res.send("WELCOME TO EMPLOYEE MANAGEMENT SYSTEM")
 
-const address = ( website ) =>{
-    ipaddress.lookup(website, (err, adddress)=>{
-        console.log(adddress);
-    })
+})
 
-}
+app.get("/address", (req, res)=>{
+    const address = ( website ) =>{
+        ipaddress.lookup(website, (err, adddress)=>{
+            console.log(adddress);
+        })
+    
+    }
+})
 
 
 //writeinfile 
-const writeinfile = (fileName,content)=>{
-    filesystem.writeFile(fileName, content,(err)=>{
-        console.log(err);
+app.get("/writeinfile", (req, res)=>{
+    const writeinfile = (fileName,content)=>{
+        filesystem.writeFile(fileName, content,(err)=>{
+            console.log(err);
+    
+        });
+    };
+    
+})
 
-    });
-};
+
+
+
+
+
 
 
 
 // enternames("employee.txt", content);
-
-const enternames =(fileName, content)=>{
-    filesystem.writeFile(fileName, content, (err)=>{
-        console.log(err);
-    })
+app.get("/enternames", (req, res)=>{
+    const enternames =(fileName, content)=>{
+        filesystem.writeFile(fileName, content, (err)=>{
+            console.log(err);
+        })
+    }
 }
-
 
 
 
@@ -45,7 +64,7 @@ const enternames =(fileName, content)=>{
 
 
 
-
+app.get("/alldetails", (req, res)=>{
 const alldetails =(fileName)=>{
     filesystem.readFile("./"+ fileName, {encoding: "utf-8"}, (err, data)=>{
         if(err){
@@ -53,7 +72,7 @@ const alldetails =(fileName)=>{
         }
     })
 }
-
+}
 
 const deleteFile =(fileName)=>{
     filesystem.unlink("./"+fileName, (err)=>{
