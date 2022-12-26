@@ -22,13 +22,24 @@ app.get("/",(req,res)=>{
 
 })
 
-app.get("/address", (req, res)=>{
-    const address = ( website ) =>{
-        ipaddress.lookup(website, (err, adddress)=>{
-            console.log(adddress);
+
+
+
+app.post("/address", (req, res)=>{
+   const {website} = req.body
+    // const address = ( website ) =>{
+        ipaddress.lookup(website, (err, address)=>{
+            if(err){
+                console.log(err);
+                
+            }
+            else{
+                res.send(address)
+            }
+            console.log(address);
         })
     
-    }
+    // }
 })
 
 
@@ -96,19 +107,19 @@ const deleteFile =(fileName)=>{
 const makeCowSay = (content)=>{
     console.log(`Cow Says ${content}`);
 }
-cowsay.list(makeCowSay);
+// cowsay.list(makeCowSay);
 
 
 
 
 
 
-adddress("masaischool.com");
-writeinfile("employee.txt", "Employee names are as follows:");
-alldetails("employee.txt")
-deleteFile("employee.txt");
+// adddress("masaischool.com");
+// writeinfile("employee.txt", "Employee names are as follows:");
+// alldetails("employee.txt")
+// deleteFile("employee.txt");
 
-makeCowSay("employee.txt")
+// makeCowSay("employee.txt")
 
 app.listen(8080, ()=>{
     console.log("Listen on PORT 8080")
