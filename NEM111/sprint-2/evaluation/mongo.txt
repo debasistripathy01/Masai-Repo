@@ -7,7 +7,7 @@
 
 
 
-### . To Start Mono
+### . To Start MongoDB
 
 1. brew services start mongodb-community@6.0
 

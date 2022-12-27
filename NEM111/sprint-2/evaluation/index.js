@@ -149,7 +149,7 @@ app.post("/students/create", (req, res)=>{
 
 // PUT request for the data 
 
-app.put("/db.json/:students", (req, res)=>{
+app.put("/db.json/students/:roll_no", (req, res)=>{
     const studentsId = req.params.roll_no;
     const students = req.body;
     const prevData = fs.readFileSync("./db.json", {encoding: "utf-8"});
