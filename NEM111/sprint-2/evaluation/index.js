@@ -6,57 +6,96 @@
 const express = require("express");
 
 const fs = require("fs");
-const { type } = require("os");
+
 const app = express()
 
 app.use(express.json());
 
 
-// Creating the Validator for the validation 
-
-const validator =(rq, res, next)=>{
-    if(req.method=="POST"){
-        const body = req.body;
-        if(body.roll_no && body.name && body.location && body.course){
-            if((typeof body.roll_no == "number") && (typeof body.name=="string") && ( typeof body.course =="string" ) && (typeof body.location=="string")){
-                next();
-            }
-            else{
-                res.send("validation failed");
-            }
-        }
-        else{
-            next();
-        }
-    }
-}
-app.use(validator);
-
-
 // Creating a middleware Logger 
 
 const Logger =(req, res, next)=>{
-    const text =    `${req.method}, ${req.url}, ${req.headers["user-agent"]}`;
-    const write = fs.appendFile("./logs.txt", text, "utf-8");
-
-    next();
+    fs.appendFile('logs.txt', `Method: ${req.method}, Route: ${req.url}, user-agent: ${req.headers['user-agent']}\n`, (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
+      next();
+    
 }
 app.use(Logger);
 
 
-// password 
 
-const passwordGuard =( req, res, next)=>{
-    const { password } = req.query;
-    if(password == "7877"){
-        next();
+// Creating the Validator for the validation 
+
+// const validator =(rq, res, next)=>{
+//     if(req.method=="POST"){
+//         const body = req.body;
+//         if(body.roll_no && body.name && body.location && body.course){
+//             if((typeof body.roll_no == "number") && (typeof body.name=="string") && ( typeof body.course =="string" ) && (typeof body.location=="string")){
+//                 next();
+//             }
+//             else{
+//                 res.send("validation failed");
+//             }
+//         }
+//         else{
+//             next();
+//         }
+//     }
+// }
+const validator =( req, res, next)=>{
+    const password = req.query.password;
+    const role = req.query.role;
+  if (req.method === 'PATCH' || req.method === 'DELETE') {
+    if (password === '7877' && (role === 'admin' || role === 'teacher')) {
+      next();
+    } else {
+      res.send("You are not authorised to do this operation");
     }
-    else{
-        res.send("You are not authorised to do this operation");
-    }
+  } else {
+    next();
+  }
 }
+app.use(validator);
 
-//
+
+
+// Data vase 
+
+let dataBase = require("./db.json")
+
+
+
+// API to add a student
+
+app.post('/students/addstudent', (req, res) => {
+    const student = {
+      roll_no: req.body.roll_no,
+      name: req.body.name,
+      location: req.body.location,
+      course: req.body.course
+    };
+    database.students.push(student);
+    fs.writeFileSync('db.json', JSON.stringify(database));
+    res.send(student);
+  });
+
+  // API to add Teacher
+
+  app.post('/teachers/addteacher', (req, res) => {
+    const teacher = {
+      emp_id: req.body.emp_id,
+      name: req.body.name,
+      sub: req.body.sub,
+      exp: req.body.exp
+    };
+    database.teachers.push(teacher);
+    fs.writeFileSync('db.json', JSON.stringify(database));
+    res.send(teacher);
+  });
+  
 
 
 
@@ -72,6 +111,25 @@ app.get("./students", (req, res)=>{
     res.send(students);
 })
 
+// Getting students by roll number
+
+app.get('/students/:roll_no', (req, res) => {
+    const student = database.students.find(s => s.roll_no === parseInt(req.params.roll_no));
+    if (student) {
+      res.send(student);
+    } else {
+      res.send('Student not found');
+    }
+  });
+
+
+  //Getting teacheras 
+
+  app.get('/teachers', (req, res) => {
+    res.send(database.teachers);
+  });
+
+
 // Creating the Post request to ADD details
 
 app.post("/students/create", (req, res)=>{
@@ -85,7 +143,7 @@ app.post("/students/create", (req, res)=>{
     res.send("students data created");
 })
 
-app.use(passwordGuard)
+// app.use(passwordGuard)
 
 
 
