@@ -77,8 +77,8 @@ app.post('/students/addstudent', (req, res) => {
       location: req.body.location,
       course: req.body.course
     };
-    database.students.push(student);
-    fs.writeFileSync('db.json', JSON.stringify(database));
+    dataBase.students.push(student);
+    fs.writeFileSync('./db.json', JSON.stringify(dataBase));
     res.send(student);
   });
 
@@ -105,7 +105,7 @@ app.post('/students/addstudent', (req, res) => {
 
 // GET the data from JSON-Server
 
-app.get("./students", (req, res)=>{
+app.get("/students", (req, res)=>{
     const data = fs.readFileSync("./db.json", "utf-8")
     const students = JSON.parse(data).students;
     res.send(students);
