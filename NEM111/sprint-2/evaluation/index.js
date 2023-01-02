@@ -91,8 +91,8 @@ app.post('/students/addstudent', (req, res) => {
       sub: req.body.sub,
       exp: req.body.exp
     };
-    database.teachers.push(teacher);
-    fs.writeFileSync('db.json', JSON.stringify(database));
+    dataBase.teachers.push(teacher);
+    fs.writeFileSync('db.json', JSON.stringify(dataBase));
     res.send(teacher);
   });
   
@@ -114,7 +114,7 @@ app.get("/students", (req, res)=>{
 // Getting students by roll number
 
 app.get('/students/:roll_no', (req, res) => {
-    const student = database.students.find(s => s.roll_no === parseInt(req.params.roll_no));
+    const student = dataBase.students.find(s => s.roll_no === parseInt(req.params.roll_no));
     if (student) {
       res.send(student);
     } else {
@@ -126,7 +126,7 @@ app.get('/students/:roll_no', (req, res) => {
   //Getting teacheras 
 
   app.get('/teachers', (req, res) => {
-    res.send(database.teachers);
+    res.send(dataBase.teachers);
   });
 
 
@@ -149,7 +149,7 @@ app.post("/students/create", (req, res)=>{
 
 // PUT request for the data 
 
-app.put("./db.json/:students", (req, res)=>{
+app.put("/db.json/:students", (req, res)=>{
     const studentsId = req.params.roll_no;
     const students = req.body;
     const prevData = fs.readFileSync("./db.json", {encoding: "utf-8"});

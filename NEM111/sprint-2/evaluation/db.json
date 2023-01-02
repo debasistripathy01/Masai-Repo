@@ -1,1 +1,24 @@
-{"students":[{"roll_no":1,"name":"ram","location":"bangalore","course":"NEM111"},{"roll_no":2,"name":"bhrugu","location":"bangalore","course":"RM"}],"teachers":[{"emp_id":1902,"name":"anyone","sub":"NEM","exp":0}]}
+{
+    "students": [
+        {
+            "roll_no": 1,
+            "name": "ram",
+            "location": "bangalore",
+            "course": "NEM111"
+        },
+        {
+            "roll_no": 2,
+            "name": "bhrugu",
+            "location": "bangalore",
+            "course": "RM"
+        }
+    ],
+    "teachers": [
+        {
+            "emp_id": 1902,
+            "name": "anyone",
+            "sub": "NEM",
+            "exp": 0
+        }
+    ]
+}
