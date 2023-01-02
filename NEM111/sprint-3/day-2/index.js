@@ -18,10 +18,10 @@ app.get("/heros", async(req, res)=>{
 
     try{
         const city = req.query.city
-    const language= req.query.language
-    const active = req.query.isActive;
-    const heros = await HeroModel.find({language: language, active: active})
-    res.send(heros)
+        const language= req.query.language
+        const active = req.query.isActive;
+        const heros = await HeroModel.find({language: language, active: active})
+        res.send(heros)
     }
     catch(err){
         console.log(err);
