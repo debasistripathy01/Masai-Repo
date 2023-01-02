@@ -12,3 +12,6 @@ Method: POST, Route: /students/addstudent, user-agent: Thunder Client (https://w
 Method: POST, Route: /students/addstudent, user-agent: Thunder Client (https://www.thunderclient.com)
 Method: PUT, Route: /db.json/:2, user-agent: Thunder Client (https://www.thunderclient.com)
 Method: PUT, Route: /db.json/:2, user-agent: Thunder Client (https://www.thunderclient.com)
+Method: POST, Route: /teachers/addteacher, user-agent: Thunder Client (https://www.thunderclient.com)
+Method: POST, Route: /teachers/addteacher, user-agent: Thunder Client (https://www.thunderclient.com)
+Method: POST, Route: /teachers/addteacher, user-agent: Thunder Client (https://www.thunderclient.com)
