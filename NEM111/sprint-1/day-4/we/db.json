@@ -1,0 +1,16 @@
+{
+    "student": [
+        {
+            "name": "Santosh",
+            "Age": 27,
+            "City": "Bangalore"
+        }
+    ],
+    "teacher": [
+        {
+            "name": "Teacher",
+            "Age": 12,
+            "subject": "bhasad"
+        }
+    ]
+}
