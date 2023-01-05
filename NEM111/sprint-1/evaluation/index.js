@@ -7,52 +7,142 @@
 const express = require("express")
 const app = express()
 
-const ipaddress = require("dns");
+const dns = require("node:dns");
 
-
+const http = require("http");
 const filesystem = require("fs");
 
 const cowsay = require("cowsay");
 
 const content = ["Aman", "Albert", "Varun", "Rajat", "Nrupul"];
-
-
-app.get("/",(req,res)=>{
-    res.send("WELCOME TO EMPLOYEE MANAGEMENT SYSTEM")
-
-})
+let param = process.argv[2];
 
 
 
 
-app.post("/address", (req, res)=>{
-   const {website} = req.body
-    // const address = ( website ) =>{
-        ipaddress.lookup(website, (err, address)=>{
+const server = http.createServer((req, res)=>{
+
+    // "/" EndPoint
+    if(req.url === "/"){
+        res.setHeader("Content-type", "text/html");
+        res.end("<h1>Employee Management System</h1>");
+
+    }
+    // "/writeinFIle" EndPoint 
+
+    else if(req.url === "/writeinfile"){
+        filesystem.writeFile("./employee.txt", "Employee names are as follows:", (err)=>{
             if(err){
+                res.end("there is an error while writing into the file");
                 console.log(err);
-                
             }
             else{
-                res.send(address)
+                res.setHeader("Content-type", "text/html");
+                res.end("<h1>The data has been is written in the file</h1>")
             }
-            console.log(address);
         })
-    
-    // }
+    }
+
+    // "/enternames" endPoint to Enter all the Names of the students 
+
+    else if(req.url === "/enternames"){ 
+        content.map(el=>{
+            filesystem.appendFile("./employee.txt", `\n${el}`,(err)=>{
+                if(err){
+                    res.end("There is some error while adding the Names");
+                    console.log(err);
+                }
+                
+            })
+        })
+    }
+
+    else if(req.url==="/alldetails"){
+        filesystem.readFile("./employee.txt", "utf-8", (err, data)=>{
+            if(err){
+                res.end("There is some error while reading the Employee data");
+                console.log(err);
+            }
+            else{
+                res.end(cowsay.say({
+                    text: data
+                }))
+            }
+        })
+    }
+
+
+    // address endpoint Creating
+
+    else if(req.url === "/address"){
+        dns.lookup(param, (err,address, family)=>{
+            res.write("The IP address is \n");
+            res.end(address);
+        })
+    }
+
+    // Delete Endpoint creating it 
+
+    else if (req.url==="/delete"){
+        filesystem.unlink("./employee.txt", (err)=>{
+            if(err){
+                res.end("THere is some error deleting");
+                console.log(err);
+            }
+            else{
+                res.setHeader("Content-type", "text/html");
+                res.end("<h1>File has been deleted</h1>")
+            }
+        })
+    }
+    else{
+        res.setHeader("Content-type", "text/html");
+        res.end("<h1>Invalid Endpoint</h1>");
+    }
 })
+
+
+
+server.listen(3500, ()=>{
+    console.log("Listen on PORT 3500")
+})
+
+// app.get("/",(req,res)=>{
+//     res.send("WELCOME TO EMPLOYEE MANAGEMENT SYSTEM")
+
+// })
+
+
+
+
+// app.post("/address", (req, res)=>{
+//    const {website} = req.body
+//     // const address = ( website ) =>{
+//         ipaddress.lookup(website, (err, address)=>{
+//             if(err){
+//                 console.log(err);
+                
+//             }
+//             else{
+//                 res.send(address)
+//             }
+//             console.log(address);
+//         })
+    
+//     // }
+// })
 
 
 //writeinfile 
-app.get("/writeinfile", (req, res)=>{
-    const writeinfile = (fileName,content)=>{
-        filesystem.writeFile(fileName, content,(err)=>{
-            console.log(err);
+// app.get("/writeinfile", (req, res)=>{
+//     const writeinfile = (fileName,content)=>{
+//         filesystem.writeFile(fileName, content,(err)=>{
+//             console.log(err);
     
-        });
-    };
+//         });
+//     };
     
-})
+// })
 
 
 
@@ -63,13 +153,13 @@ app.get("/writeinfile", (req, res)=>{
 
 
 // enternames("employee.txt", content);
-app.get("/enternames", (req, res)=>{
-    const enternames =(fileName, content)=>{
-        filesystem.writeFile(fileName, content, (err)=>{
-            console.log(err);
-        })
-    }
-})
+// app.get("/enternames", (req, res)=>{
+//     const enternames =(fileName, content)=>{
+//         filesystem.writeFile(fileName, content, (err)=>{
+//             console.log(err);
+//         })
+//     }
+// })
 
 
 
@@ -80,33 +170,33 @@ app.get("/enternames", (req, res)=>{
 
 
 
-app.get("/alldetails", (req, res)=>{
-    const alldetails =(fileName)=>{
-        filesystem.readFile("./"+ fileName, {encoding: "utf-8"}, (err, data)=>{
-            if(err){
-                res.send(err)
-            }
-        })
-    }
-})
+// app.get("/alldetails", (req, res)=>{
+//     const alldetails =(fileName)=>{
+//         filesystem.readFile("./"+ fileName, {encoding: "utf-8"}, (err, data)=>{
+//             if(err){
+//                 res.send(err)
+//             }
+//         })
+//     }
+// })
 
 
-app.get("/delete", (req, res)=>{
-const deleteFile =(fileName)=>{
-    filesystem.unlink("./"+fileName, (err)=>{
-        if(err){
-            console.log(err);
-        }
-        console.log("File has been deleted")
-    })
+// app.get("/delete", (req, res)=>{
+// const deleteFile =(fileName)=>{
+//     filesystem.unlink("./"+fileName, (err)=>{
+//         if(err){
+//             console.log(err);
+//         }
+//         console.log("File has been deleted")
+//     })
 
-}
-});
+// }
+// });
 
 
-const makeCowSay = (content)=>{
-    console.log(`Cow Says ${content}`);
-}
+// const makeCowSay = (content)=>{
+//     console.log(`Cow Says ${content}`);
+// }
 // cowsay.list(makeCowSay);
 
 
@@ -121,8 +211,6 @@ const makeCowSay = (content)=>{
 
 // makeCowSay("employee.txt")
 
-app.listen(8080, ()=>{
-    console.log("Listen on PORT 8080")
-})
+
 
 
