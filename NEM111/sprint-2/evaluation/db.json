@@ -1,0 +1,21 @@
+{
+"students":[
+    {
+        "roll_no": 1,
+        "name": "ram",
+        "location": "bangalore",
+        "course": "NEM111"
+    }
+],
+"teachers":[
+
+        {
+            "emp_id": 1902,
+            "name": "anyone",
+            "sub": "NEM",
+            "exp": 0
+        }
+
+
+]
+}
