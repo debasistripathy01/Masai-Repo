@@ -4,7 +4,7 @@
 
 const express = require("express");
 const {connection, HeroModel, heroSchema} = require("./db.js")
-
+require("dotenv").config()
 const app = express();
 
 app.use(express.json())
@@ -89,5 +89,5 @@ app.listen(4500, async ()=>{
         console.log("erorr while connecting to db")
     }
     
-    console.log("running on port 4500");
+    console.log(`running on port${process.env.KEY}` );
 })

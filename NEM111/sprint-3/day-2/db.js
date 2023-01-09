@@ -5,8 +5,9 @@
 const mongoose = require("mongoose");
 
 // const connection = mongoose.connect("mongodb://127.0.0.1:27017/superheroDB")
-const connection = mongoose.connect("mongodb+srv://debasis:deba@cluster0.h9ccc5i.mongodb.net/superhero?retryWrites=true&w=majority")
-
+const PORT = process.env.KEY
+const connection = mongoose.connect(`${PORT}`)
+require("dotenv").config()
 
 const heroSchema = mongoose.Schema({
     name: {type: String, require: true},
