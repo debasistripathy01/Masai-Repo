@@ -126,7 +126,7 @@ app.listen(4300, async()=>{
         console.log(err);
         console.log("Error while connecting to DB");
     }
-    console.log(`Running on port${process.env.API_KEY}` );
+    console.log(`Running on port${process.env.KEY}` );
 })
 
 

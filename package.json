@@ -1,0 +1,20 @@
+{
+  "name": "debasis_fw18_0821",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masai-course/Debasis_fw18_0821.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masai-course/Debasis_fw18_0821/issues"
+  },
+  "homepage": "https://github.com/masai-course/Debasis_fw18_0821#readme"
+}
