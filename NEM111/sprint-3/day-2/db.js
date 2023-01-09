@@ -1,10 +1,11 @@
-
+// mongodb+srv://debasis:<password>@cluster0.h9ccc5i.mongodb.net/?retryWrites=true&w=majority
 
 
 
 const mongoose = require("mongoose");
 
-const connection = mongoose.connect("mongodb://127.0.0.1:27017/superheroDB")
+// const connection = mongoose.connect("mongodb://127.0.0.1:27017/superheroDB")
+const connection = mongoose.connect("mongodb+srv://debasis:deba@cluster0.h9ccc5i.mongodb.net/superhero?retryWrites=true&w=majority")
 
 
 const heroSchema = mongoose.Schema({
