@@ -89,5 +89,5 @@ app.listen(4500, async ()=>{
         console.log("erorr while connecting to db")
     }
     
-    console.log(`running on port${process.env.KEY}` );
+    // console.log(`running on port${process.env.KEY}` );
 })
