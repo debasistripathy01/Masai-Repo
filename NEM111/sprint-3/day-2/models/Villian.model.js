@@ -15,5 +15,5 @@ const VillianModel = mongoose.model("villian", villianSchema)
 
 
 
-module.exports={ VillianModel }
+module.exports={VillianModel}
 

@@ -8,7 +8,6 @@ const {heroRouter} = require("./routes/Hero.route")
 const {villianRouter} = require("./routes/Villian.route")
 
 
-
 app.use(express.json())
 
 app.get("/",(req, res)=>{
@@ -19,7 +18,7 @@ app.use("/heroes", heroRouter);
 app.use("/villians", villianRouter);
 
 
-app.listen(`process.env.mongoURL`, async ()=>{
+app.listen(`process.env.API`, async ()=>{
     try{
         await connection;
         console.log(`Connected to DB Successfully connected to ${process.env.mongoURL}`)

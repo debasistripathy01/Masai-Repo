@@ -7,11 +7,12 @@ const heroRouter = express.Router();
 
 const { HeroModel } = require("../models/Heroes.model");
 
-heroRouter.get("/heroes", async(req, res)=>{
+heroRouter.get("/", async(req, res)=>{
     // let query = req.query;
     let query = req.query;
     const city = req.query.city
     const language= req.query.language
+    const isActive=req.query.isActive
 try{
 
     
@@ -29,7 +30,7 @@ try{
 })
 
 
-heroRouter.post("/addhero", async(req, res)=>{
+heroRouter.post("/add", async(req, res)=>{
     try{
         const data = req.body;
         const hero = new HeroModel(data);
@@ -43,7 +44,7 @@ heroRouter.post("/addhero", async(req, res)=>{
 })
 // Patching the data in the Server
 
-heroRouter.patch("/edithero/:id", async(req, res)=>{
+heroRouter.patch("/edit/:id", async(req, res)=>{
     try{
         const ID = req.params.id
         await HeroModel.findByIdAndUpdate({_id: ID}, payload)
