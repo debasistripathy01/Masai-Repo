@@ -1,3 +1,27 @@
+### You can either use React or just HTML,CSS and JS for frontend.
+  ## Following pages should be there.
+        - Home Page
+        - Signup Page.
+        - Login Page.
+## Posts Page ==> 
+    - Only that user's posts should be visible who has logged in.
+## Delete 
+    - A delete button should also be there, which will delete that particular post.
+## Update Button
+    - Along with Delete button there should be an update button as well, which will take you to a form that will ask for things to be updated, and once you fill them and click on the ok button, that particular post should be updated.
+## Navbar
+ - There should be a navbar as well which should be visible all the time.
+## Logout Button
+  - A logout button should be there which will log out the user take you to posts page and no posts should be visible then at posts page.
+## Counter
+
+    - A counter should be there at the top left corner which will show the number of posts, and once the user logs out, should become 0.
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
