@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+const {connection} =require("./configs/db");
 
 const app = express();
 
@@ -15,6 +15,15 @@ app.get("/", (req, res)=>{
 
 
 
-app.listen(process.env.PORT, ()=>{
-    console.log("connected to 4300 port ");
+
+app.listen(process.env.PORT, async()=>{
+    // console.log("connected to 4300 port ");
+    try{
+        await connection;
+        console.log("successfully connected to Mongo DB");
+        
+    }catch(err){
+        console.log(err);
+        console.log("Error at connecting mognoose")
+    }
 })
