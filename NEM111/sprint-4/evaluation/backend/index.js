@@ -63,29 +63,37 @@ app.post("/users/login",async(req, res)=>{
 } )
 
 
+// Authenticate HEre 
+const validation = (req,res,next) =>{
+    if(!req.headers.authorization){
+        return res.send("Login First");
+    }
+    const token = req.headers.authorization.split(" ")[1]
+    jwt.verify(token,process.env.jwt_secret_key,(err,decode) =>{
+        if(err){
+            return res.send("Login Please");
+        }
+        next()
+    })
+}
+
+
 // SHowing the existing Posts of the Logged in Users
 app.get("/posts", (req, res)=>{
 
     const post = req.body;
     try{
 
-        const query = req.params.query;
-        if(!query){
-            return res.send("No query found");
-        }
-        const post_data = new UserModel.findOne({query});
-        res.send("FOund all the posts that are stored in the data base");
+        // const query = req.params.query;
+        // if(!query){
+        //     return res.send("No query found");
+        // }
+        // const post_data = new UserModel.findOne({query});
+        // res.send("FOund all the posts that are stored in the data base");
     }catch(err){
         console.log(err);
         console.log("error while fetching to posts");
-
     }
-
-
-
-
-
-
 })
 
 
@@ -108,6 +116,7 @@ app.delete("/posts/delete", (req, res)=>{
 
 
 
+app.use(validation);
 
 
 app.listen(8080, async()=>{
