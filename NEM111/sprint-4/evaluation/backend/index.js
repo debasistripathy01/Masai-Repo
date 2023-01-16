@@ -138,7 +138,7 @@ app.delete("/posts/delete", validation,async(req, res)=>{
 app.use(validation);
 
 app.use("/users", postsRouter);
-app.listen(8080, async()=>{
+app.listen(process.env.mongoURL, async()=>{
     console.log("connected to 8080 port ");
     try{
         await connection;
