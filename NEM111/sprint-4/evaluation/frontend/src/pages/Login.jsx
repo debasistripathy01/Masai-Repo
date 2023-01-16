@@ -2,20 +2,17 @@ import React from 'react'
 import { useNavigate } from "react-router-dom"
 import {useState} from "react"
 import "./login.css"
-import {
-  // Heading,
-  Text,
-  Button, Box, Image
-} from '@chakra-ui/react'
+
 import {useDispatch} from ""
 import { Link } from "react-router-dom"
+
 import { login } from "../Redux/action.js"
 export const Login = () => {
-
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    
     const handleSubmit = (e)=>{
         e.preventDefault()
         if(email&&password){
