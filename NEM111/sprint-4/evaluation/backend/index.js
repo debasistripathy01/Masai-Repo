@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config()
+const {postsRouter} = require("./routes/posts.routes")
 const connection =require("./configs/db");
 const { UserModel } = require("./models/User.moel");
-
+const { Posts} = require("./models/Posts.model");
 const app = express();
 
 app.use(express.json());
@@ -100,25 +101,43 @@ app.get("/posts", (req, res)=>{
 
 // Logged in User POsts Update API endPoint
 
-app.patch("/posts/update", (req, res)=>{
-    res.send("Users Posts Patching successful")
-})
+app.patch("/posts/update", validation,async(req, res)=>{
+    try{
+        const userId = req.params.userId
+        const postsId = req.params.postsId
+        const post = await Posts.findOne({_id:todosId});
+        const newpost = await Posts.findByIdAndUpdate(postsId,req.body)
+        res.send({message:"Update Posts successfull"})
+    }catch(err){
+        console.log(err);
+        console.log("Error while Updating the Data ");
+    }
+        
+    })
 
 // Deleting the Posts of the Login Users
 
-app.delete("/posts/delete", (req, res)=>{
-    res.send("Deleting the Posts of the Users successfully");
+app.delete("/posts/delete", validation,async(req, res)=>{
+    try{
+
+            const userId = req.params.userId
+            const postsId = req.params.postsId
+            const post = await Posts.findOne({_id:postsId})
+            
+            const newpost = await Posts.findByIdAndDelete(postsId)
+            res.send({message:"Delete the Posts  successfully"})
+
+    }catch(err){
+        console.log(err);
+        console.log("Error while deleting the data of Post")
+    }
 })
-
-
 
 //Get all the Queries API endpoint
 
-
-
 app.use(validation);
 
-
+app.use("/users", postsRouter);
 app.listen(8080, async()=>{
     console.log("connected to 8080 port ");
     try{
