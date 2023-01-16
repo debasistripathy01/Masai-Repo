@@ -1,6 +1,7 @@
 const express = require("express");
+require("dotenv").config();
 const mongoose = require("mongoose");
 
-require("dotenv").config();
+
 const connection = mongoose.connect(process.env.API);
-module.exports={connection};
+module.exports=connection;
