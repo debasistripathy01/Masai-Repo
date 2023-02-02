@@ -52,7 +52,7 @@ const DisplayData =(array)=>{
         let btn = document.createElement("button")
         btn.setAttribute("id","clickOnit")
         btn.addEventListener("click", ()=>{
-            const Box = document.createElement("div");
+            const Box = document.createElement("span");
             Box.setAttribute("class","Box" )
             Box.append(box)
 
