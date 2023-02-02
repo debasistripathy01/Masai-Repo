@@ -4,15 +4,17 @@
 
 
 
-const express = require("express")
-const app = express()
+// const express = require("express")
+// const app = express()
 
 const dns = require("node:dns");
 
-const http = require("http");
-const filesystem = require("fs");
+const http = require('http');
+const fs = require('fs');
+const cowsay = require('cowsay');
+const dns = require('dns');
+const url = require('url');
 
-const cowsay = require("cowsay");
 
 const content = ["Aman", "Albert", "Varun", "Rajat", "Nrupul"];
 let param = process.argv[2];
@@ -191,7 +193,9 @@ server.listen(3500, ()=>{
 //     })
 
 // }
-// });
+// }); 
+
+
 
 
 // const makeCowSay = (content)=>{
