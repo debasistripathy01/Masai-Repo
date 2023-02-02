@@ -1,0 +1,15 @@
+#container{
+    height: 800px;
+    border: 2rem solid rgb(112, 14, 14);
+    border-radius: 30px;
+    margin:auto;
+    width: 45rem;
+    overflow: auto;
+  }
+  #scrollDiv {
+    list-style-type: none;
+    font-size:35px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+  }

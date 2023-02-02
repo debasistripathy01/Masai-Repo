@@ -6,6 +6,7 @@ let array;
 const getItems =async()=>{
 
 
+
     const url = "https://jsonplaceholder.typicode.com/comments";
 
     try{
@@ -23,13 +24,15 @@ DisplayData(data)
 }
 
 getItems();
-const container = document.getElementById("container");
+
+
+const data = document.getElementById("container");
 const DisplayData =(array)=>{
     
     
-
-
-    array.forEach((ele, index)=>{
+    // const container = document.getElementById("container");
+    const container = document.createElement("container");
+    array.forEach((ele)=>{
         let box = document.createElement("div");
 
 
@@ -48,28 +51,54 @@ const DisplayData =(array)=>{
 
         let btn = document.createElement("button")
         btn.setAttribute("id","clickOnit")
+        btn.addEventListener("click", ()=>{
+            const Box = document.createElement("div");
+            Box.setAttribute("class","Box" )
+            Box.append(box)
+
+        })
+
+
         btn.innerText = "Details"
 
 
+        // let hide = document.createElement("button");
+
+
+
         box.append(postId, name, comments, btn);
-        container.append(postId, name, comments, btn)
+        container.append(box)
     });
+
+    var count =1;
+    for(var i=0; i < array.length; i++){
+        var item = document.createElement("div");
+        item.setAttribute("id", "scrollDiv")
+        item=container;
+        data.appendChild(item)
+    }
+
 
     
 }
 
 
-const posts  =(array)=>{
-    var count =1;
+const onClicking=()=>{
+    const Box = document.createElement("div");
 
-    // for(var i=0; i < array.length; i++){
-
-    //     var item = document.createElement('div');
-    //     item.id="list"
-
-    //     container.appendChild(item);
-    // }   
 }
+
+
+
+const wholeCard = document.getElementById("container");        
+// const posts  =(array)=>{
+//     var count =1;
+//     for(var i=0; i <500; i++){
+        
+        
+//         wholeCard.appendChild(DisplayData(array));
+//     }   
+// }
 
 
 
@@ -81,4 +110,4 @@ data.addEventListener('scroll', function () {
 });
 
 
-newlist();
+// posts(array)
