@@ -17,7 +17,8 @@ const getItems =async()=>{
         // DisplayData(data.map({el})=>el);
         let array = data.map(({name, email, body})=>(name, email, body))
 // console.log(array.length);
-DisplayData(data)
+    DisplayData(data)
+    cont.insertAdjacentHTML("beforeend",show)
     }catch(err){
         console.log(err)
     }
@@ -82,23 +83,25 @@ const DisplayData =(array)=>{
     
 }
 
+let limit = 10;
+    let page = 1;
+    let post= 1;
+    const getData = ()=>{
+        setTimeout(()=>{
+            page++
+            getItems()
+        },200)
+    }
 
-const onClicking=()=>{
-    const Box = document.createElement("div");
+    window.addEventListener("scroll",()=>{
+        const {scrollHeight,scrollTop,clientHeight} = document.documentElement
+        if(scrollTop+clientHeight>=scrollHeight){
+            getData()
+        }
+    })
 
-}
 
 
-
-const wholeCard = document.getElementById("container");        
-// const posts  =(array)=>{
-//     var count =1;
-//     for(var i=0; i <500; i++){
-        
-        
-//         wholeCard.appendChild(DisplayData(array));
-//     }   
-// }
 
 
 
