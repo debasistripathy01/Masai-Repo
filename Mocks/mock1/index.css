@@ -1,10 +1,24 @@
 #container{
-    height: 800px;
+    /* height: 800px;
     border: 2rem solid rgb(112, 14, 14);
     border-radius: 30px;
     margin:auto;
     width: 45rem;
-    overflow: auto;
+    overflow: auto; */
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  }
+
+#mainDiv{
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(auto);
+}
+  .item{
+    /* border: 1px solid red; */
+    
   }
   #scrollDiv {
     list-style-type: none;
@@ -13,7 +27,77 @@
     text-align: center;
     line-height: 60px;
   }
+  #modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  .close-button {
+    float: right;
+    cursor: pointer;
+  }
+  #container{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+#posts{
+    padding: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: rgb(77, 157, 130);
+    border-radius: 10px;
+}
 
+
+#modalcont{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.1s ease;
+}
+#modalcont.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+#modal{
+    background-color: white;
+    width: 350px;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+  .hidden {
+    display: none;
+  }
+  
 
   #clickOnit{
     position: relative;
