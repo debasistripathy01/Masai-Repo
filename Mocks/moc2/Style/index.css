@@ -1,0 +1,23 @@
+#create{
+    /* border: 1px solid rebeccapurple; */
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+
+
+#create>form{
+    /* border: 1px solid green; */
+    display: grid;
+    margin: auto;
+    justify-content: center;
+}
+
+#create>form>input{
+    margin-top: 3%;
+    width: 40%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    
+}

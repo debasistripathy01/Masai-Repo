@@ -1,0 +1,18 @@
+#navbar{
+    /* border: 1px solid red; */
+    display: flex;
+
+}
+
+#navbar>div{
+    width: 40% ;
+    display: flex;
+    margin: auto;
+    /* border: 1px solid green; */
+
+}
+
+#navbar>div>a{
+    margin: auto;
+    text-decoration: none;
+}
