@@ -1,16 +1,26 @@
 
 
 
-let new_data;
+const prev = document.getElementById("previous");
+
+const next = document.getElementById("next");
+
+const number = document.getElementById("number");
+
+const s_value = document.getElementById("Search__Input");
+const s_button = document.getElementById("Search__Button")
+let page_curr = 1;
+
+let new_data=[];
 const DisplayData = async()=>{
-    let url = "https://www.balldontlie.io/api/v1/players";
+    let url = "https://www.balldontlie.io/api/v1/players/?page=1&per_page=100";
     try{
 
         let res =  await fetch(url);
          let data = await res.json();
         // console.log(data.data);
         new_data =  data.data
-        showData(new_data)
+        // showData(new_data)
         console.log(new_data)
         // console.log(new_data[0].team.abbre)
     }catch(err){
@@ -20,7 +30,57 @@ const DisplayData = async()=>{
 
 }
 
-DisplayData()
+s_button.addEventListener("click", () => {
+    const sear = s_value.value
+    const player = new_data.filter((item) => {
+      return (
+        item.first_name.toLowerCase().includes(sear) ||
+        item.last_name.toLowerCase().includes(sear)
+      );
+    });
+    page_curr = 1;
+    DataShow(page_curr,player);
+
+
+  });
+
+
+
+const DataShow = (page,dataarr=new_data) => {
+    container.innerHTML = "";
+    const first = (page - 1) * 10;
+    const last = first + 10;
+    for (let i = first;i<last && i<dataarr.length;i++) {
+      const user = dataarr[i];
+    //   const card = document.createElement("div");
+        showData(dataarr)
+    }
+    console.log(dataarr)
+    number.innerText = page;
+    prev.disabled = page === 1;
+    next.disabled = page === Math.ceil(new_data.length / 10);
+  };
+  
+
+
+
+
+
+
+
+
+prev.addEventListener("click", () => {
+    page_curr--;
+    DataShow(page_curr);
+  });
+  
+  next.addEventListener("click", () => {
+    page_curr++;
+    DataShow(page_curr);
+  });
+  
+  DisplayData();
+  DataShow(page_curr);
 
 const showData = (new_data)=>{
     let container = document.getElementById("container");
