@@ -17,7 +17,15 @@
     margin-top: 3%;
     width: 40%;
     height: auto;
-    align-items: center;
     justify-content: center;
+
+}
+
+#name{
+
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    padding: 1%;
     
 }
