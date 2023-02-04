@@ -10,6 +10,11 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
   }
+
+
+  .modal_container{
+    border: 1px solid black;
+  }
   
   .modal-content {
     background-color: #fefefe;
