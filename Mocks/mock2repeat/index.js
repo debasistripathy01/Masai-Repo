@@ -71,13 +71,14 @@ const showData = (new_data)=>{
 function submitNamesBtn(el){
     localStorage.setItem("namesOfPlayer", JSON.stringify(el))||[];
     modal.style.display = "block";
+    let playerData = JSON.parse(localStorage.getItem("namesOfPlayer"))||[];
     ModalData(playerData)
 }
 
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn");
 const span = document.getElementsByClassName("close")[0];
-let playerData = JSON.parse(localStorage.getItem("namesOfPlayer"))||[];
+
 // document.getElementById("container").innerText = data
 
 
