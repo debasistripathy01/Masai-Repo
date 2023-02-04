@@ -124,11 +124,16 @@ span.onclick = function() {
           // Team Details Div 
           let teamBox = document.createElement("div");
           teamBox.setAttribute("class", "modal_teamBox");
-          teamBox.innerText="Team Details"
+        //   teamBox.innerText="Team Details"
   
   
           // Team Details Data 
           let {abbreviation, city, conference, division, full_name}=playerData.team
+
+
+          let h1 = document.createElement("p");
+            h1.innerText = "Team Details"
+
           let abbr = document.createElement("p");
           abbr.setAttribute("class", "modal_abbreviation");
   
@@ -140,21 +145,21 @@ span.onclick = function() {
   
           let confe = document.createElement("p");
           confe.setAttribute("class", "modal_conference");
-          confe.innerText="Conf : "+
+          confe.innerText="Conf : "+conference
   
+        var divisio = document.createElement("div")
+        divisio.setAttribute("class", "modal_division");
+        divisio.innerText = "Div : "+division
   
-          // div.setAttribute("class", "modal_division");
-          // div.innerText="Div : "+division
-  
-          // let fullName = document.createElement("p");
-          // fullName.setAttribute("class", "modal_fullName");
-          // fullName.innerText=full_name
+          let h3 = document.createElement("p");
+          h3.setAttribute("class", "modal_fullName");
+          h3.innerText="Full Name :"+full_name
   
   
           // teamBox.appendChild(abbreviation, city, conference, division, fullName)
-          teamBox.append(abbreviation, city, conference, division, full_name);
+          teamBox.append(h1, abbr, cit, confe, divisio, full_name);
   
-          box.append( img, name, position);
-          modal_container.append(box, teamBox);
+          box.append( img, name, position,teamBox );
+          modal_container.append(box);
   
   }

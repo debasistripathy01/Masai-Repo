@@ -12,9 +12,29 @@
   }
 
 
-  .modal_container{
+  #modal_container{
     border: 1px solid black;
+
   }
+
+  .modal_playerNames{
+        font-size: 20px;
+  }
+  .modal_teamBox> h1{
+    text-align: center;
+  }
+
+
+  .modal_teamBox{
+    width: 70%;
+    height: 70%;
+    border: 1px solid greenyellow;
+    margin: 4%;
+  }
+
+
+
+
   
   .modal-content {
     background-color: #fefefe;
