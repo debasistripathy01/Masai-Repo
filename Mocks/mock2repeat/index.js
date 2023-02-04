@@ -1,9 +1,19 @@
 
+const prev = document.getElementById("prev");
 
+const next = document.getElementById("next");
+
+const number = document.getElementById("num");
+const s_value = document.getElementById("s_input");
+const s_button = document.getElementById("s_butt")
+
+
+let page_curr = 1;
+let data = [];
 
 let new_data;
 const DisplayData = async()=>{
-    let url = "https://www.balldontlie.io/api/v1/players";
+    let url = "https://www.balldontlie.io/api/v1/players/?page=1&per_page=100";
     try{
 
         let res =  await fetch(url);
@@ -20,7 +30,20 @@ const DisplayData = async()=>{
 
 }
 
-DisplayData()
+
+
+s_button.addEventListener("click", () => {
+    const sear = s_value.value
+    const player = data.filter((item) => {
+      return (
+        item.first_name.toLowerCase().includes(sear) ||
+        item.last_name.toLowerCase().includes(sear)
+      );
+    });
+    page_curr = 1;
+    showData(page_curr,player);
+  });
+// DisplayData()
 
 const showData = (new_data)=>{
     let container = document.getElementById("container");

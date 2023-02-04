@@ -12,9 +12,22 @@
 
 <body>
 
+    <div class="navBar">
+        <a href="./index.html">Players Page</a>
+        <a href="./games.html">Games Page</a>
+    </div>
+
+    <div id="search">
+        <input type="text" id="s_input" placeholder="Search Here">
+        <button id="s_butt">Search</button>
+      </div>
+
     <div id="container">
 
     </div>
+
+
+
 
     <!-- <button id="myBtn"></button> -->
     <div id="myModal" class="modal">
@@ -26,10 +39,17 @@
         </div>
     </div>
 
+    <div id="pagination">
+        <button id="prev">Prev</button>
+        <span id="num">0</span>
+        <button id="next">Next</button>
+      </div>
+
 </body>
 
 </html>
 
 
 <script src="./index.js" type="module"></script>
+<script src="./pagination.js" type="module"></script>
 <!-- <script src="./modal.js" type="module"></script> -->
