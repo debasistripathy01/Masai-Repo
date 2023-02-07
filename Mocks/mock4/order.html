@@ -7,6 +7,28 @@
     <title>Order Page</title>
     <style>
       /* All Your css for Order page goes here  */
+      *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .nav{
+        inline-size: 100%;
+            block-size: 50px;
+            background-color: rgb(185, 232, 55);
+            margin-block-start: 1%;
+            display: flex;
+            flex-direction: row-reverse;
+      }
+      .nav>a{
+        font-size: 20px;
+            font-weight: bold;
+            margin-inline-end: 2%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            flex-direction: row-reverse;
+      }
+
+
     </style>
   </head>
   <body>
@@ -28,5 +50,75 @@
   </body>
   <script>
     // All your JS code for Order Page goes here
+
+    let cartItemsArr = JSON.parse(localStorage.getItem("buy")) || [];
+
+    let total_cart_price = document.getElementById("order-total");
+
+
+    let sum = 0
+    let len = cartItemsArr.length;
+
+    
+    for (var i = 0; i < len; i++) {
+        sum += cartItemsArr[i].price;
+    }
+
+console.log(sum);
+
+displayCart(cartItemsArr);
+// total_cart_price.innerText = data.sum.value;
+total_cart_price.innerText = sum;
+
+function displayCart(cartData) {
+    let container = document.getElementById("order-container");
+    container.innerHTML = "";
+    cartData.forEach(function(el, index) {
+
+        let box = document.createElement("div");
+        box.setAttribute("class","item");
+
+        let Img = document.createElement("img");
+        Img.setAttribute("id", "image")
+        Img.src = elem.image;
+
+        let name = document.createElement("p");
+        name.innerText = elem.title;
+
+        let Desc = document.createElement("p");
+        Desc.innerText = elem.description
+
+        let price = document.createElement("p");
+        price.innerText = elem.price;
+
+        let Ingred = document.createElement("p");
+        Ingred.innerText = elem.ingredients
+        Ingred.setAttribute("class", "Ingd")
+
+
+
+        let removeButton = document.createElement("button");
+        removeButton.innerText = "Cancel";
+        removeButton.className = "cancel";
+        removeButton.addEventListener("click", function() {
+            RemoveCartItems(el, index);
+        });
+
+
+        box.append(Img,name,Desc,price,Ingred, btn);
+        container.append(box);
+
+    });
+}
+
+function RemoveCartItems(el, index) {
+
+  cartItemsArr.splice(index, 1);
+  sum -= el.price;
+  localStorage.setItem("buy", JSON.stringify(cartItemsArr));
+  window.location.reload();
+}
+
+
   </script>
 </html>
