@@ -43,7 +43,10 @@
         border: 1px solid greenyellow;
        
       }
-
+      #alert{
+        text-align: center;
+        font-size: 20px;
+      }
       #image{
         width: 90%;
         height: 40%;
@@ -133,11 +136,10 @@ getItems();
 
 let addData = JSON.parse(localStorage.getItem("buy"))||[];
 
+
+// Display Data
+
 function DisplayData(new_data){
-    
-
-    
-
     const container = document.getElementById("menu-container");
     container.innerHTML = null;
     new_data.forEach((elem, index)=>{
@@ -165,7 +167,7 @@ function DisplayData(new_data){
         btn.setAttribute("id","add_to_cart")
         btn.innerText = "Buy"
         btn.addEventListener('click',function(){
-            addFun(elem, index);
+            checkAdded(elem, index);
         })
 
         box.append(Img,name,Desc,price,Ingred, btn);
@@ -174,18 +176,42 @@ function DisplayData(new_data){
 }
 
 function addFun(el){
-    addData.push(cofeeArr.splice(el, 1));
+    addData.push(el);
     localStorage.setItem("buy",JSON.stringify(addData))
-    document.getElementById("alert").alert("Successfully Placed Order");
+    document.getElementById("alert").textContent = ("Successfully Placed Order");
     
-    window.location.reload()
+    // window.location.reload()
 }
 
 function checkAdded(el, index){
-
+  if (addData.includes(el)) {
+    document.getElementById("alert").textContent = "Already Placed Order";
+  } else {
+    addFun(el)
+    // addData.push(el);
+    // document.getElementById("alert").textContent = "Successfully Placed Order";
+  }
 }
 
+// 
 
+document.getElementById("filter-btn").addEventListener("click", function() {
+  let minPrice = parseInt(document.getElementById("lower").value);
+  let maxPrice = parseInt(document.getElementById("upper").value);
+  let coffeeList = document.getElementById("menu-container").children;
+  
+  for (let i = 0; i < coffeeList.length; i++) {
+    let coffeePrice = parseInt(coffeeList[i].price);
+    if (coffeePrice >= minPrice && coffeePrice <= maxPrice) {
+      // coffeeList.append(coffeeList[i])
+      coffeeList[i].style.display="list-item";
+      console.log(coffeeList[i]);
+
+    } else {
+      coffeeList[i].style.display = "none";
+    }
+  }
+});
 
 
 
