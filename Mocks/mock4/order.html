@@ -73,7 +73,7 @@ total_cart_price.innerText = sum;
 function displayCart(cartData) {
     let container = document.getElementById("order-container");
     container.innerHTML = "";
-    cartData.forEach(function(el, index) {
+    cartData.forEach(function(elem, index) {
 
         let box = document.createElement("div");
         box.setAttribute("class","item");
@@ -101,11 +101,11 @@ function displayCart(cartData) {
         removeButton.innerText = "Cancel";
         removeButton.className = "cancel";
         removeButton.addEventListener("click", function() {
-            RemoveCartItems(el, index);
+            RemoveCartItems(elem, index);
         });
 
 
-        box.append(Img,name,Desc,price,Ingred, btn);
+        box.append(Img,name,Desc,price,Ingred, removeButton);
         container.append(box);
 
     });
