@@ -13,14 +13,15 @@ let page_curr = 1;
 
 let new_data=[];
 const DisplayData = async()=>{
-    let url = "https://www.balldontlie.io/api/v1/players/?page=1&per_page=100";
+    let url = "https://www.balldontlie.io/api/v1/players/?page=1&per_page=50";
     try{
 
         let res =  await fetch(url);
          let data = await res.json();
         // console.log(data.data);
         new_data =  data.data
-        // showData(new_data)
+        showData(new_data)
+        // showData
         console.log(new_data)
         // console.log(new_data[0].team.abbre)
     }catch(err){
@@ -34,7 +35,7 @@ s_button.addEventListener("click", () => {
     const sear = s_value.value
     const player = new_data.filter((item) => {
       return (
-        item.first_name.toLowerCase().includes(sear) ||
+        item.first_name.toLowerCase().includes(sear)|
         item.last_name.toLowerCase().includes(sear)
       );
     });
@@ -113,6 +114,7 @@ const showData = (new_data)=>{
 
         let btn = document.createElement("button");
         btn.id="myBtn"
+        btn.setAttribute("class", "myBtn");
         btn.innerText = "Details";
         btn.addEventListener("click", ()=>{
             submitNamesBtn(el);

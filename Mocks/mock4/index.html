@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .nav{
+        inline-size: 100%;
+            block-size: 50px;
+            background-color: rgb(185, 232, 55);
+            margin-block-start: 1%;
+            display: flex;
+            flex-direction: row-reverse;
+      }
+      .nav>a{
+        font-size: 20px;
+            font-weight: bold;
+            margin-inline-end: 2%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            flex-direction: row-reverse;
+      }
+
+      #menu-container{
+        border: 1px solid red;
+        /* display: grid; */
+        margin: auto;
+        display: grid;
+            cursor: pointer;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, auto);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+      }
+
+      #menu-container>div{
+        border: 1px solid greenyellow;
+       
+      }
+
+      #image{
+        width: 90%;
+        height: 40%;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+      }
+      .item>p{
+        text-align: center;
+        font-size: 16px;
+        margin-top: 1rem;
+      }
+
+      .item>button{
+        inline-size: 40%;
+            block-size: 30px;
+            cursor: pointer;
+            background-color: aquamarine;
+            border-radius: 6px;
+            text-align: center;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 2%;
+            font-size: 13px;
+      }
+      .item>button:hover {
+            background-color: blueviolet;
+        }
+        .Ingd{
+          justify-content: space-evenly;
+        }
+      /* All Your css for Home page goes here  */
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Web Coffee Shop Menu</h1>
+      <a href="./index.html">Home</a>
+      <a href="./order.html">Ordered</a>
+    </div>
+    <div id="filter">
+      <input type="number" id="lower" />
+      <input type="number" id="upper" />
+      <button id="filter-btn">Filter</button>
+    </div>
+    <select id="sort">
+      <option value="">Sort By Price</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <h1 id="alert"></h1>
+    <div id="menu-container">
+      <!-- Here Append All the Items  -->
+    </div>
+  </body>
+  <script>
+    // All your JS code for Home Page goes here
+    const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee`;
+
+    let cofeeArr =[];
+
+
+async function getItems() {
+    let url = "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee";
+    try {
+        let res = await fetch(`${url}`);
+        let Data = await res.json();
+
+        let new_data = Data.data;
+      // console.log(Data.data)
+        
+        if(new_data !== undefined){
+            cofeeArr = new_data;
+            DisplayData(new_data);
+            
+        };
+        // console.log(typeof(new_data))
+        console.log("ALl data :", new_data);
+    } 
+    catch (error) {
+        console.log(error);
+    };
+}
+getItems();
+
+let addData = JSON.parse(localStorage.getItem("buy"))||[];
+
+function DisplayData(new_data){
+    
+
+    
+
+    const container = document.getElementById("menu-container");
+    container.innerHTML = null;
+    new_data.forEach((elem, index)=>{
+        let box = document.createElement("div");
+        box.setAttribute("class","item");
+
+        let Img = document.createElement("img");
+        Img.setAttribute("id", "image")
+        Img.src = elem.image;
+
+        let name = document.createElement("p");
+        name.innerText = elem.title;
+
+        let Desc = document.createElement("p");
+        Desc.innerText = elem.description
+
+        let price = document.createElement("p");
+        price.innerText = elem.price;
+
+        let Ingred = document.createElement("p");
+        Ingred.innerText = elem.ingredients
+        Ingred.setAttribute("class", "Ingd")
+
+        let btn = document.createElement("button")
+        btn.setAttribute("id","add_to_cart")
+        btn.innerText = "Buy"
+        btn.addEventListener('click',function(){
+            addFun(elem, index);
+        })
+
+        box.append(Img,name,Desc,price,Ingred, btn);
+        container.append(box);
+    });
+}
+
+function addFun(el){
+    addData.push(cofeeArr.splice(el, 1));
+    localStorage.setItem("buy",JSON.stringify(addData))
+    document.getElementById("alert").alert("Successfully Placed Order");
+    
+    window.location.reload()
+}
+
+function checkAdded(el, index){
+
+}
+
+
+
+
+
+  </script>
+</html>
