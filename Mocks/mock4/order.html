@@ -151,8 +151,8 @@ function RemoveCartItems(el, index) {
   window.location.reload();
 }
 
-
-document.getElementById("cupon").addEventListener("click",function(){
+let CpBtn = document.getElementById("cupon")
+CpBtn.addEventListener("click",function(){
   addCoupon();
 });
 
@@ -160,10 +160,13 @@ document.getElementById("cupon").addEventListener("click",function(){
 let addCoupon=()=>{
 
 
-  let cuponValue = document.getElementById("cupon").value;
-  if(cuponValue =="Masai30"){
+  let cuponValue =document.querySelector('#cupon input[type="text"]');
+
+  console.log(cuponValue.value)
+  if(cuponValue.value =="Masai30"){
     sum = sum - Math.floor(sum * 0.3);
     total_cart_price.innerText=sum
+
   }
   else{
     total_cart_price.innerText=sum
