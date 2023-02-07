@@ -106,13 +106,13 @@
   </body>
   <script>
     // All your JS code for Home Page goes here
-    const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee`;
+    // const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee`;
 
     let cofeeArr =[];
-
-
-async function getItems() {
     let url = "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee";
+
+async function getItems(url) {
+    
     try {
         let res = await fetch(`${url}`);
         let Data = await res.json();
@@ -132,7 +132,7 @@ async function getItems() {
         console.log(error);
     };
 }
-getItems();
+getItems(url);
 
 let addData = JSON.parse(localStorage.getItem("buy"))||[];
 
@@ -213,6 +213,46 @@ document.getElementById("filter-btn").addEventListener("click", function() {
   }
 });
 
+
+
+
+
+//Filter
+const Lower = document.getElementById("lower");
+    const HigherPrice = document.getElementById("upper");
+    const FilterBtn= document.getElementById("filter-btn")
+
+    FilterBtn.addEventListener("click", () => {
+    const LowerPrice = Lower.value;
+    const HighPrice = HigherPrice.value
+    const filterdata = addData.filter((elem) => {
+        const Price = elem.price;
+        return Price >= LowerPrice && Price <= HighPrice;
+    })
+    DisplayData(filterdata)
+    console.log(addData)
+  })
+
+
+  // sorting 
+  document.getElementById("sort").addEventListener("change",()=>{
+    BtnOnchange()
+  })
+  
+const BtnOnchange= async()=>{
+  let selected = document.getElementById("sort").value
+      if(selected==""){
+          DisplayData(addData)
+      }
+      else if(selected=="asc"){
+        let url = "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee?sort=price&order=asc"
+        getItems(url);
+      }else if(selected=="desc"){
+        let url = "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee?sort=price&order=desc"
+        getItems(url);
+      }
+      
+  }
 
 
   </script>
