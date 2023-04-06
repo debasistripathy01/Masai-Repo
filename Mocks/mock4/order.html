@@ -159,11 +159,12 @@ CpBtn.addEventListener("click",function(){
 
 let addCoupon=()=>{
 
-
+  localStorage.setItem("cupon", JSON.stringify("Masai30"));
+  let alreadyCupon = JSON.parse(localStorage.getItem("cupon"))
   let cuponValue =document.querySelector('#cupon input[type="text"]');
 
   console.log(cuponValue.value)
-  if(cuponValue.value =="Masai30"){
+  if(cuponValue.value =="Masai30" && alreadyCupon!=="Masai30" ){
     sum = sum - Math.floor(sum * 0.3);
     total_cart_price.innerText=sum
 
